@@ -1,0 +1,145 @@
+\subsection*{Lecture 28 (10/30)} % wed oct 30
+
+To recap last lecture, the \ul{\textbf{Fundamental Theorem of Finite Abelian Groups}} states:
+\[\text{\(G\) finite abelian group \(\implies\) \(\order{G} = p_1^{n_1}p_2^{n_2}\cdots p_k^{n_k}\)}\]
+
+By \ul{\textbf{Lemma 1}}, \(G = G(p_1) \idp G(p_2) \idp \cdots \idp G(p_k)\) where each \(G(p_i)\) has order \(p_i^{n_i}\).
+
+By \ul{\textbf{Lemma 2}}, each \(G(p_i)\) = internal direct product of cyclic groups, each has order of some power of \(p_i\)
+
+\setcounter{section}{23}
+\section{Sylow's Theorem}
+
+\begin{definition}[Conjugate class of \(a\)]
+
+    \(a,b\in G\) are called \ul{conjugate} in \(G\) if \(b=xax\inv\) for some \(x\in G\).
+
+    The \ul{conjugate class of \(a\)} is the set \(\cl{a} = \{\conj{x}{a} \st x\in G\}\).
+\end{definition}
+
+\begin{remark}
+    Conjugacy is an equivalence relation on \(G\).
+\end{remark}
+
+\begin{example}
+    \(\D_4 = \{ R_{0},\  R_{90},\  R_{180},\  R_{270},\  F_{0},\  F_{45},\ F_{90},\ F_{135} \}\)
+    \begin{align*}
+        \cl{R_{0}} &= \{R_{0}\} \qquad & \cl{R_{90}}&=\{R_{90}, R_{270}\} = \cl{R_{270}} \qquad & \cl{R_{180}} &= \{R_{180}\} \\
+            \cl{F_{0}} &= \{F_{0}, F_{90}\} = \cl{R_{90}} \qquad & \cl{F_{45}} &= \{F_{45}, F_{135}\}
+    \end{align*}
+\end{example}
+
+\begin{theorem}[24.1]
+    Let \(G\) be a finite group and \(a\in G\). Then, \(\order{\cl{a}}=\index{G}{C(a)}\).
+\end{theorem}
+
+\begin{proof}[Proof of Theorem 24.1]
+Recall \(C(a) = \{h\in G \st ha=ah\}\) is the \ul{centralizer of \(a\) in \(G\)} and \(C(a)\sgp G\).
+
+Consider \( \quad\begin{matrix}
+    G\to \cl{a} \\
+    \ \ x\mapsto \conj{x}{a}
+\end{matrix}\quad \) induces a map \(T:\begin{matrix}
+    \{\text{left cosets of } C(a)\} \to \cl{a} \\
+    \qquad \qquad \qquad \quad xC(a) \mapsto \conj{x}{a}
+\end{matrix}\).
+
+\begin{itemize}
+    \item \(T\) is well-defined if \begin{align*}
+        xC(a) = yC(a) &\iff x=yh \text{ for some } h\in C{a} \\
+            &\implies \conj{x}{a} = \conj{y}{\conj{h}{a}} = \conj{y}{a}
+    \end{align*}
+    \item \(T\) is onto (obvious)
+    \item \(T\) is 1-1: \begin{align*}
+        \conj{x}{a} = \conj{y}{a} &\implies (y\inv x)a = a(y\inv x) \\
+        &\implies y\inv x \in C(a) \\
+        &\implies xC(a) = yC(a)
+    \end{align*}
+\end{itemize}
+Since \(T\) is a 1-1 correspondence, we know that \begin{align*}
+    \order{\cl{a}} &= \text{\# of left cosets of C(a)} = \index{G}{C(a)} = \frac{\order{G}}{\order{C(a)}}
+\end{align*}
+\end{proof}
+
+\begin{corollary}
+  \(\order{\cl{a}}\divs \order{G}\) for any \(a\in G\)
+\end{corollary}
+
+\begin{proof}[Proof of Corollary]
+    \(\order{\cl{a}} = \frac{\order{G}}{\order{C(a)}} \Big\vert \order{G}\)
+\end{proof}
+
+\begin{corollary}
+  For any finite group \(G\), \begin{align*}
+    \order{G} = \sum \index{G}{C(a)}
+  \end{align*}
+  where the sum runs over one element \(a\) from each conjugacy class of \(G\).
+\end{corollary}
+\begin{proof}[Proof of Corollary]
+    \begin{align*}
+        \order{G} &= \sum_a \order{\cl{a}}\qquad\text{(sum runs over)} \\
+        &= \sum \index{G}{C(a)}
+    \end{align*}
+\end{proof}
+
+\begin{theorem}
+    Let \(G\) be a finite group such that \(\order{G} = p^n\) where \(n\geq 1\). Then \(Z(G)\) has more than one element.
+\end{theorem}
+
+\begin{proof}[Proof of Theorem 24.2]
+    Notice that \(a\in Z(G) \iff \cl{a}=\{a\}\)
+
+    Thus we have that \begin{align*}
+        \order{G} = \order{Z(G)} + \sum\index{G}{C(a)} = \sum \order{\cl{a}}
+    \end{align*} where the above sum runs over representatives of all conjugacy classes with more than one element
+    \begin{align*}
+        \index{G}{C(a)} &= \frac{\order{G}}{\order{C(a)}} = p^k\text{ with } k \geq 1 \\
+        \implies \order{Z(G)} &= \order{G} - \sum\index{G}{C(a)} = p^n - \sum p^k \text{ divisible by p} \\
+        \implies \order{Z(G)} &\neq 1
+    \end{align*}
+\end{proof}
+
+\begin{corollary}
+  If \(\order{G} = p\sq\) where p prime, then \(G\) abelian.
+\end{corollary}
+
+\begin{proof}[Proof of Corollary]
+    \(\order{Z(G)} \divs p^2\) and \(\order{Z(G)}\neq 1\) (by Thm) \(\implies \order{Z(G)}=p\) or \(p\sq\)
+    \begin{align*}
+        \text{If } \order{Z(G)} = p\sq &\implies G = Z(G) \\
+        &\implies G \text{ abelian} \\
+        \text{If } \order{Z(G)} = p &\implies \order{G/Z(G)} = p \\
+        &\implies G/Z(G) \text{ cyclic} \\
+        &\implies G \text{ abelian} \implies Z(G) = G \quad \contradiction
+    \end{align*}
+\end{proof}
+
+\begin{theorem}[Sylow's First Theorem]
+  Let \(G\) be a finite group and let \(p\) be a prime. If \(p^k \divs \order{G}\) then \(G\) has at least one subgroup of order \(p^k\).
+\end{theorem}
+
+\begin{proof}[Proof of Sylow's First Theorem]
+    Use induction on \(\order{G}\). When \(\order{G}=1\) it is trivial.
+
+    Assume the statement holds for all groups or order less than \(\order{G}\).
+
+    If \(H \psgp G\) and \(p^k\divs \order{H}\) then we are done by induction.
+
+    Assume \(p^k\) does not divide the order of any proper subgroup of \(G\).
+
+    Consider \(\order{G}=\order{Z(G)} + \sum\index{G}{C(a)}\), where we sum over a representative of each conjugacy class \(\cl{a}\) with \(a\not\in Z(G)\)
+
+    By FTFAG (or Cauchy's theorem for abelian groups), \(\exists x \in Z(G)\) with \(\order{x}=p\)
+
+    Since \(x\in Z(G)\implies \cyc{x}\nsgp Z(G)\nsgp G \implies \cyc{x}\nsgp G\)
+
+    So, we can formulate \(G / \cyc{x}\)
+
+    Since \(\order{G / \cyc{x}} = \frac{\order{G}}{\order{\cyc{x}}}=\frac{\order{G}}{p} \implies p^{k-1}\divs \order{G / \cyc{G}}\)
+
+    Note that (\(G\to G / \cyc{x}\) is \(p\)-to-1)
+
+    Then by induction \(\exists\)subgroup of order \(p^{k-1}\) of \(G / \cyc{x}\) and such a subgroup has form \(H / \cyc{x}\) where \(H\sgp G\).
+
+    But now \(\order{H} / \cyc{x} = p^{k-1} and \order{\cyc{x}}=p\) so \(\order{H} = p^k\) \contradiction.
+\end{proof}

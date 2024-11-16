@@ -1,0 +1,92 @@
+\subsection*{Lecture 25 (10/23)} % wed oct 23
+
+\begin{example}[N/C Theorem] Let \(H\sgp G\). Recall the \emph{normalizer of H in G} and the \emph{centralizer of H in G}, \begin{align*}
+    N(H)&=\{x\in G \st xHx\inv=H\} \\
+    C(H)&=\{x\in G \st xhx\inv \in H,\ \forall h\in H\}
+\end{align*}
+
+(Note: \(H\nsgp G \implies N(H)=G \implies H\nsgp N(H)\)).
+
+Consider the map \(\phi: N(H)\to \Aut(H)\) given by \(g\mapsto \phi_g\), where \(\phi_g\) is the inner automorphism of \(H\) induced by \(g\). That is, \(\phi_g(h)=ghg\inv \) for all \(h\in H\).\\
+
+\begin{exercise}
+    Check \(\phi_g\) is an automorphism of H and check \(\phi\) is a homomorphism (i.e. \(\phi_{g_1g_2}=\phi_{g_1}\circ\phi_{g_2}\)).
+\end{exercise}
+
+Then, \(\kerphi = \{g\in N(H) \st \phi_g=id_H\} = \{g\in N(H) \st ghg\inv=h,\ \forall h\in H\}= C(H)\). Note that elements of \(C(H)\) commute with all elements of \(H\). Thus by Thm 10.3, \(N(H)/C(H)\) is isomorphic to a sgp of \(\Aut(G)\).
+\end{example}
+
+\begin{theorem}
+    Every normal sgp of a group \(G\) is the kernel of a \homo\ of \(G\). That is,
+    \begin{align*}
+        N\nsgp G \implies N = \ker(\phi:G\to G/N)
+    \end{align*}
+\end{theorem}
+
+\begin{example}
+    Let \(G = D_4\). Recall that \(Z(D_4)=\{R_0, R_{180}\}\nsgp D_4\). Define
+    \begin{align*}
+        \phi: D_4 \to D_4/Z(D_4)&\cong \ZZ{2} \edp \ZZ{2} \\
+        \{R_0, R_{180}\}&\mapsto (0,0) \\
+        \{R_{90}, R_{270}\}&\mapsto (1,0) \\
+        \{F_0, F_{90}\}&\mapsto (0,1) \\
+        \{F_{45}, F_{135}\}&\mapsto (1,1) \\
+    \end{align*}
+
+    Thus \(\kerphi = Z(D_4)\).
+\end{example}
+
+\section{Fundamental Theorem of Finite Abelian Groups}
+
+\begin{theorem}[Fundamental Theorem of Finite Abelian Groups]
+    Every finite abelian group is isomorphic to a direct product of cyclic groups of prime-power order. Moreover, the number of terms in the product and the order of the cyclic groups are uniquely determined by the group. That is, for some group \(G\cong \Z_{p_1^{n_1}}\edp \Z_{p_2^{n_2}}\edp\cdots\edp \Z_{p_k^{n_k}}\) where the \(p_i\)'s are (not necessarily distinct) primes, the prime powers \(p_1^{n_1},p_2^{n_2},\ldots,p_k^{n_k}\) are uniquely determined by \(G\).
+\end{theorem}
+
+
+\begin{theorem}[Abelian groups of order \(p^k\)]
+    There is \ul{one} abelian group of order \(p^k\) for each set of positive integers whose sum is \(k\) (called a partition of \(k\))
+\end{theorem}
+
+\begin{example}
+    Let \(k=2\). The abelian groups of order \(p^2\) are \(\Z_{p^2}\) (2=2) and \(\Z_p\edp\Z_p\) (2 = 1+1)
+\end{example}
+
+\begin{example} \ \vspace{-3em}
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        order of \(G\)  & partitions of \(k\)   & possible direct products for \(G\) \\ \hline
+        \(p\)           & 1                     & \(\Z_{p}\)              \\ \hline
+        \(p^2\)         & 2                     & \(\Z_{p^2}\)            \\
+                        & $1 + 1$               & \(\Z_{p}\edp\Z_{p}\)  \\ \hline
+        \(p^3\)         & 3                     & \(\Z_{p^3}\) \\
+                        & $2 + 1$           &  \(\Z_{p^2}\edp \Z_{p}\) \\
+                        & \(1+1+1\)         & \(\Z_{p}\edp \Z_{p}\edp \Z_{p}\) \\ \hline
+        \(p^3\)         & \(4\)             & \(\Z_{p^4}\) \\
+                        & $3 + 1$           &  \(\Z_{p^3}\edp \Z_{p}\) \\
+                        & $2 + 2$           &  \(\Z_{p^2}\edp \Z_{p^2}\) \\
+                        & $2 + 1 + 1$       &  \(\Z_{p^2}\edp \Z_{p}\edp \Z_p\) \\
+                        & \(1+1+1+1\)         & \(\Z_{p}\edp \Z_{p}\edp \Z_{p}\edp \Z_p\) \\ \hline
+    \end{tabular}
+\end{center}
+\end{example}
+
+\begin{example}
+    How many abelian groups are there of order \(1176 = 7^2\cdot 3\cdot 2^3\)?
+    \begin{align*}
+        7^2 &: \qquad \Z_{49} \quad \text{ or } \quad \ZZ{7}\edp\ZZ{7} \\
+        3   &: \qquad \ZZ{3} \\
+        2^3 &: \qquad \ZZ{8} \quad \text{ or } \quad \ZZ{4} \edp \ZZ{2} \quad \text{ or } \quad \ZZ{2} \edp \ZZ{2} \edp \ZZ{2}
+    \end{align*}
+    Thus groups of order 1176 are
+    \begin{align*}
+        &\Z_{49} \edp \ZZ{3} \edp \ZZ{8} \\
+        &\Z_{49} \edp \ZZ{3} \edp \ZZ{4} \edp \ZZ{2} \\
+        &\Z_{49} \edp \ZZ{3} \edp \ZZ{2} \edp \ZZ{2} \edp \ZZ{2} \\
+        &\ZZ{7} \edp \ZZ{7} \edp \ZZ{3} \edp \ZZ{8} \\
+        &\ZZ{7} \edp \ZZ{7} \edp \ZZ{3} \edp \ZZ{4} \edp \ZZ{2} \\
+        &\ZZ{7} \edp \ZZ{7} \edp \ZZ{3} \edp \ZZ{2} \edp \ZZ{2} \edp \ZZ{2}
+    \end{align*} so there are 6 possible abelian groups of order 1176.
+
+    Thus \(\Z_{1176}\cong \Z_{49} \edp \ZZ{3} \edp \ZZ{8}\)
+\end{example}

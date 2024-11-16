@@ -1,0 +1,137 @@
+\subsection*{Lecture 32 (11/12)} % wed nov 6
+\section{Introduction to Rings}
+\subsection{Motivation \& Definition}\
+\begin{definition}[Ring]
+  A \ul{ring} \(R\) is a set with two binary operations: \(a+b\) and \(a\cdot b=ab\) such that for all \(a,b,c\in R\),
+  \begin{enumerate}
+    \item \(a+b = b+a\)
+    \item \((a+b)+c = a+(b+c)\)
+    \item \(\exists\) an additive identity \(0\), \(a+0 = a\)
+    \item \(\exists\) an element \(-a\in R\) such that \(a+(-a)=0\)
+    \item \((ab)c = a(bc)\)
+    \item \(a(b+c) = ab+ac\)
+
+    \((b+c)a = ba+ca\)
+  \end{enumerate}
+\end{definition}
+
+So a ring is an abelian group under addition, and also has an associative multiplication that is left and right distributive over addition.
+\begin{itemize}
+  \item The multiplication need not be commutative. When it is, we say the ring is commutative.
+  \item A \ul{unity (or identity)}: a nonzero element that is an identity under multiplication.
+  \item \ul{unit}: a nonzero element of a commutative ring with identity that has a multiplicative inverse.
+  \item In \(R\), \(a\divs b\) if \(\exists c\in R\) such that \(b=ac\).
+  \item \(n\in \ZZ{>0}\), \(na = \underbrace{a+a+\cdots+a}_{\text{n times}}\)
+\end{itemize}
+
+\subsection{Examples of Rings}\
+\begin{example}
+  \((\Z, +\times)\) is a commutative ring with identity and units \(=\pm 1\)
+\end{example}
+
+\begin{example}
+  \((\Z_n, +\times)\) is a commutative ring with identity and units \(=U(n)\)
+\end{example}
+
+\begin{example}
+  \((\Z[x], +\times)\) is a commutative ring with identity
+\end{example}
+
+\begin{example}
+  \((\M_2[\Z], +\times)\) is a non-commutative ring with identity
+\end{example}
+
+\begin{example}
+  \((2\Z = \{\text{even integers}\}, +\times)\) is a comm ring without identity
+\end{example}
+
+\begin{example}
+  \((\{\text{continuous functions on \R}, +\times\})\) is a comm ring with identity \(f(x) = 1\)
+\end{example}
+
+\begin{example}
+  \((\{\text{continuous functions on \R\ whose graphs pass through (1, 0)}, +\times\})\) is a comm ring without identity
+
+  Note \(f(1) = 0\), \(g(1) = 0\), \(f+g, fg\)
+\end{example}
+
+\begin{definition}[Direct sum of rings]
+  Let \(R_1, R_2, \ldots, R_n\) be rings. Construct
+  \begin{align*}
+    R_1\edp R_2\edp \cdots \edp R_n = \{(r_1, r_2, \ldots, r_n) \mid r_i\in R_i\}
+  \end{align*}
+  endowed with component-wise addition and multiplication. This is called the \ul{direct sum} of \(R_1, R_2, \ldots, R_n\).
+\end{definition}
+
+\subsection{Properties of Rings}\
+
+\begin{theorem}[Rules of Multiplication]
+  For all \(a,b,c\in R\),
+\begin{enumerate}
+  \item \(a\cdot 0 = 0\cdot a = 0\)
+  \item \(a(-b) = (-a)b = -(ab)\)
+  \item \((-a)(-b)=ab\)
+  \item \(a(b-c) = ab-ac\)
+
+  \((b-c)a = ba-ca\)
+  \item \((-1)a = -a\)
+  \item \((-1)(-1) = 1\)
+\end{enumerate}
+\begin{note}
+Properties 5 and 6 only hold if \(R\) has an identity 1
+\end{note}
+\end{theorem}
+
+\begin{proof}[Proof of property 1]
+    Clearly \(0+a0 = a0 = a(0+0) = a0 + a0\), so by cancellation \(0=a0\) and similarly \(0a=0\)
+\end{proof}
+
+\begin{theorem}[Uniqueness of the Unity and Inverses]
+  If a ring \(R\) has a unity, it is unique. If a ring element has a multiplicative inverse, it is unique.
+\end{theorem}
+
+\begin{proof}
+1, 1' \(\implies\) 1=1\(\cdot\)1' = 1'
+
+\(a\) \(\quad\) \(ab=ba = 1\)
+
+\(\qquad\) \(ac=ca=1\)
+
+\(c = c\cdot 1 = c(ab) = (ca)b = 1\cdot b = b\)
+\end{proof}
+
+\begin{warning}
+In general, \(ab = ac \centernot\implies b=c\) (cancellation rule does not hold in general for multiplication).
+\end{warning}
+
+\begin{example}
+  In \(\Z_6\), notice \(2\cdot 3 = 0 = 3\cdot 0\) but \(2\neq 0\)
+\end{example}
+
+\subsection{Subrings}\
+
+\begin{definition}[Subring]
+  A subset \(S\subseteq R\) is a \ul{subring} of \(R\) if \(S\) is itself a ring with the operations of \(R\)
+\end{definition}
+
+\begin{theorem}[Subring Test]
+  A nonempty subset \(S\) of a ring \(R\) is a subring if \(S\)  is closed under sutraction and multiplication.
+
+  i.e. if \(a,b\in S\) then \(a-b\in S\) and \(ab \in S\)
+\end{theorem}
+
+\begin{example}
+  \(\{0\}\) and \(R\) will always be subrings of any ring \(R\).
+\end{example}
+
+\begin{example}
+  \(\{0,2,4\}\subseteq \Zsi\) is a subring
+
+  1 is the identity in \(\Zsi\)
+
+  4 is the identity in \(\{0,2,4\}\) (\(0\cdot 4 = 0,\ 2\cdot 4 = 2,\ 4\cdot 4 = 4\))
+\end{example}
+
+\begin{example}
+  \(n\Z = \{0, \pm n, \pm 2n, \pm 3n,\ldots\}\) is a subring of \(\Z\) that does not have any identity (if \(n\neq 1\)).
+\end{example}

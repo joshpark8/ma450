@@ -1,0 +1,101 @@
+\subsection*{Lecture 27 (10/28)} % mon oct 28
+Recall the Fundamental Theorem of Finite Abelian Groups:
+ \begin{theorem} Let \(G\) be a finite abelian group. Then,
+     \begin{align*}
+         G\cong \Z_{p_1^{n_1}}\edp \Z_{p_2^{n_2}}\edp\cdots\edp \Z_{p_k^{n_k}}
+     \end{align*}
+     where the \(p_i\)'s are (not necessarily distinct) primes.
+ \end{theorem}
+
+ \begin{lemma}
+ Let \(G\) be a finite abelian group of order \(p^n m\) where \(\gcd(p,m)=1\). Then \(G = H\idp K\) where \begin{align*}
+     H=\{x\in G\st x^{p^n}=e\} \qquad\qquad\qquad K = \{x\in G \st x^m = e\}
+ \end{align*}
+ Moreover, \(\order{H} = p^n\) and \(\order{K} = m\).
+ \end{lemma}
+ \begin{proof}[Proof of Lemma 1]
+     \(H\nsgp G\) and \(K\nsgp G\) (e.g. \(x^{p^n}=e=y^{p^n}\implies (xy)^{p^n}=x^{p^n}y^{p^n}=e\)).
+
+     To show \(G = H \idp K\), ETS \begin{itemize}
+         \item \(H\cap K = \{e\}\)
+         \item \(G = HK\)
+     \end{itemize}
+
+     If \(x\in H\cap K\) then \(x^{p^n} = e, \  x^m = e\).
+
+     Since \(\gcd(p^n, m) = 1\), \(\exists a,b\in\Z\) such that \(ap^n+bm = 1\).
+     \begin{align*}
+         x = x^{ap^n+bm} = x^{ap^n}\cdot x^{bm} = e.
+     \end{align*}
+     For any \(y\in G\) we can write \(y = y^{ap^n+bm} = y^{ap^n}\cdot y^{bm}\).
+
+     Then \(y^{ap^n}\in K\) because \((y^a)^{p^n m} = e\) because \(\order{G} = p^n m\) and similarly, \(y^{bm}\in H\).
+
+     Thus we have shown \(G=H\idp K\).
+
+     Finally, \(p^nm = \order{G} = \order{H}\cdot\order{K}\) but \(p\ndivs \order{K}\) (if \(p\divs \order{K} \xRightarrow{\text{Cauchy}} \exists\) an element of \(K\) of order \(p\))
+
+     Similarly, we have \(m\ndivs \order{H} \implies \order{H}=p^n\) and \(\order{K} = m\)
+ \end{proof}
+
+ \begin{lemma}
+    Let \(G\) be an abelian group such that \(\order{G}=p^n\) and \(a\in G\) be an element of maximal order. Then \(G = \cyc{a}\idp K\) for some group \(K\).
+ \end{lemma}
+
+ \begin{proof}[Proof of Lemma 2]
+     We can show this by induction.  If \(n = 1\), then \(\order{G} = p\), then \(G = \cyc{a}=\cyc{a}\idp\cyc{e}\).
+
+     Assume we have proved the lemma for all \(p^k\) such that \(k < n\).
+
+     Choose \(a\in G\) which has maximal order, say \(p^m\) for some \(m\leq n\).  Then \(x^{p^m} = e\) for all \(x\in G\).
+
+     If \(m = n\) then \(G = \cyc{a}=\cyc{a}\idp\cyc{e}\) and we are done.  So assume \(m \neq n\).
+
+     Pick \(b\) of smallest order such that \(b\not\in\cyc{a}\).
+
+     \begin{claim}
+     $\cyc{a}\cap \cyc{b} = \{e\}$
+     \end{claim}
+     \begin{subproof}[Proof of claim]
+         \vspace*{-1em}\(\order{b^p} < \order{b}\) so by our choice \(b^p\in \cyc{a}\) say \(b^p=a^i\).
+
+         Then \(e = b^{p^m} = (b^{p})^{p^{m-1}} = (a^i)^{p^{m-1}}\) so \(\order{a^i}\leq p^{m-1} \implies a_i\) is not a generator for \(\cyc{a}\).
+
+         \(\implies \gcd(p^m, i) \neq 1 \implies p\divs i\) and we can write \(i = pj\) for some \(j\).
+
+         Then \(b^p = a^i = a^{pj}\), set \(c=a^{-j}b\).
+
+         Then \(c\not\in\cyc{a}\) (\ital{because if \(c\in\cyc{a}\), then \(b\in\cyc{a}\) since \(b = a^jc\)}) and \(c^p = a^{-jp}b^p = e\).
+
+         Thus we have found an element \(c\) of order \(p\) such that \(c\not\in\cyc{a}\).
+
+         Since \(b\) has the smallest order such that \(b\not\in\cyc{a}\implies \order{b}\leq p\), but then \(\order{b}=p\).
+
+         Then \(\cyc{a}\cap\cyc{b}=\{e\}\) since otherwise elements in this intersection would generate \(\cyc{b}\) so \(b\in\cyc{a}\) \(\contradiction\)
+     \end{subproof}
+     Next, consider the group \(\Gbar = G / \cyc{b}\) and use \(\xbar\) to denote \(x\cyc{b}\in\Gbar\).
+
+     If \(\order{\abar} < \order{a} = p^m\) then \(\abar^{p^{m-1}} = \ebar \implies (a\cyc{b})^{p^{m-1}} = a^{p^{m-1}}\cyc{b} = \cyc{b}\) so \(a^{p^{m-1}}\in\cyc{a}\cap\cyc{b}=\{e\}\) \(\contradiction\)
+
+     Thus \(\order{\abar} = p^m \implies \abar\) is an element with maximal order in \(\Gbar\).
+
+     By induction, \(\Gbar = \cyc{\abar}\idp\Kbar\) for some \(\Kbar\nsgp\Gbar\).
+
+     Let \(K\) be the pre-image of \(\Kbar\) under \(\quad \begin{matrix}
+         G\to \Gbar \\
+         K\to\Kbar
+     \end{matrix}\quad \)
+     (i.e. \(K = \{x\in G \st \xbar\in\Kbar\}\))
+
+     \begin{claim}
+         \(\cyc{a}\cap K = \{e\}\)
+     \end{claim}
+     \begin{subproof}
+         \vspace*{-1em}If \(x\in\cyc{a}\cap K \) then \(\xbar \in\cyc{\abar}\cap\Kbar = \{\ebar\} \implies x\in\cyc{b} \implies x\in\cyc{a}\cap\cyc{b} = \{e\}\) by previous claim.
+     \end{subproof}
+     It remains to show that \(\cyc{a}K = G\).
+     \begin{align*}
+         \order{\cyc{a}K} = \order{\cyc{a}}\order{K} = \order{\cyc{\abar}}\order{\Kbar}\cdot p = \order{\Gbar}\cdot p = \order{G}
+     \end{align*}
+     Note that \(G\to \Gbar\) is \(p\)-to-1 since \(\order{\ker} = p\).  Thus, \(\cyc{a}K = G\).  Therefore \(G = \cyc{a}\idp K\)
+ \end{proof}

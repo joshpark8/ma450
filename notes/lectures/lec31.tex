@@ -1,0 +1,73 @@
+\subsection*{Lecture 31 (11/06)} % wed nov 6
+\section*{Applications of Sylow's Theorems}
+\begin{example}
+     Any group of order 66 contains a subgroup isomorphic to \(\ZZ{33}\) (66 = \(2\cdot 3 \cdot 11\))
+
+     \(H_p\) = Sylow p-sgp, \(n_p = \)\# of \spsgp s
+
+    Then \(n_{11}\divs 6\) and \(n_{11}\equiv 1\Mod 11\) (by Sylow's Theorem)
+
+    \(\implies n_{11} \implies H_{11}\) is a normal subgroup
+
+    Now, \(H_3H_{11} = H_{11}H_3\) is a subgroup (since \(H_{11}\) is normal)
+
+    \(H_3\cap H_{11} = \tsgp \implies \order{H_3H_{11}}=\frac{\order{H_3}\order{H_{11}}}{\order{H_3\cap H_{11}}} = 3\cdot 11 = 33 \implies H_3H_{11}\) is a subgroup of order 33. \(\qed\)
+  \end{example}
+  \begin{note}
+      Any group of order 33 is isomorphic to \(\ZZ{33}\) (\(pq\) such that \(p\leq q\) and \(p\ndivs (q-1)\))
+  \end{note}
+In fact, we can completely classify all groups of order 66 (Example 7 on pg 420)
+
+There are exactly 4 such groups (up to \(\iso\))\begin{itemize}
+    \item \(\ZZ{66}\qquad\qquad \cyc{2}\sgp \ZZ{66}\) \quad subgroup of order 33
+    \item \(D_{33}\qquad\qquad \{\)rotations\} \(\sgp D_{33}\)\quad ``  \quad''
+    \item \(D_{11}\edp\ZZ{3}\qquad \ZZ{11}\edp \ZZ 3 \sgp D_{11}\edp\ZZ{3}\)\quad ``\quad  ''
+    \item \(\ZZ{11}\edp D_3 \qquad \ZZ{11}\edp \ZZ 3 \sgp \ZZ{11}\edp D_3\) \quad`` \quad ''
+\end{itemize}
+
+\begin{example}
+    Let \(G\) be a group of order 20 = \(2^2\cdot 5\) that is not abelian, then \(G\) has 5 Sylow 2-sgps.
+
+    By Sylow's Theorem, \(n_5\divs 4\) and \(n_5\equiv 1\Mod 5 \implies n_5=1 \)
+
+    \qquad\qquad\qquad\qquad\quad\ \ \(n_2 \divs 5\) and \(n_2 \equiv 1\Mod 2\implies n_2=1\) or \(n_2=5\)
+
+    Suppose \(n_2 = 1\), then \(H_2\nsgp G\) and \(H_5\nsgp G\)
+
+    Also \(H_2\cap H_5 = \tsgp \qquad\qquad \order{H_2H_5} = \frac{\order{H_2}\order{H_5}}{\order{H_2\cap H_5}} = 4\cdot 5 = 20\)
+    \begin{align*}
+        \left.
+        \begin{array}{l}
+            \implies G = H_2\idp H_5 \iso H_2\edp H_5 \\
+            \text{but }\order{H_2} = 4 \implies H_2\iso\ZZ 4 \text{ or } \ZZ 2\edp\ZZ 2 \\
+            \order{H_5} = 5 \implies H_5\iso\ZZ 5
+        \end{array}
+        \right\} \implies \underbrace{G =\text{ abelian}}_{\contradiction}
+    \end{align*}
+    Therefore \(n_2 = 5\).
+\end{example}
+
+\begin{example}
+Classify groups of order 255 = \(3\cdot 5\cdot 17\)
+
+\(n_{17}\divs 15\) and \(n_{17}\equiv 1\Mod 17\) (Sylow's Theorem)
+
+\(\implies n_{17} = 1 \implies \ZZ{17}\iso H_{17}\nsgp G \implies N(H_{17}) = G\)
+
+By \(\qg{N}{C}\) Theorem, \begin{align*}
+  &\qg{N(H_{17})}{C(H_{17})} \sgp \Aut(H_{17})  \\
+  &\order{\qg{G}{C(H_{17})}} \divs \order{\Aut(H_{17})} =\order{\U{17}}  = 16 \\
+  &\order{\qg{G}{C(H_{17})}} \divs \order{G} =255 = 3\cdot 5\cdot 7 \\
+  \implies &\order{\qg{G}{C(H_{17})}} \divs \gcd(16,255) = 1 \\
+  \implies &C(H_{17}) = G \text{ i.e. elts of \(G\) comm. with any elt in \(H_{17}\)} \\
+  \implies &H_{17} \sgp Z(G) \implies 17\divs \order{Z(G)}
+\end{align*}
+Therefore \(\order{Z(G)} = 17,\ 3\cdot 17,\ 5\cdot 17,\ 3\cdot 5\cdot 17\) \(\left(\impliedby \order{Z(G)}\divs 255 \text{ and }17\divs \order{Z(G)}\right)\). \\
+i.e., \(\order{\qg{G}{Z(G)}} =\) 15, 5, 3, or 1
+
+But any group of order 15, 5, 3, or 1 is cyclic (\(15 = pq\) such that \(p\leq q\) and \(p\ndivs (q-1)\)).
+
+Recall if \(\qg{G}{Z(G)} \) cyclic, then \(G\) abelian, so \(G\) is abelian.
+
+Now by FTFAG, \(G\iso \ZZ 3 \edp \ZZ 5\edp \ZZ{17} (\iso \ZZ{255})\).
+\end{example}

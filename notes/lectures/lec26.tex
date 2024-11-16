@@ -1,0 +1,128 @@
+\subsection*{Lecture 26 (10/25)} % fri oct 25
+
+If \(\abs{G} = 8\), how do we know whether it is \(\ZZ{8}\) or \(\ZZ{4}\edp\ZZ{2}\) or \(\ZZ{2}\edp\ZZ{2}\edp\ZZ{2}\)?
+
+We can use the \ul{algorithm for determining an abelian group of order \(p^n\)}.
+
+\begin{enumerate}[label=Step \arabic*., left=0pt, labelsep=1em]
+\item Compute the orders of all elements of \(G\)
+\item Select an element \(a_1\) of maximum order. Define \(G_1=\cyc{a_1}\) and set \(i=1\).
+\item If \(\order{G} = \order{G_i}\), we can stop. Otherwise, increment \(i\).
+\item Select an element \(a_i\) of maximum order \(p^k\), such that \(p^k\leq \frac{\order{G}}{\order{G_{i-1}}}\) and none of \(a_i, a_i^p, a_i^{p^2}, \ldots, a_i^{p^k-1}\) are in \(G_{i-1}\) (This guarantees \(a_iG_{i-1}\) has order \(p^k\) in \(G/G_{i-1}\)). Define \(G_i = G_{i-1}\idp \cyc{a_i}\)
+\item Return to step 3.
+\end{enumerate}
+Eventually, \begin{align*}
+G=\underbrace{\cyc{a_1}\idp\cyc{a_2}\idp\cdots\idp\cyc{a_{i-1}}\idp\cyc{a_i}}_{G_i}\idp \cdots\idp\cyc{a_s}
+\end{align*}
+\begin{note}
+Observe that \(\order{a_1}\geq \order{a_2}\geq \cdots \geq \order{a_s}\)
+\end{note}
+
+\begin{example}
+Consider the group \(U(30)=\{1,7,11,13,17,19,23,29\}\).
+
+Since \(\order{U(30)}=8=2^3\), possibilities are \(\ZZ{8}\), \(\ZZ{4}\edp\ZZ{2}\), and \(\ZZ{2}\edp\ZZ{2}\edp\ZZ{2}\).
+
+\begin{enumerate}[label=Step \arabic*., left=0pt, labelsep=1em]
+\item \(\cyc{7}  = \{1,7,19,13\}  \implies \order{7}=\order{13}=4,\quad \order{19}=2\) \\
+\(\cyc{23} = \{1,23,19,17\} \implies \order{23}=\order{17}=4,\quad \order{11}=2,\quad \order{29}=2\)
+\item \(a_1 = 7 ,\quad G_1=\cyc{a_1}=\cyc{7}\)
+\item \(\order{G_1}=4 < 8, \quad i=1\rightsquigarrow i=2\)
+\item[\textcircled{\(\bigstar\)}  Step 4.] Pick some \(a_2\) such that \(\order{a_2} \leq \frac{\order{U(30)}}{\order{G_1}} = 2\) and \(a_2\) is not contained in \(G_1 = \cyc{7}\)
+
+Set \(a_2 = 11\) and define \(G_2 = g_1 \idp \cyc{a_2} = \cyc{7}\idp\cyc{11}\)
+\item[Step 5.] \(\order{G_2} = 4\cdot 2 = 8 = \order{U(30)}\)
+\end{enumerate}
+\(\implies U(30) =  \cyc{7}\idp\cyc{11} \iso \ZZ{4} \edp \ZZ{2} \qed\)
+\end{example}
+
+We can use concrete examples to simplify the identification process
+
+\begin{example} \(\order{\U{30}} = 8\)
+
+We know it has (4 elements of order 4), (3 elements of order 2), and (1 element of order 1).
+
+Our options are \(\ZZ{8}\), \(\quad\ZZ{4}\edp\ZZ{2}\), \(\quad\ZZ{2}\edp\ZZ{2}\edp\ZZ{2}\)
+
+We can rule out \(\ZZ{8}\) as we do not have an element of order 8.
+
+We can rule out \(\ZZ{2}\edp\ZZ{2}\edp\ZZ{2}\) as all elements here have order 2 (excl. \(e\)).
+
+Thus the structure must be \(\ZZ{4}\edp\ZZ{2}\).
+\end{example}
+
+\begin{example}
+If an abelian group \(G\) has order \(16 = 2^4\)
+
+Suppose G has (12 elements of order 4), (3 elements of order 2), (1 elements of order 41)
+
+Our options are \(\Z_{16}\), \(\quad \ZZ{8}\edp\ZZ{2}\), \(\quad\ZZ{4}\edp\ZZ{4}\), \(\quad\ZZ{4}\edp\ZZ{2}\edp\ZZ{2}\), \(\quad\ZZ{2}\edp\ZZ{2}\edp\ZZ{2}\edp\ZZ{2}\)
+
+We don't have any elements of order 16 or 8, so can easily eliminate \(\Z_{16}\) and \(\ZZ{8}\edp\ZZ{2}\)
+
+Not \(\ZZ{2}\edp\ZZ{2}\edp\ZZ{2}\edp\ZZ{2}\), as it has too many elements of order 2.
+
+Not \(\ZZ{4}\edp\ZZ{2}\edp\ZZ{2}\), as it has 8 elements of order 4 (and 7 elements of order 2).
+
+Thus \(G \iso \ZZ{4}\edp\ZZ{4}\)
+\end{example}
+
+\begin{corollary}
+Let \(G\) be a finite \ul{abelian} group. If \(m\divs \order{G}\), then \(G\) has a subgroup of order \(m\).
+\end{corollary}
+
+So, the converse of Lagrange's Theorem holds for finite abelian groups.
+
+\begin{remark}
+This cor. does not hold if \(G\) is not abelian (e.g. \(A_4\) does not have any subgroups of order \(6\)).
+\end{remark}
+
+\begin{proof}[Proof of Corollary.]
+
+By FTFAG, \begin{align*}
+G \iso \Z_{p_1^{n_1}} \edp \Z_{p_2^{n_2}} \edp \cdots \edp \Z_{p_k^{n_k}} \implies \order{G} = p_1^{n_1}p_2^{n_2}\cdots p_k^{n_k}
+\end{align*}
+
+Now, \begin{align*}
+m\divs\order{G} \implies m = p_{i_1}^{n_{i_1}}p_{i_2}^{n_{i_2}}\cdots p_{i_k}^{n_{i_k}}
+\qquad \text{ where } \qquad
+p_{i_1}^{r_{i_1}} \divs p_{i_1}^{n_{i_1}} \quad \text{ (i.e. \(r_{i_j}\leq n_{i_j}\))}
+\end{align*}
+
+\(\implies\) by FTCG, \(\exists\) subgroup \(\Z_{p_{i_j}^{n_{i_j}}}\) with order \(p_{i_j}^{r_{i_j}}\)
+
+\(\implies\) Take their direct product. This yields a subgroup of \(G\) of order \(m\).
+\end{proof}
+
+\begin{example}
+Let \(\order{G} = 72 = 3^2 \cdot 2^3\). Find a subgroup of order \(12 = 3^1 \cdot 2^2\).
+
+The possibilities are
+\begin{align*}
+\begin{array}{lll}
+  \Zei\edp\Zni \qquad & \Zfo\edp\Ztw\edp\Zni \qquad & \Ztw\edp\Ztw\edp\Ztw\edp\Zni \\
+  \Zei\edp\Zth\edp\Zth \qquad & \Zfo\edp\Ztw\edp\Zth\edp\Zth \qquad & \Ztw\edp\Ztw\edp\Ztw\edp\Zth\edp\Zth
+\end{array}
+\end{align*}
+
+In \(\Zni\edp\Zei\), a subgroup of order 12 would be the direct product of two subgroups of orders 3 and 4. Thus one subgroup of order 12 is: \(\cyc{3}\edp\cyc{2}\).
+
+In \(\Zni\edp\Zfo\edp\Ztw\),
+\begin{center}
+\begin{tabular}{ccccccc}
+  $\Zni$ & $\edp$ & $\Zfo$ & $\edp$ & $\Ztw$ & & \\
+  $3^2$ & $\cdot$ & $2^2$ & $\cdot$ & $2$ &$= 72$ & \\
+  $3$ & $\cdot$ & $2^2$ & $\cdot$ & $1$ &$= 12$ &\(\implies \cyc{3}\edp\cyc{1}\edp\cyc{0}\)\\
+  $3$ & $\cdot$ & $2$ & $\cdot$ & $2$ &$= 12$ &\(\implies \cyc{3}\edp\cyc{2}\edp\cyc{1}\)
+\end{tabular}.\\
+\end{center}
+
+Similarly for \(\Zth\edp\Zth\edp\Ztw\edp\Ztw\edp\Ztw\),
+\begin{center}
+\begin{tabular}{ccccccccccc}
+  $\Zth$ & $\edp$ & $\Zth$ & $\edp$ & $\Ztw$ & $\edp$ & $\Ztw$ & $\edp$ & $\Ztw$ & & \\
+  3      & \tcdot & 3      & \tcdot & 2      & \tcdot & 2      & \tcdot & 2 & = 72 &\\
+  3      & \tcdot & 1      & \tcdot & 2      & \tcdot & 2      & \tcdot & 1 & = 12 & \(\implies \cyc{1}\edp\cyc{0}\edp\cyc{1}\edp\cyc{1}\edp\cyc{0}\)
+\end{tabular}
+\end{center}
+\end{example}

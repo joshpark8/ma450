@@ -1,0 +1,104 @@
+\subsection*{Lecture 29 (11/01)} % fri nov 1
+\begin{definition}[Sylow \(p\)-subgroup]
+    Let \(G\) be a finite group and let \(p\) be a prime. A subgroup \(H\sgp G\) is called a \ital{Sylow \(p\)-subgroup} of \(G\) if \(\order{H} = p^k\) and \(p^k\divs \order{G}\) but \(p^{k+1}\ndivs \order{G}\).
+\end{definition}
+
+\begin{example}
+  \(\order{G}=2^3\cdot 3^2\cdot 5^4\cdot 7 \implies \exists\) subgroups of order:
+
+  2, 4, 8 (Sylow 2-gp), 3, 9 (sylow 3-gp), 5, 25, 125 (sylow 5-gp), 7 (sylow 7-sgp).
+\end{example}
+
+\begin{corollary}[Cauchy's Thm]
+    Let \(G\) be a finite group and let \(p\) be a prime. If \(p\divs \order{G}\) then \(G\) has an element of order \(p\).
+\end{corollary}
+
+\begin{corollary}
+  The converse of Lagrange's theorem holds for finite abelian groups and \ul{all finite gps of prime} \ul{power order} (if \(\order{G} = p^k\), then for any \(m\leq k\ \exists H \sgp G\) st \(\order{H}=p^m\)).
+\end{corollary}
+
+\begin{fact}
+  \(A_4\) does not have any subgroup of order 6 (\(\order{A_4} = 12 = 2^2 \cdot 3\))
+\end{fact}
+
+\begin{theorem}[Sylow's Second Theorem]
+  Let \(G\) be a finite group and let \(p\) be a prime. If \(H\sgp G\) and \(\order{H}=p^k\) then \(H\) is contained in some Sylow \(p\)-subgroup of \(G\).
+\end{theorem}
+
+\begin{theorem}[Sylow's Third Theorem]
+  Let \(\order{G}=p^km\) where \(p\) prime and \(p\ndivs m\). Then the number of Sylow \(p\)-subgroups of \(G\) is congruent to 1 modulo \(p\) and divides \(m\). Furthermore, any two Sylow \(p\)-subgroups of \(G\) are conjugate to each other.
+\end{theorem}
+
+\begin{corollary}
+  A Sylow \(p\)-subgroup of a finite group \(G\) is normal iff it is the only SPSGP of \(G\).
+\end{corollary}
+
+\begin{example}
+  \(S_3 = \{(1), (12), (13), (23), (123), (132)\}\)
+
+  Sylow 2-sgp: \(\{(1), (12)\}, \{(1),(13)\},\{(1),(23)\}\)
+
+  \((13)\{(1),(12)\}(13)\inv\) = \(\{(1),(23)\}\)
+
+  \((23)\{(1),(12)\}(23)\inv\) = \(\{(1),(13)\}\)
+
+  Sylow 3-sgp: \(\{(1),(123),(132)\}\nsgp S_3\)
+\end{example}
+
+\begin{example}
+  Recall that the group \(A_4 = \{ \)even permutations of \(S_4\}\).
+
+  \(\order{A_4} = \order{S_4}/2=12 = 2^2 \cdot 3\)
+
+  Then \(\{(1), (12)(34), (13)(24), (14)(23)\}\) is the unique Sylow 2-sgp of \(A_4\) and is thus normal by cor.
+
+  \spsgp of order 2: \(\{(1),(12)(34)\},\{(1),(13)(24)\},\{(1),(14)(23)\}\)
+\end{example}
+
+\begin{theorem}[24.6]
+    \(\order{G}=pq\), \(p,q\) prime st \(p<q\) and \(p\ndivs (q-1)\). Then \(G\) is cyclic and \(G\iso\ZZ{pq}\).
+\end{theorem}
+
+\begin{example}
+    Any finite group of order 15 is cyclic (i.e. \(\iso\ZZ{15}\))
+\end{example}
+
+\begin{proof}[Proof of Theorem 24.6]
+    Let \(H\) be the \spsgp of \(G\). Let \(K\) be the Sylow \(q\)-subgroup of \(G\).
+
+    By Sylow's Third Theorem, \# of \spsgp s of \(G\) divides \(q\) and \(\equiv 1\pmod p\).
+
+    Since \(p\ndivs (q-1)\), \(H\) is the only \spsgp of \(G\).
+
+    Similarly \(K\) is the only Sylow \(q\)-subgroup of \(G\).
+
+    Thus \(H\nsgp G\) and \(K\nsgp G\).
+
+    Let \(H=\cyc{x}\) and \(K=\cyc{y}\).
+
+    \(\implies \order{x} = p\), \(\order{y} = q\), \(H\cap K = \tsgp\), \(\order{HK} = \frac{\order{H}\order{K}}{\order{H\cap K}}=pq = \order{G}\).
+
+    \(\implies\) \(H\cap K = \tsgp\) and \(HK=G\)
+
+    \(\implies\) \(G = H\idp K\iso \ZZ p \edp \ZZ q \iso \ZZ{pq}\)
+\end{proof}
+
+\begin{example}
+    Determine \(G\) with \(\order{G} = 99 = 3^2 \cdot 11\).
+
+    \(H_3\): Sylow 3-sgp \(\qquad\) \(H_{11}\): Sylow 11-sgp of \(G\)
+    \begin{align*}
+        n_3 = \text{\# of Sylow 3-sgps} &\implies n_3\divs 11 \text{ and } n_3 \equiv 1 \Mod 3 \\
+        &\implies n_3 = 1 \implies H_3 \nsgp G \\
+        n_{11} = \text{\# of Sylow 11-sgps} &\implies n_{11}\divs 9 \text{ and } n_{11} \equiv 1 \Mod {11} \\
+        &\implies n_{11} = 1 \implies H_{11} \nsgp G \\
+        H_3\cap H_{11} = \tsgp &\implies \order{H_3H_{11}} = \frac{\order{H_3}\order{H_{11}}}{\order{H_3\cap H_{11}}} = 99 \implies H_3H_{11}= G
+    \end{align*}
+    So, we have \(H_3\nsgp G\), \(H_{11}\nsgp G\), \(H_3\cap H_{11} = \tsgp\), \(H_3H_{11} = G \)
+
+    \(\implies\) \(G = H_3\idp H_{11} \iso H_3 \edp H_{11}\)
+    \begin{align*}
+        \order{H_{11}} = 11 \implies H_{11}\iso \ZZ{11} \qquad\qquad\qquad \order{H_3} = 3^2 = 9\implies H_3 \iso \ZZ{9}\text{ or } \ZZ 3\edp \ZZ 3
+    \end{align*}
+    \(\implies G\iso \ZZ9\edp \ZZ{11}\) or \(G\iso\ZZ 3\edp \ZZ 3\edp \ZZ{11}\)
+\end{example}
