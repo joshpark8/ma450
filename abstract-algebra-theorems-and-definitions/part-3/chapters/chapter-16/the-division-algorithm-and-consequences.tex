@@ -1,0 +1,29 @@
+\section{The Division Algorithm and Consequences}
+
+\begin{theorem}[Division Algorithm for $\mathbf{\F[x]}$]
+	Let $\F$ be a field and let $f(x), g(x) \in \F[x]$ with $g(x) \neq 0$. Then there exist unique polynomials $q(x)$ and $r(x)$ in $\F[x]$ such that $f(x) = g(x)q(x) + r(x)$ and either $r(x) = 0$ or $\deg r(x) < \deg g(x)$.
+\end{theorem}
+
+\begin{corollary}[Remainder Theorem]
+	Let $\F$ be a field, $a \in \F$, and $f(x) \in \F[x]$. Then $f(a)$ is the remainder in the division of $f(x)$ by $x -a$.
+\end{corollary}
+
+\begin{corollary}[Factor Theorem]
+	Let $\F$ be a field, $a \in \F$, and $f(x) \in \F[x]$. Then $a$ is a zero of $f(x)$ if and only if $x-a$ is a factor of $f(x)$.
+\end{corollary}
+
+\begin{corollary}[Polynomials of Degree $\mathbf{n}$ Have at Most $\mathbf{n}$ Zeros]
+	A polynomial of degree $n$ over a field has at most $n$ zeros, counting multiplicity.
+\end{corollary}
+
+\begin{definition}[Principal Ideal Domain (PID)]
+	A \textit{principal ideal domain} is an integral domain $R$ in which every ideal has the form $\cyc{a}=\{ra\ \vert\ r \in R\}$ for some $a$ in $R$.
+\end{definition}
+
+\begin{theorem}[$\mathbf{\F[x]}$ Is a PID]
+	Let $\F$ be a field. Then $\F[x]$ is a principal ideal domain.
+\end{theorem}
+
+\begin{theorem}[Criterion for $\mathbf{I = \cyc{g(x)}}$]
+	Let $\F$ be a field, $I$ a nonzero ideal in $\F[x]$, and $g(x)$ an element of $\F[x]$. Then, $I=\cyc{g(x)}$ if and only if $g(x)$ is a nonzero polynomial of minimum degree in $I$.
+\end{theorem}

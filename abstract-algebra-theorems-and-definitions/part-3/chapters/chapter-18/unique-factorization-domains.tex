@@ -1,0 +1,21 @@
+\section{Unique Factorization Domains}
+
+\begin{definition}
+	An integral domain $D$ is a \textit{unique factorization domain} if
+	\begin{enumerate}
+		\item every nonzero element of $D$ that is not a unit can be written as a product of irreducibles of $D$; and
+		\item the factorization into irreducibles is unique up to associates and the order in which the factors appear.
+	\end{enumerate}
+\end{definition}
+
+\begin{lemma}[Ascending Chain Condition for a PID]
+	In a principal ideal domain, any stricly increasing chain of ideals $I_1 \subset I_2 \subset \dots$ must be finite in length.
+\end{lemma}
+
+\begin{theorem}[PID Implies UFD]
+	Every principal ideal domain is a unique factorization domain.
+\end{theorem}
+
+\begin{corollary}[$\mathbf{\F[x]}$ Is a UFD]
+	Let $\F$ be a field. Then $\F[x]$ is a unique factorization domain.
+\end{corollary}

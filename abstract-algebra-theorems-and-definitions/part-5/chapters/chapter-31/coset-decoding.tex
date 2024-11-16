@@ -1,0 +1,13 @@
+\section{Coset Decoding}
+
+\begin{theorem}[Coset Decoding Is Nearest-Neighbor Decoding]
+	In coset decoding, a received word $w$ is decoded as a code word $c$ such that $d(w,c)$ is a minimum.
+\end{theorem}
+
+\begin{definition}[Syndrome]
+	If an $(n,k)$ linear code over $\F$ has parity-check matrix $H$, then, for any vector $u$ in $\F^n$, the vector $uH$ is called the \textit{syndrome} of $u$.
+\end{definition}
+
+\begin{theorem}[Same Coset-Same Syndrome]
+	Let $C$ be an $(n,k)$ linear code over $\F$ with a parity-check matrix $H$. Then, two vectors of $\F^n$ are in the same coset of $C$ if and only if they have the same syndrome.
+\end{theorem}

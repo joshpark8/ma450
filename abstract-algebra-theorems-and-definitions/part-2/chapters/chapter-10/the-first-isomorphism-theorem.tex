@@ -1,0 +1,38 @@
+\section{The First Isomorphism Theorem}
+
+\begin{theorem}[First Isomorphism Theorem]
+	Let $\phi$ be a group homomorphism from $G$ to $\overline{G}$. Then the mapping from $G/\ker\phi$ to $\phi(G)$, given by $g\ker\phi \to \phi(g)$, is an isomorphism. In symbols, $G/\ker\phi \approx \phi(G)$.
+\end{theorem}
+% \pagebreak
+
+\begin{theorem}[Second Isomorphism Theorem]
+    Let \(G\) be a group, \(K\sgp G\) and \(H\nsgp G\). Then
+    \begin{enumerate}[label=(\alph*)]
+        \item The set \vspace{-1em}
+        \begin{align*}
+            HK = \{hk \st h\in H,\ k\in K\}\vspace{-1em}
+        \end{align*}
+        is a subgroup of \(G\)
+        \item \(H\cap K\) is a normal subgroup of \(K\).
+        \item The groups \(HK / H\) and \(K / (H\cap K)\) are isomorphic.
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Third Isomorphism Theorem]
+    Let \(G\) be a group and \(H \nsgp G\).
+    \begin{enumerate}[label=(\alph*)]
+        \item If \(K\sgp G\) and \(H \subseteq K\subseteq G\), then \(K / H\) is a subgroup of \(G / H\).
+        \item Every subgroup of \(G / H\) is of the form \(K / H\), for some \(K\sgp G\) such that \(H \subseteq K\subseteq G\).
+        \item If \(K\nsgp G\) and \(H \subseteq K\subseteq G\), then \(K / H\) is a normal subgroup of \(G / H\).
+        \item Every normal subgroup of \(G / H\) is of the form \(K / H\), for some \(K\nsgp G\) such that \(H \subseteq K\subseteq G\).
+        \item If \(K\nsgp G\) and \(H \subseteq K\subseteq G\), then the groups \((G/H)/(K/H)\) and \(G/K\) are isomorphic.
+    \end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+	If $\phi$ is a homomorphism from a finite group $G$ to $\overline{G}$, then $\abs{\phi(G)}$ divides $\abs{G}$ and $\abs{\overline{G}}$.
+\end{corollary}
+
+\begin{theorem}[Normal Subgroups Are Kernels]
+	Every normal subgroup of a group $G$ is the kernel of a homomorphism of $G$. In particular, a normal subgroup $N$ is the kernel of the mapping $g \to gN$ from $G$ to $G/N$.
+\end{theorem}

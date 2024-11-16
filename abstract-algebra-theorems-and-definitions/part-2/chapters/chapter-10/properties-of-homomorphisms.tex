@@ -1,0 +1,32 @@
+\section{Properties of Homomorphisms}
+
+\begin{theorem}[Properties of Elements Under Homomorphisms]
+	Let $\phi$ be a homomorphism from a group $G$ to a group $\overline{G}$ and let $g$ be an element of $G$. Then
+	\begin{enumerate}
+		\item $\phi$ carries the identity of $G$ to $\overline{G}$.
+		\item $\phi(g^n)=(\phi(g))^n$ for all $n$ in $\Z$.
+		\item If $\abs{g}$ is finite, then $\abs{\phi(g)}$ divides $\abs{g}$.
+		\item $\ker\phi$ is a subgroup of $G$.
+		\item $\phi(a) = \phi(b)$ if and only if $a\ker\phi = b\ker\phi$.
+		\item If $\phi(g) = g'$, then $\phi^{-1}(g') = \{x \in G\ \vert\ \phi(x) = g'\} = g\ker\phi$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Properties of Subgroups Under Homomorphisms]
+	Let $\phi$ be a homomorphism from a group $G$ to a group $\overline{G}$ and let $H$ be a subgroup of $G$. Then
+	\begin{enumerate}
+		\item $\phi(H) = \{\phi(h)\ \vert\ h \in H\}$ is a subgroup of $\overline{G}$.
+		\item If $H$ is cyclic, then $\phi(H)$ is cyclic.
+		\item If $H$ is Abelian, then $\phi(H)$ is Abelian.
+		\item If $H$ is normal in $G$, then $\phi(H)$ is normal in $\phi(G)$.
+		\item If $\abs{\ker\phi} = n$, then $\phi$ is an $n$-to-1 mapping from $G$ onto $\phi(G)$.
+		\item If $\abs{H} = n$, then $\abs{\phi(H)}$ divides $n$.
+		\item If $\overline{K}$ is a subgroup of $\overline{G}$, then $\phi^{-1}(\overline{K})=\{k \in G\ \vert\ \phi(k) \in \overline{K}\}$ is a subgroup of $G$.
+		\item If $\overline{K}$ is a normal subgroup of $\overline{G}$, then $\phi^{-1}(\overline{K})=\{ k \in G\ \vert\ \phi(k) \in \overline{K}\}$ is a normal subgroup of $G$.
+		\item If $\phi$ is onto and $\ker\phi = \{e\}$, then $\phi$ is an isomorphism from $G$ to $\overline{G}$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{corollary}[Kernels Are Normal]
+	Let $\phi$ be a group homomorphism from $G$ to $\overline{G}$. Then $\ker\phi$ is a normal subgroup of $G$.
+\end{corollary}
