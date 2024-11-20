@@ -2,19 +2,109 @@
 \subsection{Prime Ideals and Maximal Ideals}
 
 \begin{definition}[Prime Ideal, Maximal Ideal]
-  A \ul{prime ideal} \( P \) of a commutative ring \( R \) is a proper ideal of \( R \) such that if \( a,b\in R \) and \( ab\in P \), then \( a\in P \) or \( b\in P \)
+  A \ul{prime ideal} \( P \) of a commutative ring \( R \) is a proper ideal of \( R \) such that if \( a,b\in R \) and \( ab\in P \), then \( a\in P \) or \( b\in P \).
 
-  A \ul{maximal ideal} of a commutative ring \( R \) is a proper ideal \( A \) of \( R \) such that if \( B \) is an ideal of \( R \) and \( A\subseteq B\subseteq R \), then \( B=A \) or \( B=R \)
+  A \ul{maximal ideal} of a commutative ring \( R \) is a proper ideal \( A \) of \( R \) such that if \( B \) is an ideal of \( R \) and \( A\subseteq B\subseteq R \), then \( B=A \) or \( B=R \).
 \end{definition}
 
 \begin{example}
-  \( n\Z \sseq \Z \) is a prime ideal \( \iff n=0 \) or \( n \) prime
+  \( n\Z \sseq \Z \) is a prime ideal \( \iff n=0 \) or \( n \) prime.
+
   \begin{note}
     \( n = 0 \), if \( a,b\in \Z \) such that \( ab = 0, \) then \( a=0 \) or \( b=0 \) \checkmark
 
     \( n \) prime, if \( a,b\in\Z \), \( n\divs ab \) then \( n\divs a  \) or \( n\divs b \) \checkmark
   \end{note}
-  Moreover, \( n\Z\sseq\Z \) is a maximal ideal \tiff \( n \) prime.
+  Moreover, \( n\Z\sseq\Z \) is a maximal ideal \( \iff n \) prime.
 \end{example}
 
-\pagebreak
+\begin{example}
+  \( \cyc{2}, \cyc{3} \) are maximal ideals of \( \ZZ{36} \). More generally, if \( n=\prod_{i=1}^{r} p_{i}^{k_{i}},\ k_i\neq 0,\) then \( \cyc{p_i} \) are maximal ideals of \( \Zn \)
+\end{example}
+
+\begin{example}
+  \( \cyc{x\sq +1} \) is maximal in \( \bbR[x] \)
+\end{example}
+
+\begin{proof}
+  Let \( B \) be an ideal containing \( \cyc{x\sq + 1} \) and \( B\neq \cyc{x\sq + 1} \).
+
+  \imp \( \exists f(x) \in\B \) such that \( f(x) \notin \cyc{x\sq + 1} \)
+
+  \imp \( f(x) = (x\sq+1) \cdot q(x) + r(x) \) with \( r(x)\neq 0 \) and \( \deg r(x) <2 \).
+
+  \imp \( (ax+b) \cdot x - (x\sq+1)\cdot a = bx-a \in B \)
+
+  \imp \( (ax+b) \cdot b - (bx-a)\cdot a = bx-a \in B \)
+
+  Since \( r(x) \neq 0 \) and \( a\sq+b\sq \neq 0 \) \imp \( 1\in B \) \imp \( B = \bbR[x] \)
+\end{proof}
+
+\begin{example}
+  \( \cyc{x\sq + 1} \) is not a prime ideal in \( \Ztw[x] \)
+  \begin{note}
+    \( (x+1)(x+1) = x\sq + 2x + 1 = x\sq + 1 \) (since \( 2x\equiv 0\pmod 2 \)), but \( x+1 \notin\cyc{x\sq+1} \)
+  \end{note}
+\end{example}
+
+\begin{theorem}
+  Let \( R \) be a commutative ring with unity, let \( A \) be an ideal of \( R \). Then \( \qg{R}{A} \) is an integral domain \tiff \( A \) is prime
+\end{theorem}
+
+\begin{proof}
+  \( \qg{R}{A} = \) integral domain
+
+  \( \iff \) \( (a+A)(b+A) = 0+A \) implies \( a+A = 0+A \tor b+A = 0+A \)
+
+  \( \iff \) \( ab+A = 0+A \) implies \( a\in A \tor b\in A \)
+
+  \( \iff \) \( ab\in A \) implies \( a\in A \tor b\in A \)
+
+  \( \iff \) \( A = \) prime
+\end{proof}
+
+\begin{theorem}
+  Let \( R \) be a commutative ring with unity and let \( A \) be an ideal of \( R \). Then, \( \qg{R}{A} \) is a field \tiff \( A \) is a maximal ideal
+\end{theorem}
+
+\begin{proof}
+  (\( \imp \)) Suppose \( \qg{R}{A} = \) field. Let \( B\supsetneqq A \) be an ideal (\( B\neq A \)). Then \( \exists b \in B \) such that \( b\not\in A \)
+
+    \( \imp \) \( b+A \neq 0+A \) in \( \qg{R}{A} \)
+
+    \( \imp \) \( \exists c \) such that \( (b+A)(c+A) = bc+A = 1+A \) in \( \qg{R}{A} \)
+
+    \( \imp \) \( bc-1 = a \in A \)
+
+    \( \imp \) \( bc-a \in B \imp B = R \imp A = \) maximal
+
+    (\( \impliedby \)) Conversely, suppose \( A = \) maximal.
+
+    For any \( b+A \neq 0+A \in\qg{R}{A} \) (i.e. \( b\not\in A \))
+
+    Consider \( B = \{rb+a \st r\in R, a\in A\} \) (check \( B \) is an ideal and \( B\supsetneqq A,\ B\neq A \))
+
+    \( \imp \) \( B = R \imp \exists r\in A \) such that \( rb+a = 1 \) for some \( a\in\A \)
+
+    \( \imp \) \( (r+A)(b+A) = (1+A) \)
+
+    \( \imp \) \( (b+A) \) is invertible in \( \qg{R}{A} \)
+
+    \( \imp \qg{R}{A} = \) field
+\end{proof}
+
+\begin{corollary*}
+  Let \( R \) be a commutative ring with unity. Then all maximal ideals are prime.
+\end{corollary*}
+
+\begin{example}
+ \( 4\Z\sseq 2\Z = R \) maximal but not prime (\( 2\cdot 2 = 4 \in 4\Z \) but \( 2\not\in 4\Z \))
+\end{example}
+
+\begin{example}
+  \( \cyc{x} \) is a prime ideal in \( \Z[x] \)
+
+  \( \qg{\Z[x]}{\cyc{x}} \iso \Z \) is an integral domain but not a field, so \( \cyc{x} \) is not maximal.
+
+  \( \cyc{x} \subsetneqq \underset{\text{maximal}}{\ul{\cyc{x,2}}} \subsetneqq \Z[x] \qquad\qquad \frac{\Z[x]}{\cyc{x,2}} \iso \Z_2 \)
+\end{example}
