@@ -1,6 +1,5 @@
 \subsection*{Lecture 35} % mon nov 18
 \subsection{Prime Ideals and Maximal Ideals}
-
 \begin{definition}[Prime Ideal, Maximal Ideal]
   A \ul{prime ideal} \( P \) of a commutative ring \( R \) is a proper ideal of \( R \) such that if \( a,b\in R \) and \( ab\in P \), then \( a\in P \) or \( b\in P \).
 
@@ -48,11 +47,11 @@
 \end{example}
 
 \begin{theorem}
-  Let \( R \) be a commutative ring with unity, let \( A \) be an ideal of \( R \). Then \( \qg{R}{A} \) is an integral domain \tiff \( A \) is prime
+  Let \( R \) be a commutative ring with unity, let \( A \) be an ideal of \( R \). Then \( \fr{R}{A} \) is an integral domain \tiff \( A \) is prime
 \end{theorem}
 
 \begin{proof}
-  \( \qg{R}{A} = \) integral domain
+  \( \fr{R}{A} = \) integral domain
 
   \( \iff \) \( (a+A)(b+A) = 0+A \) implies \( a+A = 0+A \tor b+A = 0+A \)
 
@@ -64,15 +63,15 @@
 \end{proof}
 
 \begin{theorem}
-  Let \( R \) be a commutative ring with unity and let \( A \) be an ideal of \( R \). Then, \( \qg{R}{A} \) is a field \tiff \( A \) is a maximal ideal
+  Let \( R \) be a commutative ring with unity and let \( A \) be an ideal of \( R \). Then, \( \fr{R}{A} \) is a field \tiff \( A \) is a maximal ideal
 \end{theorem}
 
 \begin{proof}
-  (\( \imp \)) Suppose \( \qg{R}{A} = \) field. Let \( B\supsetneqq A \) be an ideal (\( B\neq A \)). Then \( \exists b \in B \) such that \( b\not\in A \)
+  (\( \imp \)) Suppose \( \fr{R}{A} = \) field. Let \( B\supsetneqq A \) be an ideal (\( B\neq A \)). Then \( \exists b \in B \) such that \( b\not\in A \)
 
-    \( \imp \) \( b+A \neq 0+A \) in \( \qg{R}{A} \)
+    \( \imp \) \( b+A \neq 0+A \) in \( \fr{R}{A} \)
 
-    \( \imp \) \( \exists c \) such that \( (b+A)(c+A) = bc+A = 1+A \) in \( \qg{R}{A} \)
+    \( \imp \) \( \exists c \) such that \( (b+A)(c+A) = bc+A = 1+A \) in \( \fr{R}{A} \)
 
     \( \imp \) \( bc-1 = a \in A \)
 
@@ -80,7 +79,7 @@
 
     (\( \impliedby \)) Conversely, suppose \( A = \) maximal.
 
-    For any \( b+A \neq 0+A \in\qg{R}{A} \) (i.e. \( b\not\in A \))
+    For any \( b+A \neq 0+A \in\fr{R}{A} \) (i.e. \( b\not\in A \))
 
     Consider \( B = \{rb+a \st r\in R, a\in A\} \) (check \( B \) is an ideal and \( B\supsetneqq A,\ B\neq A \))
 
@@ -88,9 +87,9 @@
 
     \( \imp \) \( (r+A)(b+A) = (1+A) \)
 
-    \( \imp \) \( (b+A) \) is invertible in \( \qg{R}{A} \)
+    \( \imp \) \( (b+A) \) is invertible in \( \fr{R}{A} \)
 
-    \( \imp \qg{R}{A} = \) field
+    \( \imp \fr{R}{A} = \) field
 \end{proof}
 
 \begin{corollary*}
@@ -102,9 +101,8 @@
 \end{example}
 
 \begin{example}
-  \( \cyc{x} \) is a prime ideal in \( \Z[x] \)
-
-  \( \qg{\Z[x]}{\cyc{x}} \iso \Z \) is an integral domain but not a field, so \( \cyc{x} \) is not maximal.
-
-  \( \cyc{x} \subsetneqq \underset{\text{maximal}}{\ul{\cyc{x,2}}} \subsetneqq \Z[x] \qquad\qquad \frac{\Z[x]}{\cyc{x,2}} \iso \Z_2 \)
+  \( \cyc{x} \) is a prime ideal in \( \Z[x] \). \( \fr{\Z[x]}{\cyc{x}} \iso \Z \) is an integral domain but not a field, so \( \cyc{x} \) is not maximal.
+  \begin{align*}
+    \cyc{x} \subsetneqq \underbrace{\cyc{x,2}}_{\text{maximal}} \subsetneqq \Z[x] \qquad \frac{\Z[x]}{\cyc{x,2}} \iso \Z_2
+  \end{align*}
 \end{example}
