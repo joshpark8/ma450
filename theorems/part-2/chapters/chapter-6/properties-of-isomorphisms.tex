@@ -1,0 +1,26 @@
+\section{Properties of Isomorphisms}
+
+\begin{theorem}[Properties of Isomorphisms Acting on Elements]
+	Suppose that $\phi$ is an isomorphism from a group $G$ onto a group $\overline{G}$. Then
+	\begin{enumerate}
+		\item $\phi$ carries the identity of $G$ to the identity of $\overline{G}$.
+		\item For every integer $n$ and for every group element $a$ in $G$, $\phi(a^n)=[\phi(a)]^n$.
+		\item For any elements $a$ and $b$ in $G$, $a$ and $b$ commute if and only if $\phi(a)$ and $\phi(b)$ commute.
+		\item $G = \cyc{a}$ if and only if $\overline{G} = \cyc{\phi(a)}$.
+		\item $\abs{a}=\abs{\phi(a)}$ for all $a$ in $G$ (isomorphisms preserve orders).
+		\item For a fixed integer $k$ and a fixed group element $b$ in $G$, the equation $x^k=b$ has the same number of solutions in $G$ as does the equation $x^k = \phi(b)$ in $\overline{G}$.
+		\item If $G$ is finite, then $G$ and $\overline{G}$ have exactly the same number of elements of every order.
+	\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Properties of Isomorphisms Acting on Groups]
+	Suppose that $\phi$ is an isomorphism from a group $G$ onto a group $\overline{G}$. Then
+	\begin{enumerate}
+		\item $\phi^{-1}$ is an isomorphisms from $\overline{G}$ onto $G$.
+		\item $G$ is Abelian if and only if $\overline{G}$ is Abelian.
+		\item $G$ is cyclic if and only if $\overline{G}$ is cyclic.
+		\item If $K$ is a subgroup of $G$, then $\phi(K) = \{\phi(k)\ \vert\ k \in K\}$ is a subgroup of $\overline{G}$.
+		\item If $\overline{K}$ is a subgroup of $\overline{G}$, then $\phi^{-1}(\overline{K}) = \{g \in G\ \vert\ \phi(g) \in \overline{K}\}$ is a subgroup of $G$.
+		\item $\phi(Z(G))=Z(\overline{G})$.
+	\end{enumerate}
+\end{theorem}

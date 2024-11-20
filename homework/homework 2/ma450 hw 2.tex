@@ -1,0 +1,240 @@
+\documentclass{article}
+
+% Packages
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{CJK}
+\usepackage{enumitem}
+\usepackage{epsf}
+\usepackage{etoolbox}
+\usepackage{tcolorbox}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{systeme}
+
+% \input{//Users/joshpark/purdue/other/latex/mypreamble.tex}
+% \input{//Users/joshpark/purdue/other/latex/letterfont.tex}
+% \input{//Users/joshpark/purdue/other/latex/macros.tex}
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{prop}{Proposition}
+\newtheorem*{cor}{Corollary}
+\newtheorem*{conj}{Conjecture}
+
+% Misc helpers
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0pt}
+\setlist[enumerate]{itemsep=0mm}
+\setlist[itemize]{itemsep=0mm}
+
+% Title
+\author{Josh Park}
+\date{\vspace*{-1em}Fall 2024}
+\title{\vspace*{-2em}MA 450 Homework 2\vspace*{-1em}}
+
+% Document
+\begin{document}
+\maketitle
+\section*{Exercise 0.58}
+Suppose \(a\in S\). \\
+Trivially \(a-a=0\), an integer. \\
+Thus \(a\sim a\) by def \(\sim\). \\
+Thus \(\sim\) is reflexive.
+
+Suppose \(a,b\in S\) such that \(a\sim b\). \\
+Notice that \(a-b\in\Z \implies -(a-b)=b-a\in\Z\). \\
+Then \(b\sim a\) by def \(\sim\).\\
+Thus \(\sim\) is symmetric.
+
+Suppose we have \(a, b, c\in S\) such that \(a\sim b\) and \(b\sim c\). \\
+That is, \(a-b, b-c\in\Z\). \\
+By closure of the integers, \((a-b)+(b-c)=a-c\in\Z\). \\
+So \(a\sim c\) by def \(\sim\). \\
+Thus \(\sim\) is transitive.
+
+Thus \(\sim\) is an equivalence relation by def equivalence relation.
+
+The equivalence classes represent the real numbers between 0 and 1. \\
+As an example, suppose we let \(a=25.3245\) and \(b=20.3245\). \\
+Then, \(a\sim b\) since \(a-b=5\in \Z\). \\
+So, \(a,b\in [0.3245]\). \\
+
+\section*{Exercise 0.59}
+No. Notice that \(1*0\geq 0\) and \(0*-1\geq 0\), but \(1*-1\not\geq 0\). Thus \(R\) fails to be transitive and can not be an equivalence relation.
+
+\section*{Exercise 2.6}
+\begin{enumerate}[label=\alph*)]
+    \item In \(\C^*\), \(7+5i)(-3+2i) = -21+14i-15i-10 = -31-i\)
+    \item In \(GL(2, \Z_{13})\), \(\det\begin{bmatrix}
+        7 & 4 \\ 1 & 5
+    \end{bmatrix}=9-4=8\)
+    \item In \(GL(2, \R)\), \(\inv{
+        \begin{bmatrix}
+            6 & 3 \\ 8 & 2
+        \end{bmatrix}}=\begin{bmatrix}
+            \frac{d}{ad-bc} & \frac{-b}{ad-bc} \\
+            \frac{-c}{ad-bc} & \frac{a}{ad-bc}
+        \end{bmatrix}=\begin{bmatrix}
+            \frac{2}{-12} & \frac{-3}{-12} \\
+            \frac{-8}{-12} & \frac{6}{-12}
+        \end{bmatrix}=\begin{bmatrix}
+            -\frac{1}{6} & \frac{1}{4} \\
+            \frac{2}{3} & -\frac{1}{2}
+        \end{bmatrix}\)
+    \item In \(SL(2, \Z_{13})\), \(\inv{\begin{bmatrix}
+        6 & 3 \\ 8 & 2
+    \end{bmatrix}}=\begin{bmatrix}
+        d & -b \\ -c & a
+    \end{bmatrix}=\begin{bmatrix}
+        2 & -3 \\ -8 & 6
+    \end{bmatrix}\)
+\end{enumerate}
+
+\section*{Exercise 2.16}
+Let \(G\) be the set \(\{5, 15, 25, 35\}\) with multiplication modulo 40. We wish to show that \(G\) is a group. \\
+First, notice that \begin{align}
+    25 * 5 &= 125 \equiv 5 \pmod{40} \\
+    25 * 15 &= 375 \equiv 15 \pmod{40} \\
+    25 * 25 &= 625 \equiv 25 \pmod{40} \\
+    25 * 35 &= 875 \equiv 35 \pmod{40}
+\end{align}
+This tells us that 25 must be the identity element. \\
+Then, it is easy to see that \(\inv{5}\) is 5. \\
+We also know that \(\inv{15}=15\), as \(15^2=225\equiv 25\pmod{40}\). \\
+The inverse of 35 is also easy to test, as \(35^2=1225\equiv 25\pmod{40}\). \\
+Then \(G\) has (1) an associative operation, (2) an identity element, and (3) is closed under inverses. \\
+The group axioms are satisfied, so \(G\) is a group.
+
+If we divide all the values by 5, it becomes \(\{1, 3, 5, 7\}\) under multiplication modulo 8. \\
+This is exactly \(U(8)\), the group of positive nonzero integers less than 8 and coprime to 8.
+
+\section*{Exercise 2.18}
+We are given that \(H=\left\{x\sq\ \vert\ x\in D_4\right\}\) and \(K=\left\{ x\in D_4\ \vert\ x\sq=e\right\}\).
+
+First we identify elements of \(H\). \\
+Trivially, the square of an identity is the identity, so \(R_0\in H\). \\
+Notice that the square of any reflective element of a dihedral group will equal the identity, so no reflective elements of \(D_4\) generate new elements of \(H\). \\
+Squaring rotations gives \(R_0^2=R_0,\ R_{90}^2=R_{180},\ R_{180}^2=R_0,\ R_{270}^2=R_{180}\). \\
+Thus \(H=\{R_0, R_{180}\}\).
+
+Next, we identify elements of \(K\). \\
+Again, the identity is trivial and \(R_0\in K\). \\
+As stated above, the square of every reflective element is the identity. \\
+Thus \(D, D', F, F'\in K\), where \(D\) and \(D'\) are diagonal reflections, \(F\) is a horizontal flip and \(F'\) is a vertical flip. \\
+We also found above that the only rotations whose squares are equal to the identity are \(R_0, R_{180}\in K\). \\
+Thus \(K=\{R_0, R_{180}, D, D', F, F'\}\).
+
+\section*{Exercise 2.31}
+Let \(*\) represent the group operation. \\
+Assume we have some group table with a row (or column) containing an element, say \(a\), twice. \\
+This would mean that there are two distinct elements, say \(r_1,\) and \(r_2\), that combine with a third element, say \(s\), to create \(a\).
+\begin{center}
+    \begin{tabular}{c | c c c }
+          & \(r_1\) & \(r_2\) & \(\cdots\) \\
+        \cline{1-4}
+        \(\vdots\) & \(\vdots\) & \(\vdots\) &\(\cdots\) \\
+        \(s\) & \(a\) & \(a\) & \(\cdots\) \\
+        \(\vdots\) & \(\vdots\) & \(\vdots\) &\(\ddots\)
+    \end{tabular}
+\end{center}
+This would imply that \(r_1 * s = a\) and \(r_2 * s = a\). \\
+It follows that \(r_1*s=r_2*s\). \\
+By Theorem 2.2 on page 50, we can cancel the \(s\) on both sides to find \(r_1=r_2\). \\
+However, this contradicts the assertion that \(r_1\) and \(r_2\) are distinct. \\
+Thus each element in a row (or column) of a Cayley table must be unique.
+
+\section*{Exercise 2.32}
+We wish to construct a Cayley table for \(U(12)\).
+\begin{center}
+    \begin{tabular}{c | c c c c c }
+           & 1  & 5  & 7  & 11 \\
+        \cline{1-5}
+        1  & 1  & 5  & 7  & 11 \\
+        5  & 5  & 1  & 11 & 7  \\
+        7  & 7  & 11 & 1  & 5  \\
+        11 & 11 & 7  & 5 & 1  \\
+    \end{tabular}\\
+\end{center}
+The identity row and column are trivial. \\
+Moving down on the main diagonal, \(5^2=24 + 1\equiv 1\), \(7^2=48+1\equiv 1\), \(11^2=120 + 1\equiv 1 \pmod{12}\). \\
+Then, \(7*5=24+11\equiv 11\), \(11*5=48+7\equiv 7\), and \(11*7=72+5\equiv 5\pmod{12}\). \\
+Since \(U(12)\) is abelian, the entries of the table are reflected over the main diagonal.
+
+\section*{Exercise 2.33}
+We wish to fill in the following Cayley table.
+\begin{center}
+    \begin{tabular}{c | c c c c c}
+        & $e$ & $a$ & $b$ & $c$ & $d$  \\
+       \cline{1-6}
+       $e$ & $e$         & \ul{\ \ \ } & \ul{\ \ \ } & \ul{\ \ \ } & \ul{\ \ \ } \\
+       $a$ & \ul{\ \ \ } & $b$         & \ul{\ \ \ } & \ul{\ \ \ } & $e$ \\
+       $b$ & \ul{\ \ \ } & $c$         & $d$         & $e$         & \ul{\ \ \ } \\
+       $c$ & \ul{\ \ \ } & $d$         & \ul{\ \ \ } & $a$         & $b$ \\
+       $d$ & \ul{\ \ \ } & \ul{\ \ \ } & \ul{\ \ \ } & \ul{\ \ \ } & \ul{\ \ \ } \\
+   \end{tabular}
+\end{center}
+The identity row and column are trivial. \\
+By uniqueness of inverses, \(da=ad=e\) and \(cb=bc=e\). So
+\begin{center}
+    \begin{tabular}{c | c c c c c}
+        & $e$ & $a$ & $b$ & $c$ & $d$  \\
+       \cline{1-6}
+       $e$ & $e$ & $a$ & $b$ & $c$ & $d$ \\
+       $a$ & $a$ & $b$         & \ul{\ \ \ } & \ul{\ \ \ } & $e$ \\
+       $b$ & $b$ & $c$         & $d$         & $e$         & \ul{\ \ \ } \\
+       $c$ & $c$ & $d$         & $e$         & $a$         & $b$ \\
+       $d$ & $d$ & $e$ & \ul{\ \ \ } & \ul{\ \ \ } & \ul{\ \ \ } \\
+   \end{tabular}
+\end{center}
+By problem 2.31, each element of the group appears exactly once in each row and each column. Thus \(db=a\) and \(dd=c\).
+\begin{center}
+    \begin{tabular}{c | c c c c c}
+        & $e$ & $a$ & $b$ & $c$ & $d$  \\
+       \cline{1-6}
+       $e$ & $e$ & $a$ & $b$ & $c$ & $d$ \\
+       $a$ & $a$ & $b$         & \ul{\ \ \ } & \ul{\ \ \ } & $e$ \\
+       $b$ & $b$ & $c$ & $d$ & $e$ & $a$ \\
+       $c$ & $c$ & $d$ & $e$ & $a$ & $b$ \\
+       $d$ & $d$ & $e$ & \ul{\ \ \ } & \ul{\ \ \ } & $c$ \\
+   \end{tabular}
+\end{center}
+Note that if we let \(ca=x\), then \(cad=xd\implies c=xd\implies x=d\). \\
+Invoking 2.31 again, we find that \(cd=b\), \(ab=c\), and \(bd=a\)
+\begin{center}
+    \begin{tabular}{c | c c c c c}
+        & $e$ & $a$ & $b$ & $c$ & $d$  \\
+       \cline{1-6}
+       $e$ & $e$ & $a$ & $b$ & $c$ & $d$ \\
+       $a$ & $a$ & $b$ & $c$ & $d$ & $e$ \\
+       $b$ & $b$ & $c$ & $d$ & $e$ & $a$ \\
+       $c$ & $c$ & $d$ & $e$ & $a$ & $b$ \\
+       $d$ & $d$ & $e$ & $a$ & $b$ & $c$ \\
+   \end{tabular}
+\end{center}
+
+\section*{Exercise 2.42}
+Suppose \(F_1F_2 = F_2F_1\) in \(D_n\) such that \(F_1\neq F_2\). \\
+Since both are reflections, \(F_1F_2\) must represent some rotation on \(D_n\). \\
+Notice that \((F_1F_2)^2=F_1F_2F_2F_1=F_1F_1=e\). \\
+The only rotation with order 2 is \(R_{180}\), so \(F_1F_2=F_2F_1=R_{180}\).
+
+\section*{Exercise 2.45}
+\begin{enumerate}[label=(\alph*)]
+    \item First, notice that we can rewrite \(R^5\) as \(R\). Then the expression becomes \(FR^{-2}FR\).
+    \begin{lemma}
+        \(FR^mF=R^{-m}\) for any \(m\in\Z\).
+    \end{lemma}
+    \begin{proof}
+        We know \(FR^m\) is a reflection for arbitrary \(m\), so \((FR^m)(FR^m)=R^0\). \\
+        Multiplying both sides by \(R^{-m}\) gives \(FR^mF=R^{-m}\).
+    \end{proof}
+    By this lemma, \((FR^{-2}F)R=R^2R=R^3\).
+    \item By the lemma above, \(R^{-3}(FR^4F)R^{-2}=R^{-3}R^{-4}R^{-2}=R^2RR^3=R\)
+    \item Note that \(R^5=R^{-1}\). By the lemma above, \((FR^{-1}F)R^{-2}F=RR^{-2}F=R^{-1}F=R^5F\).
+\end{enumerate}
+\end{document}

@@ -1,0 +1,17 @@
+\section{Fundamental Theorem of Galois Theory}
+
+\begin{definition}[Automorphism, Galois Group, Fixed Field of $\mathbf{H}$]
+	Let $\E$ be an extension field of the field $\F$. An \textit{automorphism of $\E$} is a ring isomorphism from $\E$ onto $\E$. The \textit{Galois group} of $\E$ over $\F$, $\gal(\E/\F)$, is the set of all automorphisms of $\E$ that take every element of $\F$ to itself. If $H$ is a subgroup of $\gal(\E/\F)$, then set
+	\[ \E_H = \{x \in \E\ \vert\ \phi(x) = x,\ \forall\ \phi \in H\} \]
+	is called the \textit{fixed field of $H$}.
+\end{definition}
+
+\begin{theorem}[Fundamental Theorem of Galois Theory]
+	Let $\F$ be a field of characteristic 0 or a finite field. If $\E$ is the splitting field over $\F$ for some polynomial in $\F[x]$, then the mapping from the set of subfields of $\E$ containing $\F$ to the set of subgroups of $\gal(\E/\F)$ given by $\K \to \gal(\E/\F)$ is a one-to-one correspondence. Furthermore, for any subfield $\K$ of $\E$ containing $\F$,
+	\begin{enumerate}
+		\item $[\E:\K] = \abs{\gal(\E/\K)}$ and $[\K:\F] = \abs{\gal(\E/\F)} / \abs{\gal(\E/\K)}$. [The index of $\gal(\E/\K)$ in $\gal(\E/\F)$ equals the degree of $\K$ over $\F$.]
+		\item If $\K$ is the splitting field of some polynomial in $\F[x]$, then $\gal(\E/\K)$ is a normal subgroup of $\gal(\E/\F)$ and $\gal(\K/\F)$ is isomorphic to $\gal(\E/\F)/\gal(\E/\K)$.
+		\item $\K = \E_{\gal(\E/\K)}$. [The fixed field of $\gal(\E/\K)$ is $\K$.]
+		\item If $H$ is a subgroup of $\gal(\E/\F)$, then $H=\gal(\E/\E_H)$. [The automorphism group of $\E$ fixing $\E_H$ is $H$.]
+	\end{enumerate}
+\end{theorem}

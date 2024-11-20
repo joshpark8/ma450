@@ -1,0 +1,21 @@
+% \section{Reducibility Tests}
+
+\begin{definition}[Irreducible Polynomial, Reducible Polynomial]
+	Let $D$ be an integral domain. A polynomial $f(x)$ from $D[x]$ that is neither the zero polynomial nor a unit in $D[x]$ is said to be \textit{irreducible over $D$}, whenever $f(x)$ is expressed as a product $f(x) = g(x)h(x)$, with $g(x)$ and $h(x)$ from $D[x]$, then $g(x)$ or $h(x)$ is a unit in $D[x]$. A nonzero, nonunit element of $D[x]$ that is not irreducible over $D$ is called \textit{reducible over $D$}.
+\end{definition}
+
+\begin{theorem}[Reducibility Test for Degrees 2 and 3]
+	Let $\F$ be a field. If $f(x) \in \F[x]$ and $\deg f(x)$ is 2 or 3, then $f(x)$ is reducible over $\F$ if and only if $f(x)$ has a zero in $\F$.
+\end{theorem}
+
+\begin{definition}[Content of a Polynomial, Primitive Polynomial]
+	The \textit{content} of a nonzero polynomial $a_nx^n + a_{n-1}x^{n-1} + \dots + a_0$, where the $a$'a are integers, is the greatest common divisor of the integers $a_n,a_{n-1}, \dots, a_0$. A \textit{primitive polynomial} is an element of $\Z[x]$ with content 1.
+\end{definition}
+
+\begin{lemma}[Gauss's Lemma]
+	The product of two primitive polynomials is primitive.
+\end{lemma}
+
+\begin{theorem}[Reducibility over $\mathbf{\Q}$ Implies Reducibility over $\mathbf{\Z}$]
+	Let $f(x) \in \Z[x]$. If $f(x)$ is reducible over $\Q$, then it is reducible over $\Z$.
+\end{theorem}

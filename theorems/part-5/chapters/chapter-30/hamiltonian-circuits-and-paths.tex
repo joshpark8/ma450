@@ -1,0 +1,20 @@
+\section{Hamiltonian Circuits and Paths}
+
+\begin{remark}
+	Obviously, this idea can be applied to any digraph; that is, one starts at some vertex and attempts to traverse the digraph by moving along arcs in such a way that each vertex is visited exactly once before returning to the starting vertex. (To go from $x$ to $y$, there must be an arc from $x$ to $y$.) Such a sequence of arcs is called a \textit{Hamiltonian circuit} in the digraph. A sequence of arcs that passes through each vertex exactly once without returning to the starting point is called a \textit{Hamiltonian path}. In the rest of this chapter, we concern ourselves with the existence of Hamiltonian circuits and paths in Cayley digraphs.
+\end{remark}
+
+\begin{theorem}[A Necessary Condition]
+	Cay$(\{(1,0),(0,1)\}:\Z_m \oplus \Z_n)$ does not have a Hamiltonian circuit when $m$ and $n$ are relatively prime and greater than 1.
+\end{theorem}
+
+\begin{theorem}[A Sufficient Condition]
+	Cay$(\{(1,0),(0,1)\}:\Z_m \oplus \Z_n)$ has a Hamiltonian circuit when $n$ divides $m$.
+\end{theorem}
+
+\begin{theorem}[Abelian Groups Have Hamiltonian Paths]
+	Let $G$ be a finite Abelian group, and let $S$ be any (nonempty*) generating set for $G$. Then Cay$(S:G)$ has a Hamiltonian path.\\
+
+
+	\noindent *If $S$ is the empty set, it is customary to define $\cyc{S}$ as the identity group. We prefer to ignore this trivial case.
+\end{theorem}

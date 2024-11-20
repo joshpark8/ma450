@@ -1,0 +1,17 @@
+\section{Characterization of Extensions}
+
+\begin{definition}[Types of Extensions]
+	Let $\E$ be an extension field of a field $\F$ and let $a \in \E$. We call $a$ \textit{algebraic over $\F$} if $a$ is the zero of some nonzero polynomial in $\F[x]$. If $a$ is not algebraic over $\F$, it is called \textit{transcendental over $\F$}. An extension $\E$ of $\F$ is called an \textit{algebraic} extension of $\F$ if every element of $\E$ is algebraic over $\F$. If $\E$ is not an algebraic extension of $\F$, it is called a \textit{transcendental} extension of $\F$. An extension of $\F$ of the form $\F(a)$ is called a \textit{simple} extension of $\F$.
+\end{definition}
+
+\begin{theorem}[Characterization of Extensions]
+	Let $\E$ be an extension field of the field $\F$ and let $a \in \E$. If $a$ is transcendental over $\F$, then $\F(a) \approx \F(x)$. If $a$ is algebraic over $\F$, then $\F(a) \approx \F[x]/\cyc{p(x)}$, where $p(x)$ is a polynomial in $\F[x]$ of minimum degree such that $p(a) = 0$. Moreover, $p(x)$ is irreducible over $\F$.
+\end{theorem}
+
+\begin{theorem}[Uniqueness Property]
+	If $a$ is algebraic over a field $\F$, then there is a unique monic irreducible polynomial $p(x)$ in $\F[x]$ such that $p(a)=0$. The polynomial with this property is called the \textit{minimal polynomial for $a$ over $\F$}.
+\end{theorem}
+
+\begin{theorem}[Divisibility Property]
+	Let $a$ be algebraic over $\F$, and let $p(x)$ be the minimal polynomial for $a$ over $\F$. If $f(x) \in \F[x]$ and $f(a) = 0$, then $p(x)$ divides $f(x)$ in $\F[x]$.
+\end{theorem}

@@ -1,0 +1,44 @@
+\section{Zeros of an Irreducible Polynomial}
+
+\begin{definition}[Derivative]
+	Let $f(x) = a_nx^n + a_{n-1}x^{n-1} + \dots + a_1x + a_0$ belong to $\F[x]$. The \textit{derivative} of $f(x)$, denoted by $f'(x)$, is the polynomial $na_nx^{x-1} + (n-1)a_{n-1}x^{n-2} + \dots + a_1$ in $\F[x]$.
+\end{definition}
+
+\begin{lemma}[Properties of the Derivative]
+	Let $f(x)$ and $g(x) \in \F[x]$ and let $a \in \F$. Then
+	\begin{enumerate}
+		\item $(f(x) + g(x))' = f'(x) + g'(x)$.
+		\item $(af(x))' = af'(x)$.
+		\item $(f(x)g(x))' = f(x)g'(x) + g(x)f'(x)$.
+	\end{enumerate}
+\end{lemma}
+
+\begin{theorem}[Criterion for Multiple Zeros]
+	A polynomial $f(x)$ over a field $\F$ has a multiple zero in some extension $\E$ if and only if $f(x)$ and $f'(x)$ have a common factor of positive degree in $\F[x]$.
+\end{theorem}
+
+\begin{theorem}[Zeros of an Irreducible]
+	Let $f(x)$ be an irreducible polynomial over a field $\F$. If $\F$ has characteristic 0, then $f(x)$ has no multiple zeros. If $\F$ has characteristic $p \neq 0$, then $f(x)$ has a multiple zero if it is of the form $f(x) = g(x^p)$ for some $g(x)$ in $\F[x]$.
+\end{theorem}
+
+\begin{definition}[Perfect Field]
+	A field $\F$ is called \textit{perfect} if $\F$ has characteristic 0 or if $\F$ has characteristic $p$ and $\F^p=\{a^p\ \vert\ a \in \F\} = \F$.
+\end{definition}
+
+\begin{theorem}[Finite Fields Are Perfect]
+	Every finite field is perfect.
+\end{theorem}
+
+\begin{theorem}[Criterion for No Multiple Zeros]
+	If $f(x)$ is an irreducible polynomial over a perfect field $\F$, then $f(x)$ has no multiple zeros.
+\end{theorem}
+
+\begin{theorem}[Zeros of an Irreducible over a Splitting Field]
+	Let $f(x)$ be an irreducible polynomial over a field $\F$ and let $\E$ be a splitting field of $f(x)$ over $\F$. Then all the zeros of $f(x)$ in $\E$ have the same multiplicity.
+\end{theorem}
+
+\begin{corollary}[Factorization of an Irreducible over a Splitting Field]
+	Let $f(x)$ be an irreducible polynomial over a field $\F$ and let $\E$ be a splitting field of $f(x)$. Then $f(x)$ has the form
+	\[ a(x-a_1)^n(x-a_2)^n\dots(x-a_t)^n \]
+	where $a_1,a_2,\dots,a_t$ are distinct elements of $\E$ and $a \in \F$.
+\end{corollary}

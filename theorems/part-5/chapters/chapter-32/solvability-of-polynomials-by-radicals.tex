@@ -1,0 +1,27 @@
+\section{Solvability of Polynomials by Radicals}
+
+\begin{definition}[Solvable by Radicals]
+	Let $\F$ be a field, and let $f(x) \in \F[x]$. We say that $f(x)$ is \textit{solvable by radicals over $\F$} if $f(x)$ splits in some extension $\F(a_1,a_2,\dots,a_n)$ of $\F$ and there exist positive integers $k_1,\dots,k_n$ such that $a_1^{k_1} \in \F$ and $a_i^{k_i} \in \F(a_1,\dots,a_{i-1})$ for $i=2,\dots,n$.
+\end{definition}
+
+\begin{definition}[Solvable Group]
+	We say that a group $G$ is \textit{solvable} if $G$ has a series of subgroups
+	\[ \{e\} = H_0 \subset H_1 \subset H_2 \subset \dots \subset H_k = G \]
+	where, for each $0 \leq i <k$, $H_i$ is normal in $H_{i + 1}$ and $H_{i + 1}/H_i$ is Abelian.
+\end{definition}
+
+\begin{theorem}[Splitting Field of $\mathbf{x^n - a}$]
+	Let $\F$ be a field of characteristic 0 and let $a \in \F$. If $\E$ is the splitting field of $x^n-a$ over $\F$, then the Galois group $\gal(\E/\F)$ is solvable.
+\end{theorem}
+
+\begin{theorem}[Factor Group of a Solvable Group is Solvable]
+	A factor group of a solvable group is solvable.
+\end{theorem}
+
+\begin{theorem}[$\mathbf{N}$ and $\mathbf{G/N}$ Implies $\mathbf{G}$ Is Solvable]
+	Let $N$ be a normal subgroup of a group $G$. If both $N$ and $G/N$ are solvable, then $G$ is solvable.
+\end{theorem}
+
+\begin{theorem}[(Galois) Solvable by Radicals Implies Solvable Group]
+	Let $\F$ be a field of characteristic 0 and let $f(x) \in \F[x]$. Suppose the $f(x)$ splits in $\F(a_1,a_2,\dots,a_t)$, where $a_1^{n_1} \in \F$ and $a_i^{n_i} \in \F(a_1,\dots,a_{i-1})$ for $i=2,\dots,t$. Let $\E$ be the splitting field for $f(x)$ over $\F$ in $\F(a_1,a_2,\dots,a_t)$. Then the Galois group $\gal(\E/\F)$ is solvable.
+\end{theorem}

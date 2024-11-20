@@ -1,0 +1,37 @@
+\section{The Sylow Theorems}
+
+\begin{theorem}[Sylow's First Theorem]
+ Let $G$ finite group and $p$ prime. $p^k$ divides $\abs{G}$
+
+ \noindent\(\implies \exists\) at least one $H\sgp G$ such that  $ |H| = p^k$.
+\end{theorem}\vspace{-1em}
+
+\begin{definition}[Sylow $\mathbf{p}$-Subgroup]
+	Let $G$ be a finite group and let $p$ be a prime. If $p^k$ divides $\abs{G}$ and $p^{k+1}$ does not divide $\abs{G}$, then any subgroup of $G$ of order $p^k$ is called a \textit{Sylow $p$-subgroup of $G$}.
+\end{definition}
+
+\begin{corollary}[Cauchy's Theorem]
+	Let $G$ be a finite group and let $p$ be a prime that divides the order of $G$. Then $G$ has an element of order $p$.
+\end{corollary}
+
+\begin{definition}[Conjugate Subgroups]
+	Let $H$ and $K$ be subgroups of a group $G$. We say that $H$ and $K$ are \textit{conjugate} in $G$ if there is an element in $G$ such that $H = gKg^{-1}$.
+\end{definition}
+
+\begin{theorem}[Sylow's Second Theorem]
+	Let \(G\) finite group, $H \sgp G$, $\abs{H}$ is a power of a prime $p$
+
+  \noindent\(\implies\) $H$ is contained in some Sylow $p$-subgroup of $G$.
+\end{theorem}\vspace{-1em}
+
+\begin{theorem}[Sylow's Third Theorem]
+	Let \(|G| = p^k m\), $p$ prime where $p$ does not divide $m$
+
+  \noindent\(\implies\) \# of Sylow \(p\)-sgp of $G$ = $n_p$ \(\equiv\) 1 (mod \( p\)) and $n_p | m$.
+
+  \noindent Furthermore, any two Sylow $p$-sgp of $G$ are conjugate.
+\end{theorem}
+
+\begin{corollary}[A Unique Sylow $\mathbf{p}$-Subgroup Is Normal]
+	A Sylow $p$-subgroup of a finite group $G$ is a normal subgroup of $G$ if and only if it is the only Sylow $p$-subgroup of $G$.
+\end{corollary}

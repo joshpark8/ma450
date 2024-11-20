@@ -1,0 +1,87 @@
+\ProvidesPackage{init}
+
+\usepackage{import}
+\usepackage[utf8]{inputenc}
+\usepackage{pgfplots}
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{relsize}
+\usepackage{listings}
+\graphicspath{ {./images/} }
+\usepackage{array}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage[left=2cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{enumitem}
+\usepackage{mathrsfs}
+
+% Math Functions
+\newcommand{\limx}[2]{\displaystyle\lim\limits_{#1 \to #2}}
+% \newcommand{\st}{\ \text{s.t.}\ }
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\dotp}{\dot{\mathcal{P}}}
+\newcommand{\dotq}{\dot{\mathcal{Q}}}
+\newcommand{\Int}[1]{\text{int}\left(#1\right)}
+% \newcommand{\cl}[1]{\text{cl}\left(#1\right)}
+\newcommand{\cl}[1]{\ensuremath{\operatorname{cl}( #1 )}}
+\newcommand{\bd}[1]{\text{bd}\left(#1\right)}
+\newcommand{\lr}[1]{\langle #1 \rangle}
+\newcommand{\lspan}[1]{\text{span}\left(#1\right)}
+\newcommand{\ldim}[1]{\text{dim}\left(#1\right)}
+\newcommand{\nullity}[1]{\text{nullity}\left(#1\right)}
+\newcommand{\rank}[1]{\text{rank}\left(#1\right)}
+\newcommand{\ldet}[1]{\text{det}\left(#1\right)}
+\newcommand{\ltr}[1]{\text{tr}\left(#1\right)}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\DeclareMathOperator{\sign}{sgn}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Special Sets
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+
+% Theorem Styles
+\newtheoremstyle{break}% name
+{}%         Space above, empty = `usual value'
+{}%         Space below
+{}% Body font
+{}%         Indent amount (empty = no indent, \parindent = para indent)
+{\bfseries}% Thm head font
+{}%        Punctuation after thm head
+{\newline}% Space after thm head: \newline = linebreak
+{}%         Thm head spec
+\makeatletter
+\def\thmhead@plain#1#2#3{%
+	\thmname{#1}\thmnumber{\@ifnotempty{#1}{ }\@upn{#2} }%
+	\thmnote{{\the\thm@notefont\bfseries\itshape#3}}}
+\let\thmhead\thmhead@plain
+\makeatother
+\newtheoremstyle{case}{}{}{}{}{}{:}{ }{}
+\theoremstyle{case}
+\newtheorem{case}{Case}
+\theoremstyle{break}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{lem}{Lemma}
+\newtheorem*{remark}{Remark}
+\newtheorem*{aside}{}
+\newtheorem*{example}{Example}
+
+% Formatting
+\setlist[enumerate]{font=\bfseries}
+
+

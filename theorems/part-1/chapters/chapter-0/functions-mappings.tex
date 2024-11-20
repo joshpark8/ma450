@@ -1,0 +1,27 @@
+\section{Functions (Mappings)}
+
+\begin{definition}[Function (Mapping)]
+	A \textit{function} (or \textit{mapping}) $\phi$ from a set $A$ to a set $B$ is a rule that assigns to each element $a$ of $A$ exactly one element $b$ of $B$. The set $A$ is called the \textit{domain of $\phi$}, and $B$ is called the \textit{range of $\phi$}. If $\phi$ assigns $b$ to $a$, then $b$ is called the \textit{image of $a$ under $\phi$}. The subset of $B$ comprising all the images of elements of $A$ is called the \textit{image of $A$ under $\phi$}.
+\end{definition}
+
+\begin{definition}[Composition of Functions]
+	Let $\phi: A \to B$ and $\psi: B \to C$. The \textit{composition $\psi\phi$} is the mapping from $A$ to $C$ defined by $(\psi\phi)(a) = \psi(\phi(a))$ for all $a$ in $A$.
+\end{definition}
+
+\begin{definition}[One-to-One Function]
+	A function $\phi$ from a set $A$ is called \textit{one-to-one} if for every $a_1, a_2 \in A,\ \phi(a_1) = \phi(a_2)$ implies $a_1 = a_2$.
+\end{definition}
+
+\begin{definition}[Functions from A onto B]
+	A function $\phi$ from a set $A$ to a set $B$ is said to be \textit{onto $B$} if each element of $B$ is the image of at least one element of $A$. In symbols, $\phi: A \to B$ is onto if for each $b$ in $B$ there is at least one $a$ in $A$ such that $\phi(a) = b$.
+\end{definition}
+
+\begin{theorem}[Properties of Functions]
+	Given functions $\alpha: A \to B$, $\beta: B \to C$, and $\gamma: C \to D$, then
+	\begin{enumerate}
+		\item $\gamma(\beta\alpha) = (\gamma\beta)\alpha$ (associativity).
+		\item If $\alpha$ and $\beta$ are one-to-one, then $\beta\alpha$ is one-to-one.
+		\item If $\alpha$ and $\beta$ are onto, then $\beta\alpha$ is onto.
+		\item If $\alpha$ is one-to-one and onto, then there is a function $\alpha^{-1}$ from $B$ onto $A$ such that $(\alpha^{-1}\alpha)(a) = a$ for all $a$ in $A$ and $(\alpha\alpha^{-1})(b) = b$ for all $b$ in $B$.
+	\end{enumerate}
+\end{theorem}
