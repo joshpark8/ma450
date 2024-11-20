@@ -1,6 +1,6 @@
-\subsection*{Lecture 32 (11/12)} % wed nov 6
+\subsection*{Lecture 32 (11/8)} % fri nov 8
 \section{Introduction to Rings}
-\subsection{Motivation \& Definition}\
+\subsection{Motivation \& Definition}
 \begin{definition}[Ring]
   A \ul{ring} \(R\) is a set with two binary operations: \(a+b\) and \(a\cdot b=ab\) such that for all \(a,b,c\in R\),
   \begin{enumerate}
@@ -24,7 +24,7 @@ So a ring is an abelian group under addition, and also has an associative multip
   \item \(n\in \ZZ{>0}\), \(na = \underbrace{a+a+\cdots+a}_{\text{n times}}\)
 \end{itemize}
 
-\subsection{Examples of Rings}\
+\subsection{Examples of Rings}
 \begin{example}
   \((\Z, +\times)\) is a commutative ring with identity and units \(=\pm 1\)
 \end{example}
@@ -55,15 +55,15 @@ So a ring is an abelian group under addition, and also has an associative multip
   Note \(f(1) = 0\), \(g(1) = 0\), \(f+g, fg\)
 \end{example}
 
-\begin{definition}[Direct sum of rings]
+\begin{example}[Direct sum]
   Let \(R_1, R_2, \ldots, R_n\) be rings. Construct
   \begin{align*}
     R_1\edp R_2\edp \cdots \edp R_n = \{(r_1, r_2, \ldots, r_n) \mid r_i\in R_i\}
   \end{align*}
-  endowed with component-wise addition and multiplication. This is called the \ul{direct sum} of \(R_1, R_2, \ldots, R_n\).
-\end{definition}
+  with component-wise addition and multiplication. This ring is called the \ul{direct sum} of \(R_1, R_2, \ldots, R_n\).
+\end{example}
 
-\subsection{Properties of Rings}\
+\subsection{Properties of Rings}
 
 \begin{theorem}[Rules of Multiplication]
   For all \(a,b,c\in R\),
@@ -76,7 +76,8 @@ So a ring is an abelian group under addition, and also has an associative multip
   \((b-c)a = ba-ca\)
   \item \((-1)a = -a\)
   \item \((-1)(-1) = 1\)
-\end{enumerate}
+\end{enumerate}\
+
 \begin{note}
 Properties 5 and 6 only hold if \(R\) has an identity 1
 \end{note}
@@ -108,19 +109,19 @@ In general, \(ab = ac \centernot\implies b=c\) (cancellation rule does not hold 
   In \(\Z_6\), notice \(2\cdot 3 = 0 = 3\cdot 0\) but \(2\neq 0\)
 \end{example}
 
-\subsection{Subrings}\
+\subsection{Subrings}
 
 \begin{definition}[Subring]
   A subset \(S\subseteq R\) is a \ul{subring} of \(R\) if \(S\) is itself a ring with the operations of \(R\)
 \end{definition}
 
 \begin{theorem}[Subring Test]
-  A nonempty subset \(S\) of a ring \(R\) is a subring if \(S\)  is closed under sutraction and multiplication.
+  A nonempty subset \(S\) of a ring \(R\) is a subring if \(S\)  is closed under subtraction and multiplication.
 
   i.e. if \(a,b\in S\) then \(a-b\in S\) and \(ab \in S\)
 \end{theorem}
 
-\begin{example}
+\begin{example}[Trivial Subrings]
   \(\{0\}\) and \(R\) will always be subrings of any ring \(R\).
 \end{example}
 

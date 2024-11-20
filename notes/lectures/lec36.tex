@@ -1,0 +1,120 @@
+\subsection*{Lecture 36} % wed nov 20
+
+\begin{theorem}
+  Let \( R \) be a commutative ring with 1. Let \( A \) be an ideal of \( R \). Then,
+  \begin{enumerate}
+    \item \( \qg{R}{A} \) = integral domain \( \iff A =  \) prime
+    \item \( \qg{R}{A} \) = field \( \iff A =  \) maximal
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  \begin{enumerate}
+    \item \( \qg{R}{A} = \) integral domain
+
+    \( \iff \) \( (a+A)(b+A) = 0+A \) implies \( a+A = 0+A \) or \( b+A = 0+A \)
+
+    \( \iff \) \( ab+A = 0+A \) implies \( a\in A \) or \( b\in A \)
+
+    \( \iff \) \( ab\in A \) implies \( a\in A \) or \( b\in A \)
+
+    \( \iff \) \( A = \) prime
+
+    \item (\( \imp \)) Suppose \( \qg{R}{A} = \) field. Let \( B\supset A \) be an ideal (\( B\neq A \)). Then \( \exists b \in B \) such that \( b\not\in A \)
+
+    \( \imp \) \( b+A \neq 0+A \) in \( \qg{R}{A} \)
+
+    \( \imp \) \( \exists c \) such that \( (b+A)(c+A) = bc+A = 1+A \) in \( \qg{R}{A} \)
+
+    \( \imp \) \( bc-1 = a \in A \)
+
+    \( \imp \) \( bc-a \in B \imp B = R \imp A = \) maximal
+
+    (\( \impliedby \)) Conversely, suppose \( A = \) maximal.
+
+    For any \( b+A \neq 0+A \in\qg{R}{A} \) (i.e. \( b\not\in A \))
+
+    Consider \( B = \{rb+a \st r\in R, a\in A\} \) (check \( B \) is an ideal and \( B\supset A,\ B\neq A \))
+
+    \( \imp \) \( B = R \imp \exists r\in A \) such that \( rb+a = 1 \) for some \( a\in\A \)
+
+    \( \imp \) \( (r+A)(b+A) = (1+A) \)
+
+    \( \imp \) \( (b+A) \) is invertible in \( \qg{R}{A} \)
+
+    \( \imp \qg{R}{A} = \) field
+  \end{enumerate}
+\end{proof}
+
+\section{Ring Homomorphisms}
+  \begin{definition}[Ring Homomorphism]
+    A \ul{ring homomorphism}\  \( \phi: R\to S \) is a map that preserves the two operations:
+    \begin{enumerate}
+      \item \( \phi(a+b) = \phi(a) + \phi(b) \)
+      \item \( \phi(ab) = \phi(a)\phi(b) \)
+    \end{enumerate}
+  \end{definition}
+
+\begin{examples}\
+  \begin{itemize}
+    \item \( \phi:\Z\to\Zn \), \( k\mapsto k\Mod n \)
+    \item \( \phi:\C\to\C \), \( a+bi\mapsto a-bi \) (isomorphism)
+    \item \( \phi:\R[x]\to\R \), \( f(x)\mapsto f(a) \) where \( a\in\R \)
+    Check that \( \phi(f(x) + g(x)) = \phi(f(x)) + \phi(g(x)) \) and \( \phi(f(x)g(x)) = \phi(f(x))\phi(g(x)) \)
+  \end{itemize}
+\end{examples}
+
+\begin{example}
+  \( \phi:\Zfo\to\Zte,\ x\mapsto 5x \)
+  \begin{align*}
+    (!!!)\quad \phi(x+y) &= 5(x+y\Mod 4) \Mod{10} \\
+    &= 5x+5y = \phi(x)+\phi(y) \\
+    (\bigstar)\quad \phi(xy) &= 5xy \Mod{10} \\
+    &= 5x 5y \Mod{10} = \phi(x)\phi(y)
+  \end{align*}
+\end{example}
+
+\begin{example}
+  Determine all ring homomorphisms \( \ZZ{12}\mapsto\ZZ{30} \)
+
+  Group homomorphisms: \( x\mapsto ax \) where \( \order{a}\divs\gcd(12,30) = 6 \) (i.e., \( \order{a} = 1,\ 2,\ 3,\text{ or } 6 \))
+
+  \( \imp \) \( a = 0, 15, 10, 20, 5, 25 \)
+
+  Ring homomorphisms: \( a = \phi(1) = \phi(1\cdot 1) = \phi(1)\phi(1) = a^2\Mod 30\)
+
+  \( \imp \) \( a\equiv a^2 \Mod 30 \)
+
+  \( \imp \) \( a\neq 5,\ a\neq 20 \) (\( \phi(xy) = axy = a^2xy = axay = \phi(x)\phi(y) \Mod 30\))
+
+  Thus there are 4 ring homomorphisms:
+  \begin{align*}
+    x&\mapsto 0x \Mod 30 \\
+    x&\mapsto 15x \Mod 30 \\
+    x&\mapsto 10x \Mod 30 \\
+    x&\mapsto 25x \Mod 30
+  \end{align*}
+\end{example}
+
+\begin{example}
+  \( R \) commutative ring, \( \char{R} = p > 0 \)
+
+  \( \phi: R \to R \), \( x\mapsto x^p \)
+  \begin{align*}
+    \phi(xy) &= (xy)^p = x^py^p = \phi(x)\phi(y) \\
+    \phi(x+y) &= (x+y)^p = x^p + y^p + \underbrace{\sum_{i=1}^{p-1} \binom{p}{i} x^i y^{p-i}}_{p \text{ divides } \binom{p}{i}} = x^p + y^p = \phi(x) + \phi(y)
+  \end{align*}
+\end{example}
+
+\subsection{Properties of Ring Homomorphisms}
+\begin{theorem}[Properties of Ring Homomorphisms]
+  Let \( \phi: R\to S \) be a ring homomorphism. Then
+  \begin{enumerate}
+    \item \( \phi(nr) = n\phi(r),\  \phi(r^n) = \phi(r)^n \quad \forall r\in R, n\in \ZZ{>0} \)
+    \item \( A \) is a subring of \( R \implies  \phi(A) = \{\phi(a) \st a\in A\} \) is a subring of \( S \)
+    \item \( A \) ideal and \( \phi \) onto \( S \) \( \imp \phi(A) \) ideal of \( S \)
+    \item \( \phi\inv(B) = \{r\inR \st \phi(r) \in B \} \) is an ideal of \( R \)
+    \item If \( R \) commutative, then \( \phi(R) \) commutative
+    \item If \( R \) has a unity 1, \( S\neq \{0\} \), and \( \phi \) is onto, then \( \phi(1) \) is the unity of \( S \).
+  \end{enumerate}
+\end{theorem}

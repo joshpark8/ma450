@@ -16,48 +16,115 @@
 % \usepackage{latexsym}
 % \usepackage{systeme}
 
-\input{//Users/joshpark/purdue/!other/latex/mypreamble.tex}
-\input{//Users/joshpark/purdue/!other/latex/myletterfont.tex}
-\input{//Users/joshpark/purdue/!other/latex/mymacros.tex}
+\input{preamble.tex}
+\input{letterfont.tex}
+\input{macros.tex}
 
 
 % Misc helpers
 \setlength{\parskip}{1em}
 \setlength{\parindent}{0pt}
-\setlist[enumerate]{itemsep=0mm}
+\setlist[enumerate]{itemsep=-4mm}
 \setlist[itemize]{itemsep=0mm}
 
 % Title
 \author{Josh Park}
 \date{\vspace*{-1em}Fall 2024}
-\title{\vspace*{-2em}MA 450 Homework 11\vspace*{-1em}}
+\title{\vspace*{-2em}MA 450 Homework 12\vspace*{-1em}}
 
 % Document
 \begin{document}
 \maketitle
-\textbf{Exercise 12.2}
-\newpage
+\subsubsection*{Exercise 12.2}
 
-\textbf{Exercise 12.6}
-\newpage
+We wish to find the unity in the ring \( R = \{0,\ 2,\ 4,\ 6,\ 8\} \) under addition and multiplication modulo 10.
 
-\textbf{Exercise 12.18}
-\newpage
+That is, we wish to find an element \( u\inR \) such that \( a\cdot u \equiv a \pmod{10}\). Notice that
+\begin{align*}
+  0\cdot 6 &= 0 \equiv 0 \pmod{10} \\
+  2\cdot 6 &= 12 \equiv 2 \pmod{10} \\
+  4\cdot 6 &= 24 \equiv 4 \pmod{10} \\
+  6\cdot 6 &= 36 \equiv 6 \pmod{10} \\
+  8\cdot 6 &= 48 \equiv 8 \pmod{10}
+\end{align*}
+By theorem, the unity of a ring is unique. Thus the unity of \( R \) is \( 6 \).
 
-\textbf{Exercise 12.22}
-\newpage
+\subsubsection*{Exercise 12.6}
+Consider the ring \( \Zsi \).
 
-\textbf{Exercise 12.23}
-\newpage
+The first property does not hold because \( 3^2 = 9 \equiv 3 \pmod{6} \).
 
-\textbf{Exercise 12.31}
-\newpage
+The second property does not hold because \( 2\cdot 3 = 12 \equiv 0 \pmod{6} \).
 
-\textbf{Exercise 12.44}
-\newpage
+The third property does not hold because \( 2\cdot 3 \equiv 4\cdot 3\equiv 0 \pmod{6} \) and \( 2\neq 4 \) but \( 3=3 \).
 
-\textbf{Exercise 12.50}
-\newpage
+Thus \( n = 6 \). No, \( n = 6 \) is not prime.
 
+\subsubsection*{Exercise 12.18}
+Let \( a,b \in S \).
+
+Then, \( (a-b)x = ax-bx = 0-0 = 0\) and \( (ab)x = a(bx) = a\cdot 0 = 0 \) by def ring.
+
+Thus, \( S \) is a subring of \( R \) by the subring test.
+
+
+\subsubsection*{Exercise 12.22}
+By the one step test, we must show \( ab\inv \in \U{R} \) whenever \( a,b\in \U{R} \).
+
+That is, we must show \( ab\inv \) is a unit in \( R \) whenever \( a,b \) are.
+
+Let \( a,b \in \U{R} \). Then, \( a\inv, b\inv \in \U{R} \) by def unit.
+
+To show \( ab\inv \) is a unit in \( R \), we must show there exists some \( c \in R \) such that \( ab\inv c = 1 \).
+
+Let \( c = ba\inv \). Then, \( (ab\inv)(ba\inv) = ab\inv ba\inv = aa\inv = 1 \).
+
+Thus \( \U{R} \) is a group under the multiplication of \( R \).
+
+\subsubsection*{Exercise 12.23}
+Trivially we can see that \( \pm 1 \) and \( \pm i \) are units in \( \Z[i]\).
+
+Let \( x \in \Z[i] \). By def \( \Z[i] \), \( x=a+bi \) for some \( a,b\in\Z \).
+
+To find any other units, we must find \( x \in \Z[i] \) such that \( x\inv \in \Z[i]\) by def unit.
+
+We know that \( \Z[i] \) is a subring of \( \C \), and we know how to find multiplicative inverse in \( \C \).
+\begin{align*}
+  x\inv = \frac{1}{a+bi} &= \frac{1}{a+bi}\cdot \frac{a-bi}{a-bi} \\
+  &= \frac{a-bi}{a^2+b^2} \\
+  &= \frac{a}{a^2+b^2} - \frac{b}{a^2+b^2}i
+\end{align*}
+However, notice that \( \frac{a}{a^2+b^2} \in \Z \iff a^2+b^2 = 1 \), but this only holds for \( \pm 1 \) and \( \pm i \).
+
+Thus \( \U{\Z[i]} = \{\pm 1, \pm i\} \).
+
+\subsubsection*{Exercise 12.31}
+Consider the ring \( R = M_2(\Z) \). Let \( a = \begin{pmatrix}
+  0 & 0 \\ 1 & 0
+\end{pmatrix} \) and \( b = \begin{pmatrix}
+  0 & 0 \\ 0 & 1
+\end{pmatrix} \).
+
+Then, \( ab = \begin{pmatrix}
+  0 & 0 \\ 0 & 0
+\end{pmatrix} = 0 \) and \( ba = \begin{pmatrix}
+  0 & 0 \\ 0 & 1
+\end{pmatrix} \neq 0\).
+
+\subsubsection*{Exercise 12.44}
+Since \( n \) is even, we know \( n = 2k \) for some \( k \in \Z \).
+
+By properties of rings, \( (-a)^2 = (-a)(-a) = aa = a^2 \).
+
+Then, \( a = (a)^n = a^{2k} = (a^2)k\) and \( -a = (-a)^n = (-a)^{2k} = ((-a)^2)^k \).
+
+\subsubsection*{Exercise 12.50}
+Let \( a,b \inR \). Then, \( a+b = (a+b)^2 = a^2 + ab + ba + b^2 = a + ab + ba + b\) by def \( R \).
+
+This implies \( ab + ba = 0 \iff ab = -ba \).
+
+By properties of rings and def \( R \), \( -ba = (-ba)^2 = (ba)^2 = ba \).
+
+Thus \( ab=ba \) and \( R \) is commutative.
 
 \end{document}

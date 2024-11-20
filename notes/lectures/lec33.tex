@@ -1,0 +1,188 @@
+\subsection*{Lecture 33 (11/13)} % wed nov 13
+
+\begin{example}
+  The set of Gauss integers \(\Z[i] = \{a+bi\st a,b\in\Z\}\) is a subring of \(\C\).
+\end{example}
+
+\section{Integral Domains}
+\subsection{Definition and Examples}
+\begin{definition}[Zero-Divisors]
+  A \ul{zero-divisor} is a nonzero element \(x\) of a commutative ring \(R\) such that there is
+  a nonzero element \(y\in R\) with \(xy=0\).
+\end{definition}
+
+\begin{example}
+  In \(R = \Zsi\), \(x=2\) is a zero-divisor
+\end{example}
+
+\begin{definition}[Integral Domain]
+  An \ul{integral domain} is a commutative ring with unity and no zero-divisors.
+\end{definition}
+
+Thus, in an integral domain, \(ab=0\implies a=0\) or \(b=0\).
+
+\begin{example}
+  The ring of integers \(\Z\) is an integral domain.
+\end{example}
+
+\begin{example}
+  The ring of Gaussian integers \(\Z[i] = \{a+bi \st a,b\in\Z\}\) is an integral domain.
+\end{example}
+
+\begin{example}
+  The ring \(\Z[x]\) of polynomials with integer coefficients is an integral domain.
+\end{example}
+
+\begin{example}
+  The ring \(\Z[\sqrt{2}]=\{a+b\sqrt{2}\st a,b\in\Z\}\) is an integral domain.
+\end{example}
+
+\begin{example}
+  The ring \(\ZZ p\) where \(p\) is prime is not an integral domain.
+\end{example}
+
+\begin{nonexample}
+  The ring \(\ZZ n\) where \(n\) is not prime is not an integral domain.
+  \nt{Write \(n=ab\) where \(1<a,b<n\) \(\implies\) \(a,b\) are both zero-divisors in \(\ZZ n\).}
+\end{nonexample}
+
+\begin{nonexample}
+  The ring \(\Z \edp \Z\) is not an integral domain.
+  \nt{\((1,0)\times(0,1) = (0,0)\)}
+\end{nonexample}
+
+\begin{theorem}[Cancellation]
+  Let \(R\) be an integral domain. If \(a\neq 0\), then \(ab=ac\implies b=c\)
+\end{theorem}
+
+\begin{proof}
+  \(ab = 0,\quad a\neq 0 \implies 0=a\inv ab = b\)
+\end{proof}
+
+\subsection{Fields}
+\begin{definition}[Field]
+  A \ul{field} is a commutative ring with unity in which every nonzero element is a unit
+\end{definition}
+
+\begin{fact}
+  Every field is an integral domain.
+\end{fact}
+
+\begin{examples}
+  \(\C,\ \R,\ \Q,\ \ZZ p\)
+  \begin{note}[\(\ZZ p\)]
+    \(1\leq a < p\) then \(gcd(a,p) = 1\); \(as+pt=1 \implies as = 1 \Mod p \implies a\) is a unit in \(\ZZ p\)
+  \end{note}
+\end{examples}
+
+\begin{nonexamples}
+  \(\Z,\ \Z[i]\)
+\end{nonexamples}
+
+\begin{theorem}
+  A finite integral domain is a field.
+\end{theorem}
+
+\begin{proof}
+\(a\in R\) if \(a = 1 \implies a\inv = 1\)
+
+Suppose \(a\neq 1\). Consider \(a, a^2, a^3, \ldots\)
+
+\(R\) is finite \(\implies \exists i>j\) such that \(a^i = a^j\)
+
+\(a^i = a^j\cdot a^{i-j} \implies a^{i-j} = 1 \implies a\cdot(a^{i-j-1}) = 1 \implies a\inv =a^{i-j-1}\) exists in \(R\).
+\end{proof}
+
+\begin{example}
+  \(\Zth[i] = \{a+bi \st a,b\in \Zth\}\) is a field with 9 elements.
+
+  \((a+bi)\inv = \frac{a-bi}{a\sq+b\sq}\) need to check if \(a,b\in\Zth \) then \(a\sq+b\sq \neq 0\) in \(\Zth\) (unless \(a=b=0\)).
+
+  \((1+2i)\inv\) in \(\Zth[i]\) is \( \frac{1-2i}{1+4} = (1-2i)\cdot 2\inv = 2(1+1\cdot i) = 2+2i\)
+\end{example}
+
+\begin{example}
+  \( \Q[\sqrt 2] = \{a+b\rtt \st a,b\in\Q \}\)
+  is a field.
+  \begin{align*}
+    (a+b\rtt)\inv &= \frac{a-b\rtt}{(a+b\rtt)(a-b\rtt)} = \frac{a-b\rtt}{a\sq-2b\sq} \\
+    &= \frac{a}{a\sq-2b\sq} - \frac{b}{a\sq-2b\sq}\rtt \quad (a\sq-2b\sq \neq 0)
+  \end{align*}
+\end{example}
+
+\begin{definition}[Characteristic]
+  The \ul{characteristic} of a ring \( R \) is the least positive integer \( \char R = n \) such that \( \underbrace{nx}_{\sum^n x} = 0 \) for all \( x\in R \). If no such integer exists, we say \( R \) has characteristic 0.
+\end{definition}
+
+\begin{examples}
+  \( \char{\Z}=0,\ \char{\ZZ n} = n,\ \char{\Ztw} = 2 \)
+\end{examples}
+
+\begin{theorem}
+  Let \( R \) be a ring with unity 1.
+  If 1 has infinite order under addition, then \( \char R = 0 \).
+  If 1 has order \( n \) under addition, then \( \char R = n \)
+\end{theorem}
+
+\begin{proof}
+  \(n\cdot 1 =0 \implies n\cdot x = \sum^n x = x\cdot\sum^n 1 = x\cdot 0 = 0\)
+\end{proof}
+
+\begin{theorem}
+  If \( R \) is an integral domain, then \( \char R \) is either 0 or prime.
+\end{theorem}
+
+\begin{proof}
+  Suppose \( \char{R} = n\geq 0 \iff\) 1 has finite order n under addition by Thm.
+  If \( n=st \) where \( 1<s,t<n \), then
+  \begin{align*}
+    0=n\cdot 1 = (s\cdot 1)(t\cdot 1)
+  \end{align*}
+  so \( s\cdot 1 = 0 \) or \( t\cdot 1 = 0 \).
+  Since \( \char{1} = n \), it must be that \( s=n \) or \( t=n \). However, \( s,t<n \).
+\end{proof}
+
+\section{Ideals and Factor Rings}
+
+\subsection{Ideals}
+
+\begin{definition}[Ideal]
+  A subring \( I \) of a ring \( R \) is called a (two-sided) \ul{ideal} of \( R \) if \( \forall r\in R, \forall a\in I \) we have \( ra \in I \) and \( ar\in I \)
+\end{definition}
+
+\begin{itemize}
+  \item So a subring of \( R \) is an ideal if it ``absorbs'' elements of \( R \)
+  \item An ideal of \( R \) is called a \ul{proper ideal} if \( I\neq R \)
+\end{itemize}
+
+\begin{theorem}[Ideal Test]
+  A nonempty subset \( I \) of a ring \( R \) is an ideal if
+  \begin{enumerate}
+    \item \( a-b\in I \) whenever \( a,b\in I \)
+    \item \( ra, ar\in I\  \forall a\in I, r\in R \)
+  \end{enumerate}
+\end{theorem}
+
+\begin{example}
+  For any ring \( R \), \( \{0\} \) and \( R \) are ideals.
+\end{example}
+
+\begin{example}
+  \( n\Z \) is an ideal of \( \Z \) for all \( n\in\Z \)
+\end{example}
+
+\begin{example}
+  \( \cyc{a}:=\{ra\st r\in R\} \) is an ideal of \( R \) for all commutative rings with unity and \( a\in R \). This is called the \ul{principal ideal} generated by \( a \).
+\end{example}
+
+\begin{example}
+  \( R=\R[x]\quad I=\cyc{x}= \{\text{polynomials with constant term 0}\} \)
+\end{example}
+
+\begin{example}
+  Let \( R \) be a commutative ring with unity, \( a_1,a_2,\ldots,a_n\in R \). Then
+  \begin{align*}
+    I = \lt\{\sum^n  r_ia_i \st r_i\in R\rt\}
+  \end{align*}
+  is an ideal of \( R \), called the ideal generated by \( a_1,a_2,\ldots,a_n\in R \).
+\end{example}

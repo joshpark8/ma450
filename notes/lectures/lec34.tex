@@ -1,0 +1,107 @@
+% !TeX root = ../ring theory notes.tex
+
+\subsection*{Lecture 34 (11/15)} % fri nov 15
+
+\begin{example}
+  \( R = \Z[x] \), \( I=\cyc{x,2}=\{\text{polynomials with even constant terms}\} \)
+\end{example}
+
+\begin{nonexample}
+  Let \( R=\{\text{real valued functions in one variable}\} \). Then,
+  \begin{align*}
+    S=\{\text{differentiable functions in R}\}
+  \end{align*}
+  is a subring of \( R \) but \( S \) is NOT an ideal of \( R \).
+\end{nonexample}
+
+\subsection{Factor Rings}
+
+\begin{theorem}[Existence of Factor Rings]
+  Let \( R \) be a ring and let \( A \) be a subring of \( R \). Then the set of cosets \( \{r+A\st r\in R\} \)  is a ring under the operation
+  \begin{itemize}
+    \item \( (s+A)+(t+A) = s+t+A \) and
+    \item \( (s+A)(t+A) = st+A\)
+  \end{itemize}
+  if and only if \( A \) is an ideal of \( R \).
+\end{theorem}
+
+\begin{proof}[\bd{Pf sketch}]
+  \( A \) is an ideal of \( R \) \( \implies \) addition and multiplication of cosets are \ul{well-defined} (i.e. do not depend on the choice of representative)
+
+  Conversely, if \( A \) is not an ideal, then \( \exists a\in R, r\in R \) such that \( ar\not\in A \neq A \).
+
+  Then
+  \begin{align*}
+    (a+A)(r+A) = ar+A\neq A
+  \end{align*}
+  but
+  \begin{align*}
+    (a+A)(r+A)=(0+A)(r+A) =0\cdot r+A=0+a=A \quad \contradiction
+  \end{align*}
+\end{proof}
+
+\begin{example}
+  \( n\Z \) ideal of \( \Z. \)
+  \begin{align*}
+    \Z/n\Z = \{0+n\Z, 1+n\Z, \cdots, (n-1)+n\Z\} \iso \Z
+  \end{align*}\begin{align*}
+    (k+n\Z)+(\ell +n\Z) &= k + \ell + n\Z \\
+    &= (k+\ell)\Mod n  + n\Z \\\\
+    (k+n\Z)\cdot(\ell +n\Z) &= k\ell + n\Z
+  \end{align*}
+\end{example}
+
+\begin{example}
+  \( 2\Z/6\Z = \{0+6\Z,\ 2+6\Z,\ 4+6\Z\} \)
+\end{example}
+
+\begin{note}
+  In general,
+  \begin{align*}
+    m\divs n \implies m\Z/n\Z = \lt\{0+n\Z, m+n\Z, 2m+n\Z, \cdots, m\lt(\frac{n}{m}-1\rt)+n\Z \rt\}
+  \end{align*}
+\end{note}
+
+\begin{example}
+  \( R = \lt\{ \begin{pmatrix} a_1 & a_2 \\ a_3 & a_4 \end{pmatrix}\ \Bigg| \ a_i\in n\Z \rt\},\quad
+  I=\lt\{ \text{matrices in \( R \) with even entries} \rt\} \)
+\end{example}
+
+\begin{exercise}
+  Let \( R/I = \lt\{ \begin{pmatrix}
+    r_1 & r_2 \\ r_3 & r_4
+  \end{pmatrix} + I  \ \Bigg|\  r_i\in \{ 0,1 \}\rt\} \). Prove \( R/I\iso M_2\{\Ztw\} \).
+\end{exercise}
+
+\begin{example}[\( \bigstar \)] \( \Z[i] \) and \( \cyc{2-i} \)
+
+\( \Z[i] /\cyc{2-i} = \{ 0+\cyc{2-i},\quad 1+\cyc{2-i},\quad 2+\cyc{2-i},\quad 3+\cyc{2-i},\quad 4+\cyc{2-i}\} \)
+  \begin{align*}
+    5 = (2-i)(2+i) &\implies 5\in\cyc{2-i} \\
+                   &\implies 5 + \cyc{2-i} = 0+\cyc{2-i} \\
+    i = 2-(2-i)    &\implies i +\cyc{2-i} = 2+\cyc{2-i} \\
+                   &\implies 2i+\cyc{2-i} = 4+\cyc{2-i} \\
+                   &\quad \cdots \text{ etc } \cdots
+  \end{align*}
+\( \Z[i]/\cyc{2-i} \overset{\iso}{\to} \Zfi \)
+
+\( a+\cyc{2-i} \mapsto a\Mod 5 \)
+
+\( i+\cyc{2-i} \mapsto 2\Mod 5 \)
+
+\( a+bi \underset{\Mod (2-i)}{=} (a\Mod 5) + 2b = (a+2b)\Mod 5 \)
+\end{example}
+
+\begin{example}
+  \( \R[x] \) and \( \cyc{x\sq+1} \)
+  \begin{align*}
+    \R[x] &= \{ g(x) + \cyc{x^2+1} \st g(x)\in \R[x] \} \\
+          &= \{ ax+b + \cyc{x^2+1} \st a,b\in \R \} \iso \C
+  \end{align*}
+  \begin{align*}
+    \implies \qg{\R}{\cyc{x^2+1}}&\iso\C \\
+    \R &\to \R \\
+    x+\cyc{x^2+1} &\mapsto i
+  \end{align*}
+  \( (x+\cyc{x\sq +1})\sq = x\sq + \cyc{x\sq+1} = -1+\cyc{x\sq+1} \)
+\end{example}
