@@ -1,0 +1,33 @@
+\section{Properties of Cyclic Groups}
+
+\begin{theorem}[Criterion for $\mathbf{a^i=a^j}$]
+	Let $G$ be a group, and let $a$ belong to $G$. If $a$ has infinite order, then $a^i = a^j$ if and only if $i = j$. If $a$ has finite order, say, $n$, then $\cyc{a} = \{e, a, a^2, \dots, a^{n - 1}\}$ and $a^i = a^j$ if and only if $n$ divides $i - j$.
+\end{theorem}
+
+\begin{corollary}[$\mathbf{\abs{a}=\abs{\cyc{a}}}$]
+	For any group element $a$, $\abs{a} = \abs{\cyc{a}}$.
+\end{corollary}
+
+\begin{corollary}[$\mathbf{a^k = e}$ Implies That $\mathbf{\abs{a}}$ Divides $\mathbf{k}$]
+	Let $G$ be a group and let $a$ be an element of order $n$ in $G$. If $a^k = e$, then $n$ divides $k$.
+\end{corollary}
+
+\begin{theorem}[$\mathbf{\cyc{a^k} = \cyc{a^{\textbf{gcd}(n,k)}}}$ and $\mathbf{\abs{a^k} = n/\textbf{gcd}(n,k)}$]
+	Let $a$ be an element of order $n$ in a gruop and let $k$ be a positive integer. Then $\cyc{a^k} = \cyc{a^{\gcd(n,k)}}$ and $\abs{a^k} = n / \gcd(n,k)$.
+\end{theorem}
+
+\begin{corollary}[Orders of Elements in Finite Cyclic Groups]
+	In a finite cyclic group, the order of an element divides the order of the group.
+\end{corollary}
+
+\begin{corollary}[Criterion for $\mathbf{\cyc{a^i} = \cyc{a^j}}$ and $\mathbf{\abs{a^i} = \abs{a^j}}$]
+	Let $\abs{a} = n$. Then $\cyc{a^i} = \cyc{a^j}$ if and only if $\gcd(n, i) = \gcd(n,j)$, and $\abs{a^i} = \abs{a^j}$ if and only if $\gcd(n,i) = \gcd(n,j)$.
+\end{corollary}
+
+\begin{corollary}[Generators of Finite Cyclic Groups]
+	Let $\abs{a} = n$. Then $\cyc{a} = \cyc{a^j}$ if and only if $\gcd(n,j) = 1$, and $\abs{a} = \abs{\cyc{a^j}}$ if and only if $\gcd(n,j) = 1$.
+\end{corollary}
+
+\begin{corollary}[Generators of $\mathbf{\Z_n}$]
+	An integer $k$ in $\Z_n$ is a generator of $Z_n$ if and only if $\gcd(n,k) = 1$.
+\end{corollary}

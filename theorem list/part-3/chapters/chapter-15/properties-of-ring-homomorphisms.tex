@@ -1,0 +1,42 @@
+% \section{Properties of Ring Homomorphisms}
+
+\begin{theorem}[Properties of Ring Homomorphisms]
+	Let $\phi$ be a ring homomorphism from a ring $R$ to a ring $S$. Let $A$ be a subring of $R$ and let $B$ be an ideal of $S$.
+	\begin{enumerate}
+		\item For any $r \in R$ and any positive integer $n$, $\phi(nr) = n\phi(r)$ and $\phi(r^n) = (\phi(r))^n$.
+		\item $\phi(A) = \{\phi(a)\ \vert\ a \in A\}$ is a subring of $S$.
+		\item If $A$ is an ideal and $\phi$ is onto $S$, then $\phi(A)$ is an ideal.
+		\item $\phi^{-1}(B) = \{r \in R\ \vert\ \phi(r) \in B\}$ is an ideal of $R$.
+		\item If $R$ is commutative, then $\phi(R)$ is commutative.
+		\item If $R$ has a unity 1, $S \neq \{0\}$, and $\phi$ is onto, then $\phi(1)$ is the unity of $S$.
+		\item $\phi$ is an isomorphism if and only if $\phi$ is onto and $\ker \phi = \{r \in R\ \vert\ \phi(r) = 0\} = \{0\}$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Kernels Are Ideals]
+	Let $\phi$ be a ring homomorphism from a ring $R$ to a ring $S$. Then $\ker \phi = \{r \in R\ \vert\ \phi(r) = 0\}$ is an ideal of $R$.
+\end{theorem}
+
+\begin{theorem}[First Isomorphism Theorem for Rings]
+	Let $\phi$ be a ring homomorphism from $R$ to $S$. Then the mapping from $R/\ker \phi$ to $\phi(R)$, given by $r + \ker \phi \to \phi(r)$, is an isomorphism. In symbols, $R/\ker\phi\approx\phi(R)$. This theorem is often referred to as the \textit{Fundamental Theorem of Ring Homomorphisms}.
+\end{theorem}
+
+\begin{theorem}[Ideals Are Kernels]
+	Every ideal of a ring $R$ is the kernel of a ring homomorphism of $R$. In particular, an idea l$A$ is the kernel of the mapping $r \to r + A$ from $R$ to $R/A$. This mapping is known as the \textit{natural homomorphism} from $R$ to $R/A$.
+\end{theorem}
+
+\begin{theorem}[Homomorphism from $\mathbf{\Z}$ to a Ring with Unity]
+	Let $R$ be a ring with unity 1. The mapping $\phi: \Z \to R$ given by $n \to n \cdot 1$ is a ring homomorphism.
+\end{theorem}
+
+\begin{corollary}[A Ring with Unity Contains $\mathbf{\Z_n}$ or $\mathbf{\Z}$]
+	If $R$ is a ring with unity and the characteristic of $R$ is $n > 0$, then $R$ contains a subring isomorphic to $\Z_n$. If the characteristic of $R$ is 0, then $R$ contains a subring isomorphic to $\Z$.
+\end{corollary}
+
+\begin{corollary}[$\mathbf{\Z_m}$ Is a Homomorphic Image of $\mathbf{\Z}$]
+	For any positive integer $m$, the mapping of $\phi: \Z \to \Z_m$ given by $x \to x \mod m$ is a ring homomorphism.
+\end{corollary}
+
+\begin{corollary}[A Field Contains $\mathbf{\Z_p \text{ or } \Q}$]
+	If $\F$ is a field of characteristic $p$, then $\F$ contains a subfield isomorphic to $\Z_p$. If $\F$ is a field of characteristic 0, then $\F$ contains a subfield isomorphic to the rational numbers.
+\end{corollary}

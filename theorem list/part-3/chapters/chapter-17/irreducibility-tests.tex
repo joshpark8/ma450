@@ -1,0 +1,29 @@
+% \section{Irreducibility Tests}
+
+\begin{theorem}[Mod $\mathbf{p}$ Irreducibility Test]
+	Let $p$ be a prime and suppose that $f(x) \in \Z[x]$ with $\deg f(x) \geq 1$. Let $\overline{f}(x)$ be the polynomial in $\Z_p[x]$ obtained from $f(x)$ by reducing all the coefficients of $f(x)$ modulo $p$. If $\overline{f}(x)$ is irreducible over $\Z_p$ and $\deg \overline{f}(x) = \deg f(x)$, then $f(x)$ is irreducible over $\Q$.
+\end{theorem}
+
+\begin{theorem}[Eisenstein's Criterion]
+	Let
+	\[ f(x) = a_nx^n + a_{n-1}x^{n-1} + \dots + a_0 \in \Z[x] \]
+	\noindent If there is a prime $p$ such that $p \nmid a_n, p\ \vert\ a_{n-1}, \dots, p\ \vert\ a_0$ and $p^2 \nmid a_0$, then $f(x)$ is irreducible over $\Q$.
+\end{theorem}
+
+\begin{corollary}[Irreducibility of $\mathbf{p}$th Cyclotomic Polynomial]
+	For any prime $p$, the $p$th cyclotomic polynomial
+	\[ \Phi_p(x) = \frac{x^p - 1}{x-1} = x^{p-1} + x^{p-2} + \dots + x + 1 \]
+	\noindent is irreducible over $\Q$.
+\end{corollary}
+
+\begin{theorem}[$\mathbf{\cyc{p(x)}}$ Is Maximal If and Only If $\mathbf{p(x)}$ Is Irreducible]
+	Let $\F$ be a field and let $p(x) \in \F[x]$. Then $\cyc{p(x)}$ is a maximal ideal in $\F[x]$ if and only if $p(x)$ is irreducible over $\F$.
+\end{theorem}
+
+\begin{corollary}[$\mathbf{\F[x]/\cyc{p(x)}}$ Is a Field]
+	Let $\F$ be a field and $p(x)$ be an irreducible polynomial over $\F$. Then $\F[x]/\cyc{p(x)}$ is a field.
+\end{corollary}
+
+\begin{corollary}[$\mathbf{p(x)\ \vert\ a(x)b(x)}$ Implies $\mathbf{p(x)\ \vert\ a(x)}$ or $\mathbf{p(x)\ \vert\ b(x)}$]
+	Let $\F$ be a field and let $p(x), a(x), b(x) \in \F[x]$. If $p(x)$ is irreducible over $\F$ and $p(x)\ \vert\ a(x)b(x)$, then $p(x)\ \vert\ a(x)$ or $p(x)\ \vert\ b(x)$.
+\end{corollary}

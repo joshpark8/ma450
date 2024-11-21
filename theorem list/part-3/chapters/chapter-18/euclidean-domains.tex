@@ -1,0 +1,21 @@
+% \section{Euclidean Domains}
+
+\begin{definition}[Euclidean Domain (ED)]
+	An integral domain $D$ is called a \textit{Euclidean domain} if there is a function $d$ (called the \textit{measure}) from nonzero elements of $D$ to the nonnegative integers such that
+	\begin{enumerate}
+		\item $d(a) \leq d(ab)$ for all nonzero $a,b \in D$; and
+		\item if $a,b \in D,\ b \neq 0$, then there exist elements $q$ and $r$ in $D$ such that $a = bq + r$, where $r = 0$ or $d(r) < d(b)$.
+	\end{enumerate}
+\end{definition}
+
+\begin{theorem}[ED Implies PID]
+	Every Euclidean domain is a principal ideal domain.
+\end{theorem}
+
+\begin{corollary}[ED Implies UFD]
+	Every Euclidean domain is a unique factorization domain.
+\end{corollary}
+
+\begin{theorem}[$\mathbf{D}$ a UFD Implies $\mathbf{D[x]}$ a UFD]
+	If $D$ is a unique factorization domain, then $D[x]$ is a unique factorization domain.
+\end{theorem}

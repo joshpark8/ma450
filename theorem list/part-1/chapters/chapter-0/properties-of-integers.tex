@@ -1,0 +1,33 @@
+\section{Properties of Integers}
+\begin{aside}[\!Well Ordering Principle]
+	Every nonempty set of positive integers contains a smallest number.
+\end{aside}
+
+\begin{theorem}[Division Algorithm]
+	Let $a$ and $b$ be integers with $b > 0$. then there exist unique integers $q$ and $r$ with the property that $a = bq + r$, where $0 \leq r < b$.
+\end{theorem}
+
+\begin{definition}[Greatest Common Divisor, Relatively Prime Integers]
+	The \textit{greatest common divisor} of two nonzero integers $a$ and $b$ is the largest of all common divisors of $a$ and $b$. We denote this integer by $\gcd(a, b)$. When $\gcd(a, b) = 1$, we say that $a$ and $b$ are \textit{relatively prime}.
+\end{definition}
+
+\begin{theorem}[GCD Is a Linear Combination]
+	for any nonzero integers $a$ and $b$, there exist integers $s$ and $t$ such that $\gcd(a, b)=as+bt$. Moreover, $\gcd(a,b)$ is the smallest positive integer of the form $as + bt$.
+\end{theorem}
+
+\begin{corollary}
+	If $a$ and $b$ are relatively prime, then there exist integers $s$ and $t$ such that $as + bt = 1$.
+\end{corollary}
+
+\begin{lemma}[Euclid's Lemma \text{\normalfont $p\ \vert\ ab$ implies $p\ \vert\ a$ or $p\ \vert\ b$}]
+	If $p$ is a prime that divides $ab$, then $p$ divides $a$ or $p$ divides $b$.
+\end{lemma}
+
+\begin{theorem}[Fundamental Theorem of Arithmetic]
+	Every integer greater than 1 is a prime or a product of primes. this product is unique, except for the order in which the factors appear. That is, if $n = p_1p_2\dots p_r$ and $n=q_1q_2\dots q_s$, where the $p$'s and $q$'s are primes, then $r = s$ and, after renumbering the $q$'s, we have $p_i = q_i$ for all $i$.
+\end{theorem}
+
+\begin{definition}[Least Common Multiple]
+	The \textit{least common multiple} of two nonzero integers $a$ and $b$ is the smallest positive integer that is a multiple of both $a$ and $b$. We will denote this integer by $\lcm(a, b)$.
+\end{definition}
+

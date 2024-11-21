@@ -1,0 +1,16 @@
+\section{The Isomorphism Classes of Abelian Groups}
+
+\begin{remark}[Greedy Algorithm for an Abelian Group of Order $\mathbf{p^n}$]
+	The Fundamental Theorem is extremely powerful. As an application, we can use it as an algorithm for constructing all Abelian groups of any order. Let's look at Abelian groups of a certain order $n$, where $n$ has two or more distinct prime divisors.
+	\begin{enumerate}
+		\item Compute the orders of the elements of the group $G$
+		\item Select an element $a_1$ of maximum order and define $G_1 = \cyc{a_1}$. Set $i = 1$.
+		\item If $\abs{G} = \abs{G_i}$, stop. Otherwise, replace $i$ by $i + 1$.
+		\item Select an element $a_i$ of maximum order $p^k$ such that $p^k \leq \abs{G}/\abs{G_{i-1}}$ and none of $a_i, a^p_i,a^{p^2}_i, \dots, a^{p^{k-1}}_i$ is in $G_{i-1}$, and define $G_i=G_{i-1} \times \cyc{a_i}$.
+		\item Return to step 3.
+	\end{enumerate}
+\end{remark}
+
+\begin{corollary}[Existence of Subgroups of Abelian Groups]
+	If $m$ divides the order of a finite Abelian group $G$, then $G$ has a subgroup of order $m$.
+\end{corollary}

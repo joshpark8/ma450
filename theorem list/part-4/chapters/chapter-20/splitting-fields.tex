@@ -1,0 +1,34 @@
+\section{Splitting Fields}
+
+\begin{definition}[Splitting Field]
+	Let $\E$ be an extension field of $\F$ and let $f(x) \in \F[x]$ with degree at least 1. We say that $f(x)$ \textit{splits} in $\E$ if there are elements $a \in \F$ and $a_1,a_2,\dots,a_n \in \E$ such that
+	\[ f(x) = a(x-a_1)(x-a_2)\dots(x-a_n) \]
+	We call $\E$ a \textit{splitting field for $f(x)$ over $\F$} if
+	\[ \E = \F(a_1,a_2,\dots,a_n) \]
+\end{definition}
+
+\begin{theorem}[Existence of Splitting Fields]
+	Let $\F$ be a field and let $f(x)$ be a nonconstant element of $\F[x]$. Then there exists a splitting field $\E$ for $f(x)$ over $\F$.
+\end{theorem}
+
+\begin{theorem}[$\mathbf{\F(a) \approx \F[x]/\cyc{p(x)}}$]
+	Let $\F$ be a field and let $p(x) \in \F[x]$ be irreducible over $\F$. If $a$ is a zero of $p(x)$ in some extension $\E$ of $\F$, then $\F(a)$ is isomorphic to $\F[x]/\cyc{p(x)}$. Furthermore, if $\deg p(x) = n$, then every member of $\F(a)$ can be uniquely expressed in the form
+	\[ c_{n-1}a^{n-1}+c_{n-2}a^{n-2}+\dots+c_1a+c_0 \]
+	where $c_0,c_1,\dots,c_{n-1} \in \F$.
+\end{theorem}
+
+\begin{corollary}[$\mathbf{\F(a) \approx \F(b)}$]
+	Let $\F$ be a field and let $p(x) \in \F[x]$ be irreducible over $\F$. If $a$ is a zero of $p(x)$ in some extension $\E$ of $\F$ and $b$ is a zero of $p(x)$ in some extension $\E'$ of $\F$, then the fields $\F(a)$ and $\F(b)$ are isomorphic.
+\end{corollary}
+
+\begin{lemma}
+	Let $\F$ be a field, let $p(x) \in \F[x]$ be irreducible over $\F$, and let $a$ be a zero of $p(x)$ in some extension of $\F$. If $\phi$ is a field isomorphism from $\F$ to $\F'$ and $b$ is a zero of $\phi(p(x))$ in some extension of $\F'$, then there is an isomorphism from $\F(a)$ to $\F'(b)$ that agrees with $\phi$ on $\F$ and carries $a$ to $b$.
+\end{lemma}
+
+\begin{theorem}[Extending $\mathbf{\phi: \F \to \F'}$]
+	Let $\phi$ be an isomorphism from a field $\F$ to a field $\F'$ and let $f(x) \in \F[x]$. If $\E$ is a splitting field for $f(x)$ over $\F$ and $\E'$ is a splitting field for $\phi(f(x))$ over $\F'$, then there is an isomorphism from $\E$ to $\E'$ that agrees with $\phi$ on $\F$.
+\end{theorem}
+
+\begin{corollary}[Splitting Fields Are Unique]
+	Let $\F$ be a field and let $f(x) \in \F[x]$. Then any two splitting fields of $f(x)$ over $\F$ are isomorphic.
+\end{corollary}

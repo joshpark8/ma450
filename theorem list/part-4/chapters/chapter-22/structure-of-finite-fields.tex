@@ -1,0 +1,19 @@
+\section{Structure of Finite Fields}
+
+\begin{theorem}[Structure of Finite Fields]
+	As a group under addition, $\gf(p^n)$ is isomorphic to
+	\[ \underbrace{\Z_p \oplus \Z_p \oplus \dots \oplus \Z_p}_\text{$n$ factors} \]
+	As a group under multiplication, the set of nonzero elements of $\gf(p^n)$ is isomorphic to $\Z_{p^n-1}$ (and is, therefore, cyclic).
+\end{theorem}
+
+\begin{remark}
+	Because there is only one field for each prime-power $p^n$, we may unambiguously denote it by $\gf(p^n)$, in honor of Galois, and call it the \textit{Galois field of order $p^n$}.
+\end{remark}
+
+\begin{corollary}
+	\[ [\gf(p^n):\gf(p)]=n \]
+\end{corollary}
+
+\begin{corollary}[$\mathbf{\gf(p^n)}$ Contains an Element of Degree $\mathbf{n}$]
+	Let $a$ be a generator of the group of nonzero elements of $\gf(p^n)$ under multiplication. Then $a$ is algebraic over $\gf(p)$ of degree $n$.
+\end{corollary}

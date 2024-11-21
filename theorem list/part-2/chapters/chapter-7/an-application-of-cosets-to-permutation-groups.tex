@@ -1,0 +1,13 @@
+\section{An Application of Cosets to Permutation Groups}
+
+\begin{definition}[Stabilizer of a Point]
+	Let $G$ be a group of permutations of a set $S$. For each $i$ in $S$, let stab$_G(i)=\{\phi \in G\ \vert\ \phi(i) = i\}$. We call stab$_G(i)$ the \textit{stabilizer of $i$ in $G$}.
+\end{definition}
+
+\begin{definition}[Orbit of a Point]
+	Let $G$ be a group of permutations of a set $S$. For each $s$ in $S$, let orb$_G(s)=\{\phi(s)\ \vert\ \phi \in G\}$. The set orb$_G(s)$ is a subset of $S$ called the \textit{orbit of $s$ under $G$}. We use $\abs{\text{orb}_G(s)}$ to denote the number of elements in orb$_G(s)$.
+\end{definition}
+
+\begin{theorem}[Orbit-Stabilizer Theorem]
+	Let $G$ be a finite group of permutations of a set $S$. Then, for any $i$ from $S$, $\abs{G} = \abs{\text{orb}_G(i)}\abs{\text{stab}_G(i)}$.
+\end{theorem}
