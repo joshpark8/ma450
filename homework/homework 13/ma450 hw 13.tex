@@ -22,9 +22,9 @@
 
 
 % Misc helpers
-\setlength{\parskip}{1em}
+% \setlength{\parskip}{1em}
 \setlength{\parindent}{0pt}
-\setlist[enumerate]{itemsep=-4mm}
+% \setlist[enumerate]{itemsep=-2mm}
 \setlist[itemize]{itemsep=0mm}
 \renewcommand{\arraystretch}{1.25} % space out table rows
 
@@ -120,7 +120,7 @@ Let \( R = \{0, 2, 4, 6, 8\} \) under addition and multiplication modulo 10. Pro
 Construct a multiplication table for \( \Ztw[i] \), the ring of Gaussian integers modulo 2. Is this ring a field? Is it an integral domain?
 
 \begin{solution} % 13.42
-  We know \( \Ztw[i] = \{a+bi\st a,b\in\Ztw\} = \{0, i, 1, 1-i, 1+i\} \)
+  We know \( \Ztw[i] = \{a+bi\st a,b\in\Ztw\} = \{0, i, 1, 1+i\} \)
 
   Then the multiplication table is
   \begin{center}
@@ -129,15 +129,21 @@ Construct a multiplication table for \( \Ztw[i] \), the ring of Gaussian integer
         0         & 0       & 0         & 0         & 0  \\
         \( i \)   & 0       & 1         & \( i \)   & \( 1+i \)  \\
         1         & 0       & \( i \)   & 1         & \( 1+i \)  \\
-        \( 1+i \) & 0       & \( 1+i \) & \( 1+i \) & 0  \\
-    \end{tabular}\\
-\end{center}
+        \( 1+i \) & 0       & \( 1+i \) & \( 1+i \) & 0
+    \end{tabular}
+  \end{center}
+  Since \( (1+i)\sq = 0 \), it is a zero-divisor of \( \Ztw[i] \) by def zero-divisor. Thus \( \Ztw[i] \) is not an integral domain by def integral domain.
+  Thus \( \Ztw[i] \) is not a field by def field.
 \end{solution}
 
 \subsubsection*{Exercise 13.43}
 The nonzero elements of \( \Zth[i] \) form an abelian group of order 8 under multiplication. Is it isomorphic to \( \Zei,\ \Zfo\edp\Ztw, \) or \( \Ztw\edp\Ztw\edp\Ztw \)?
 
 \begin{solution} % 13.43
+  By def \( \Zth[i] \), \begin{align*}
+    \Zth[i] = \{a+bi \st a,b\in\Zth\} = \{0, i, 2i, 1, 1+i, 1+2i, 2, 2+i, 2+2i\}.
+  \end{align*}
+  Let \( G = \Zth[i] \).
 \end{solution}
 
 \subsubsection*{Exercise 14.4}

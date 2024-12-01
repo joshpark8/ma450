@@ -17,7 +17,7 @@ Recall
 \begin{proof}[Proof of Sylow's Second Theorem]
     Let \(H\sgp G\), \(\order{H}=p^k\), \(p^k\divs\order{G}\)
 
-    Let \(K\) be a \spsgp\ of \(G\).
+    Let \(K\) be a Sylow \(p\)-subgroup\ of \(G\).
 
     Let \(C=\{K_1=K, K_2,\ldots,K_n\}\) be the set of conjugates of \(K\) by elements of \(G\)\\
     (i.e. \(K_i=\conj{g_i}{K}\) for some \(g_i\in G\))
@@ -67,8 +67,8 @@ Recall
 \end{proof}
 
 \begin{proof}[Proof of Sylow's Third Theorem]
-    Let \(\order{G}=p^km\) and \(K \sgp G\) be a \spsgp \\
-    Let \(C = \{K_1=K, K_2, \ldots, \K_n\}\) be the set of conjugates of \(K\) in \(G\).
+    Let \(\order{G}=p^km\) and \(K \sgp G\) be a Sylow \(p\)-subgroup \\
+    Let \(C = \{K_1=K, K_2, \ldots, K_n\}\) be the set of conjugates of \(K\) in \(G\).
 
     Consider the action of \(K\) on \(G\) by conjugation.
 
@@ -80,15 +80,15 @@ Recall
         \end{align*}
         \(\implies n = \order{C}\) is equal to 1 modulo \(p\)
 
-        RTS that any \spsgp is one of the \(K_i\) (i.e. conjugate to \(K\))
+        RTS that any Sylow \(p\)-subgroup is one of the \(K_i\) (i.e. conjugate to \(K\))
 
-        If \(K'\) is another \spsgp of \(G\) and \(K'\not\in C\), then consider the action of \(K'\) on \(C\) by conjugation.
+        If \(K'\) is another Sylow \(p\)-subgroup of \(G\) and \(K'\not\in C\), then consider the action of \(K'\) on \(C\) by conjugation.
 
         Then the size of each orbit is greater than 1 (since \(\orb{K'}{K_i}=1 \iff K'=K_i\) which is impossible)
 
         \(\implies\) summing up, \(\order{C}\equiv 0\Mod p\) contradicting \(\order{C}\equiv 1\Mod p\)
 
-        \(\implies\) any \spsgp is a conjugate of \(K\) we started with.
+        \(\implies\) any Sylow \(p\)-subgroup is a conjugate of \(K\) we started with.
 
         Finally, \(\order{C} = \frac{\order{G}}{\order{N_G(K)}}\) divides \(\order{G}=p^rm\) and \(\order{C}\equiv 1 \Mod p\).
 

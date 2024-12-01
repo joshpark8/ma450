@@ -1,0 +1,18 @@
+{
+  "course_title":"Algebra I Student Notes",
+  "course_description":"Algebra I is the first semester of a year-long introduction to modern algebra. Algebra is a fundamental subject, used in many advanced math courses and with applications in computer science, chemistry, etc. The focus of this class is studying groups, linear algebra, and geometry in different forms.\n\nThese notes, which were created by students in a recent on-campus 18.701 Algebra I class, are offered here to supplement the materials included in OCW’s [version of 18.701](https://ocw.mit.edu/courses/18-701-algebra-i-fall-2010/). They have not been checked for accuracy by the instructors of that class or by other MIT faculty members.",
+  "course_description_html":"<p>Algebra I is the first semester of a year-long introduction to modern algebra. Algebra is a fundamental subject, used in many advanced math courses and with applications in computer science, chemistry, etc. The focus of this class is studying groups, linear algebra, and geometry in different forms.</p>\n<p>These notes, which were created by students in a recent on-campus 18.701 Algebra I class, are offered here to supplement the materials included in OCW’s <a href=\"https://ocw.mit.edu/courses/18-701-algebra-i-fall-2010/\" target=\"_blank\" rel=\"noopener\">version of 18.701</a>. They have not been checked for accuracy by the instructors of that class or by other MIT faculty members.</p>\n",
+  "site_uid":"195897d0-fc0c-4ee2-83c7-0ecec6ed3344",
+  "legacy_uid":"","instructors": [],"department_numbers":["18"],
+  "learning_resource_types":["Lecture Notes"],
+  "topics":[["Mathematics","Algebra and Number Theory"]],
+  "mit_learn_topics":null,
+  "primary_course_number":"RES.18-011",
+  "extra_course_numbers":"",
+  "term":"Fall",
+  "year":"2021",
+  "level":["Non-Credit"],
+  "hide_download":false,
+  "image_src":"./static_resources/res_18_011f21.jpg",
+  "course_image_metadata":{"body":"","content_type":"resource","draft":false,"file":"/courses/res-18-011-algebra-i-student-notes-fall-2021/res_18_011f21.jpg","file_size":51364,"file_type":"image/jpeg","image_metadata":{"caption":"Latitude and longitude lines give us a way of representing our location on the 2-sphere. The longitudes aren’t just circles as shapes, they’re also circles as groups. See section 29.2.2, \"Geometry of the Sphere,\" for more on this topic. (Image courtesy of student notetaker.)","credit":"","image-alt":"A circle with latitude lines and longitude lines inside."},"iscjklanguage":false,"learning_resource_types":[],"license":"https://creativecommons.org/licenses/by-nc-sa/4.0/","resourcetype":"Image","title":"res_18_011f21.jpg","uid":"6f479726-6a40-4861-82d1-ba0b4f512e9f","video_files":{"video_captions_file":"","video_thumbnail_file":"","video_transcript_file":""},"video_metadata":{"video_speakers":"","video_tags":"","youtube_description":"","youtube_id":""}}}
+

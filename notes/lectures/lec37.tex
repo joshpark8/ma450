@@ -1,0 +1,155 @@
+\documentclass[a4paper]{article}
+\usepackage{asymptote}
+
+\input{preamble.tex}
+\input{letterfont.tex}
+\input{macros.tex}
+
+% \renewcommand{\arraystretch}{1.25} % space out table rows
+% \setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+% \linespread{1} % 1.3 for one-and-half spacing, 1.6 for double spacing
+
+\rhead{}
+
+\begin{document}
+\subsection*{Lecture 37} % fri nov 22
+
+\begin{note}
+  3 is not true if \( \phi \) is not onto; \defmap{\phi}{\ZZ{=A=R}}{\Z\edp\ZZ{=S}}{n}{(n,n)}
+
+  6 is not true if \( \phi \) is not onto; \defmap{\phi}{\Z}{\Z\edp\Z}{n}{(n,0)}
+\end{note}
+
+\begin{theorem}
+  Let \( \phi:R\to S \) be a ring homomorphism. Then \( \kerphi \) is an ideal of \( R \).
+  \begin{note}
+    \( x\in\kerphi,\ y\in R; \qquad xy\in\kerphi; \qquad \phi(xy)=\phi(x)\phi(y) = 0\) (since \( \phi(x)=0 \))
+  \end{note}
+\end{theorem}
+
+\begin{theorem}
+  Let \( \phi:R\to S \) be a ring homomorphism. Then \( \begin{matrix}
+    \fr{R}{\kerphi} \mapsto \phi(R) \\
+    r + \kerphi \mapsto \phi(r)
+  \end{matrix} \) is an isomorphism.
+
+  (i.e. \( \fr{R}{\kerphi} \iso \phi(R) \))
+\end{theorem}
+
+\begin{theorem}
+  Every ideal of a ring \( R \) is the kernel of a ring homomorphism.
+\end{theorem}
+
+\begin{proof}
+  \( I\sseq R\implies R\to\fr{R}{I} \) has kernel \( I \)
+\end{proof}
+
+\begin{example}
+  Let \defmap{\phi}{\Z[x]}{\Z}{f(x)}{f(0)} be a ring homomorphism. Then \( \kerphi = \cyc{x} \). By Thm 15.3, \( \fr{\Z[x]}{\cyc{x}}\iso\Z \). Since \( \Z \) is an integral domain but not a field, \( \cyc{x} \) is a prime but not maximal in \( \Z[x] \).
+\end{example}
+
+\begin{theorem}
+  Let \( R \) be a ring with unity 1. The mapping \defmap{\phi}{\Z}{R}{n}{n\cdot 1} is a ring homomorphism.
+\end{theorem}
+
+\begin{proof}
+  \[
+  \begin{array}{cccccc}
+  \phi(m+n) &= &\phi(m)+\phi(n) \qquad\qquad \phi(mn) &= &\phi(m)\phi(n) \\
+  \rotatebox{90}{=} & &\quad\rotatebox{90}{=} \qquad\qquad\qquad\qquad\qquad \rotatebox{90}{=} & &\rotatebox{90}{=} \\
+  (m+n)\cdot 1 &= &m\cdot 1+n\cdot 1 \qquad\qquad (mn)\cdot 1 &= &(m\cdot 1)\cdot(n\cdot 1)
+  \end{array}
+  \]
+  \begin{note}
+    \( (m\cdot 1) = \underbrace{(1+1+\cdots+1)}_{m-\text{times}} \qquad\qquad (n\cdot 1) = \underbrace{(1+1+\cdots+1)}_{n-\text{times}} \)
+  \end{note}
+  \begin{remark}
+   \( \begin{matrix}
+    \Z\to R \\
+    1\mapsto r \\
+    n\mapsto n\cdot r
+   \end{matrix} \) is a group homomorphism, but not a ring homomorphism unless \( r\sq = r \).
+  \end{remark}
+\end{proof}
+
+\begin{corollary}
+  If \( R \) is a ring with unity an \( \char{R}=0 \), then \( R \) contains a subring isomorphic to \( \Z \). If \( \char{R} = n>0 \), then \( R \) contains a subring isomorphic to \( \Zn \).
+\end{corollary}
+
+\begin{proof}
+  Let 1 be the unity. Consider \( S = \{k\cdot 1\st k\in\Z\} \). Then \( \phi:\Z\to S \) is a ring homomorphism \( \implies \) \( \fr{\Z}{\kerphi} \iso S \).
+
+  \( \char 0: \) \( \kerphi = 0 \imp \Z\iso S \)
+
+  \( \char n: \) \( \kerphi = \cyc{n} \imp S\iso\fr{\Z}{\cyc{n}}\iso\Zn \)
+\end{proof}
+
+\begin{corollary}
+  If \( F \) is a field of \( \char{p}>0 \) then \( F \) contains a subfield isomorphic to \( \ZZ{p} \).
+
+  If \( F \) is a field of \( \char{0} \) then \( F \) contains a subfield isomorphic to \( \Q \).
+\end{corollary}
+
+\begin{proof}
+  By Cor 15.5.1, \( F \) contains \( \ZZ{p} \) if \( \char{F} = p>0 \). If \( \char{F}=0 \), then Cor 15.5.1 says \( F \) contains a subring \( S \) isomorphic to \( \Z \).  In this case, let \( T=\{ab\inv\st a,b\in S,\ b\neq 0\} \).  Then \( T \) is well defined since \( F \) is a field.
+  \begin{exercise}
+    \( T \) is a subring.
+  \end{exercise}
+  Then \( T \) is isomorphic to \( \Q \).
+  \begin{exercise}
+    \defmap{\phi}{\Q}{T}{\frac{m}{n}}{(m\cdot 1)(n\cdot 1)\inv} is an isomorphism.
+  \end{exercise}
+\end{proof}
+
+\begin{itemize}
+  \item Intersections of subfields of fields are also fields \( (F_1\sseq F,\ F_2\sseq F,\ \underbrace{F_1\cap F_2}_{\text{field}}\sseq F) \)
+  \item Every field has a smallest subfield which is called the \ul{prime subfield} of the field.
+\end{itemize}
+
+\begin{corollary}
+  \( \char{F} = p > 0 \imp  \) the prime subfield of \( F \) is isomorphic to \( \ZZ p \)
+
+  \( \char{F} = 0 \) \imp the prime subfield of \( F \) is isomorphic to \( \Q \)
+\end{corollary}
+
+\subsection{The Field of Quotients}
+
+\begin{theorem}
+  Let \( D \) be an integral domain. Then there exists a field \( F = Q(D) \) called the \ul{field of quotients} \ul{of \( D \)} that contains a subring isomorphic to \( D \).
+\end{theorem}
+
+\begin{example}
+  \( D = \Z \imp F = \Q \)
+\end{example}
+
+\begin{proof}
+  Let \( S = \{(a,b) \st a,b\in D,\ \ul{b\neq 0}\} \). Define an equivalence relation on \( S \); \( (a,b) \equiv (c,d) \) if \( ad = bc \).
+
+  Let \( F \) be the set of equivalence classes of \( S \) under the relation \( \equiv \) and denote the equivalence class that contains \( (x,y) \) by \( \frac{x}{y} \). Define addition and multiplication on \( F \) as follows:
+  \begin{align*}
+    \frac{a}{b} + \frac{c}{d} = \frac{ad+bc}{bd} \qquad\qquad \frac{a}{b} \cdot \frac{c}{d} = \frac{ac}{bd}
+  \end{align*}
+  \begin{exercise}
+    need to verify that both operations are well defined
+  \end{exercise}
+  i.e. \begin{align*}
+    \frac{a}{b}=\frac{a'}{b'},\ \frac{c}{d} = \frac{c'}{d'} \imp \frac{ad+bc}{bd} = \frac{a'd'+b'c'}{b'd'} \text{ and } \frac{ac}{bd}=\frac{a'c'}{b'd'}
+  \end{align*}
+  \begin{itemize}
+    \item \( F \) is a field. Let 1 be the unity of \( D \). Then \( \frac{0}{1} \) is the additive identity and \( \frac{1}{1} \) is the multiplicative identity. Additive inverse of \( \frac{a}{b} \) is \( \frac{-a}{b} \). Multiplicative inverse of \( \frac{a}{b} \) (when \( a\neq 0 \)) is \( \frac{b}{a} \).
+    \item The mapping \defmap{\phi}{D}{F}{x}{\frac{x}{1}} is an isomorphism from \( D \) to \( \phi(D) \).
+  \end{itemize}
+\end{proof}
+
+\begin{example}
+  \( D=\Z[x] \)
+\begin{align*}
+  Q(D) &= \left\{\frac{f(x)}{g(x)}\biggst g(x)\neq 0,\ f(x)\in\Z[x]\right\} \\
+  \Q(x) = Q(\Q[x]) &= \left\{\frac{f(x)}{g(x)}\biggst g(x)\neq 0,\ f(x)\in\Q[x]\right\}
+\end{align*}
+\begin{note}
+  \( g(x)\neq 0 \imp \) not the zero polynomial. \( g(x) = \ul{x-1} \) is allowed
+\end{note}
+\end{example}
+\end{document}

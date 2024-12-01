@@ -1,0 +1,138 @@
+\documentclass[a4paper]{article}
+\usepackage{asymptote}
+
+\input{preamble.tex}
+\input{letterfont.tex}
+\input{macros.tex}
+
+% \renewcommand{\arraystretch}{1.25} % space out table rows
+% \setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+% \linespread{1} % 1.3 for one-and-half spacing, 1.6 for double spacing
+
+\rhead{}
+
+\begin{document}
+\subsection*{Lecture 38} % mon nov 25
+\section{Polynomial Rings}
+\subsection{Notation and Terminology}
+\begin{definition}[Ring of Polynomials over \( R \)]
+  Let \( R \) be a commutative ring.
+  \begin{align*}
+    R[x] = \{a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x+a_0 \st a_i\in R,\ n\in\ZZ{>0}\}
+  \end{align*}
+  is called the \ul{ring of polynomials over \( R \) in the indeterminate \( x \).}
+\end{definition}
+
+Addition and multiplication are as usual.
+\begin{align*}
+  f=a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x+a_0
+\end{align*}
+If \( a_n\neq 0 \), then \ul{\( \deg(f) = n \)} and \( a_n \) is called the \ul{leading coefficient} of \( f \).
+
+If \( a_n\neq 0 \) is the multiplicative identity of \( R \), then \( f \) is called a \ul{monic} polynomial.
+
+\( a_0 \) is called the \ul{constant term} of \( f \).
+
+If \( f(x) = a_0 \) then \( f \) is called a \ul{constant polynomial}.
+
+\begin{theorem}
+  If \( D \) is an integral domain, then \( D[x] \) is an integral domain.
+\end{theorem}
+
+\begin{proof}
+  \( f(x) = a_nx^n+\underbrace{\cdots}_{\text{lower degree}},\quad g(x) = a_mx^m + \underbrace{\cdots}_{\text{lower degree}},\quad a_n^{\neq 0}, a_m^{\neq 0} \in D \)
+
+  \( f(x)\cdot g(x) =  (a_n \cdot a_m)x^{m+n} + \underbrace{\cdots}_{\text{lower degree}} \)
+
+  \( D \) integral domain \imp \( a_n\cdot a_m \neq 0 \) \imp \( f(x)\cdot g(x)\neq 0 \) since the leading term is nonzero.
+\end{proof}
+
+\begin{theorem}[Division Algorithm for \text{\( F[x] \)}]
+% \begin{theorem}[Abelian groups of order \(p^k\)]
+  Let \( F \) be a field and \( f(x), g(x)\in F[x] \) with \( g(x)\neq 0 \). Then there exists unique polynomials \( q(x) \) and \( r(x) \) in \( F[x] \) such that
+  \begin{align*}
+    f(x) = q(x)g(x) + r(x) \quad \text{ and } \quad \text{either } r(x) = 0 \text{ or } \deg r(x) < \deg g(x)
+  \end{align*}
+\end{theorem}
+
+\begin{proof}[\bd{Pf sketch}]\
+  \begin{itemize}
+    \item May assume \( g(x) \) is monic (\( F = \) field).
+
+    Say \( g=x^n + a_{n-1}x^{n-1}+\cdots\)
+    \item use \( x^n \) to ``cancel'' terms in \( f(x) \)
+
+    \( f(x) = b_mx^m+ \cdots \) with \( m\geq n \)
+
+    \( f(x) - b_mx^{m-n}\cdot g(x) =  \) polynomial of degree \( < m \)
+
+    Then proceed by induction on degree.
+  \end{itemize}
+\end{proof}
+
+\begin{example} In \( \Zfi[x] \),
+\begin{align*}
+  f(x) &= 3x^4 + x^3 + 2x^2 + 1 \\
+  g(x) &= x^2 + 4x + 2
+\end{align*}
+\img{files/lec38 ex16.1.png}{0.4}
+\end{example}
+
+\begin{corollary}[Remainder Theorem]
+  Let \( F \) be a field and \( f(x) \in F[x] \). THen \( a \) is a zero of \( f(x) \) \iff \( x-a \) is a factor of \( f(x) \)
+\end{corollary}
+
+\begin{proof}
+  \( f(x) = (x-a)q(x) + r \) (where \( r \) is a constant)
+\begin{align*}
+ a \text{ is a zero of } f  &\iff  f(a) = 0 \iff r=0 \\
+  &\iff  f(x) = (x-a)q(x) \\
+  &\iff  (x-a) \text{ is a factor of } f
+\end{align*}
+\end{proof}
+
+\begin{corollary}[Factor Theorem]
+  A polynomial of degree \( n \) over a field has at most \( n \) zeros counting multiplicity.
+\end{corollary}
+
+\begin{proof}[\bd{Pf sketch}]
+  use Cor 16.2.1
+\end{proof}
+
+\begin{example}
+  Every polynomial in \( \C[x] \) of deg \( n \) has exactly \( n \) zeros counting multiplicity.
+\end{example}
+
+Cor is not true for arbitrary polynomial rings.
+
+\begin{example}
+  \( x\sq+3x+2 \) in \( \Zsi[x] \) has \ul{four} zeros in \( \Zsi \) (1, 2, 4, 5).
+\end{example}
+
+\begin{definition}[Principal Ideal Domain (PID)]
+  A \ul{principal ideal domain (PID)} is an integral domain \( R \) such that every ideal has the form \( \cyc{a}=\{ra\st r\in R\} \) for some \( a\inR \)
+\end{definition}
+
+\begin{theorem}
+  For any field \( F \), \( F[x] \) is a PID.
+\end{theorem}
+
+\begin{proof}
+  Let \( I \) be an ideal in \( F[x] \).
+
+  Assume \( I\neq \{0\}=\cyc{0} \)
+
+  Let \( g \) be a polynomial in \( I \) that has minimum degree.
+
+  Then \( I=\cyc{g(x)} \) by the division algorithm
+\end{proof}
+
+\begin{theorem}
+  \( \Z \) is a PID.
+\end{theorem}
+
+\begin{example}
+  \Z[x] is \emph{not} a PID. (e.g. \( \cyc{x,2} \) is not principal)
+\end{example}
+\end{document}
