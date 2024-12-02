@@ -1,6 +1,7 @@
 \ProvidesPackage{init}
 
 \usepackage{import}
+\usepackage[dvipsnames]{xcolor}
 \usepackage[utf8]{inputenc}
 \usepackage{pgfplots}
 \usepackage[english]{babel}
@@ -62,6 +63,16 @@
 {}%        Punctuation after thm head
 {\newline}% Space after thm head: \newline = linebreak
 {}%         Thm head spec
+
+\definecolor{customdarkgreen}{RGB}{0, 100, 0}
+\definecolor{customdarkred}{RGB}{200, 0, 0}
+\definecolor{customorange}{RGB}{255, 165, 0}
+
+\newtheoremstyle{orangethm}{}{}{}{}{\color{customorange}\bfseries}{.}{\newline}{}
+\newtheoremstyle{greenthm}{}{}{}{}{\color{customdarkgreen}\bfseries}{.}{\newline}{}
+\newtheoremstyle{bluethm}{}{}{}{}{\color{blue}\bfseries}{.}{\newline}{}
+\newtheoremstyle{redthm}{}{}{}{}{\color{customdarkred}\bfseries}{.}{\newline}{}
+
 \makeatletter
 \def\thmhead@plain#1#2#3{%
 	\thmname{#1}\thmnumber{\@ifnotempty{#1}{ }\@upn{#2} }%
@@ -71,12 +82,21 @@
 \newtheoremstyle{case}{}{}{}{}{}{:}{ }{}
 \theoremstyle{case}
 \newtheorem{case}{Case}
-\theoremstyle{break}
+% \theoremstyle{break}
+
+\theoremstyle{greenthm}
 \newtheorem{definition}{Definition}[chapter]
+
+\theoremstyle{redthm}
 \newtheorem{theorem}{Theorem}[chapter]
+
+\theoremstyle{bluethm}
 \newtheorem{corollary}{Corollary}[theorem]
+
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem*{lem}{Lemma}
+
+\theoremstyle{orangethm}
 \newtheorem*{remark}{Remark}
 \newtheorem*{aside}{}
 \newtheorem*{example}{Example}
