@@ -22,19 +22,19 @@
 \end{note}
 
 \begin{theorem}
-  Let \( \phi:R\to S \) be a ring homomorphism. Then \( \kerphi \) is an ideal of \( R \).
+  Let \( \phi:R\to S \) be a ring homomorphism. Then \( \ker\phi \) is an ideal of \( R \).
   \begin{note}
-    \( x\in\kerphi,\ y\in R; \qquad xy\in\kerphi; \qquad \phi(xy)=\phi(x)\phi(y) = 0\) (since \( \phi(x)=0 \))
+    \( x\in\ker\phi,\ y\in R; \qquad xy\in\ker\phi; \qquad \phi(xy)=\phi(x)\phi(y) = 0\) (since \( \phi(x)=0 \))
   \end{note}
 \end{theorem}
 
 \begin{theorem}
   Let \( \phi:R\to S \) be a ring homomorphism. Then \( \begin{matrix}
-    \fr{R}{\kerphi} \mapsto \phi(R) \\
-    r + \kerphi \mapsto \phi(r)
+    \fr{R}{\ker\phi} \mapsto \phi(R) \\
+    r + \ker\phi \mapsto \phi(r)
   \end{matrix} \) is an isomorphism.
 
-  (i.e. \( \fr{R}{\kerphi} \iso \phi(R) \))
+  (i.e. \( \fr{R}{\ker\phi} \iso \phi(R) \))
 \end{theorem}
 
 \begin{theorem}
@@ -46,7 +46,7 @@
 \end{proof}
 
 \begin{example}
-  Let \defmap{\phi}{\Z[x]}{\Z}{f(x)}{f(0)} be a ring homomorphism. Then \( \kerphi = \cyc{x} \). By Thm 15.3, \( \fr{\Z[x]}{\cyc{x}}\iso\Z \). Since \( \Z \) is an integral domain but not a field, \( \cyc{x} \) is a prime but not maximal in \( \Z[x] \).
+  Let \defmap{\phi}{\Z[x]}{\Z}{f(x)}{f(0)} be a ring homomorphism. Then \( \ker\phi = \cyc{x} \). By Thm 15.3, \( \fr{\Z[x]}{\cyc{x}}\iso\Z \). Since \( \Z \) is an integral domain but not a field, \( \cyc{x} \) is a prime but not maximal in \( \Z[x] \).
 \end{example}
 
 \begin{theorem}
@@ -78,11 +78,11 @@
 \end{corollary}
 
 \begin{proof}
-  Let 1 be the unity. Consider \( S = \{k\cdot 1\st k\in\Z\} \). Then \( \phi:\Z\to S \) is a ring homomorphism \( \implies \) \( \fr{\Z}{\kerphi} \iso S \).
+  Let 1 be the unity. Consider \( S = \{k\cdot 1\st k\in\Z\} \). Then \( \phi:\Z\to S \) is a ring homomorphism \( \implies \) \( \fr{\Z}{\ker\phi} \iso S \).
 
-  \( \char 0: \) \( \kerphi = 0 \imp \Z\iso S \)
+  \( \char 0: \) \( \ker\phi = 0 \imp \Z\iso S \)
 
-  \( \char n: \) \( \kerphi = \cyc{n} \imp S\iso\fr{\Z}{\cyc{n}}\iso\Zn \)
+  \( \char n: \) \( \ker\phi = \cyc{n} \imp S\iso\fr{\Z}{\cyc{n}}\iso\Zn \)
 \end{proof}
 
 \begin{corollary}
@@ -104,7 +104,7 @@
 
 \begin{itemize}
   \item Intersections of subfields of fields are also fields \( (F_1\sseq F,\ F_2\sseq F,\ \underbrace{F_1\cap F_2}_{\text{field}}\sseq F) \)
-  \item Every field has a smallest subfield which is called the \ul{prime subfield} of the field.
+  \item Every field has a smallest subfield which is called the \tun{prime subfield} of the field.
 \end{itemize}
 
 \begin{corollary}
@@ -116,7 +116,7 @@
 \subsection{The Field of Quotients}
 
 \begin{theorem}
-  Let \( D \) be an integral domain. Then there exists a field \( F = Q(D) \) called the \ul{field of quotients} \ul{of \( D \)} that contains a subring isomorphic to \( D \).
+  Let \( D \) be an integral domain. Then there exists a field \( F = Q(D) \) called the \tun{field of quotients} \tun{of \( D \)} that contains a subring isomorphic to \( D \).
 \end{theorem}
 
 \begin{example}
@@ -124,7 +124,7 @@
 \end{example}
 
 \begin{proof}
-  Let \( S = \{(a,b) \st a,b\in D,\ \ul{b\neq 0}\} \). Define an equivalence relation on \( S \); \( (a,b) \equiv (c,d) \) if \( ad = bc \).
+  Let \( S = \{(a,b) \st a,b\in D,\ \tun{b\neq 0}\} \). Define an equivalence relation on \( S \); \( (a,b) \equiv (c,d) \) if \( ad = bc \).
 
   Let \( F \) be the set of equivalence classes of \( S \) under the relation \( \equiv \) and denote the equivalence class that contains \( (x,y) \) by \( \frac{x}{y} \). Define addition and multiplication on \( F \) as follows:
   \begin{align*}
@@ -149,7 +149,7 @@
   \Q(x) = Q(\Q[x]) &= \left\{\frac{f(x)}{g(x)}\biggst g(x)\neq 0,\ f(x)\in\Q[x]\right\}
 \end{align*}
 \begin{note}
-  \( g(x)\neq 0 \imp \) not the zero polynomial. \( g(x) = \ul{x-1} \) is allowed
+  \( g(x)\neq 0 \imp \) not the zero polynomial. \( g(x) = \tun{x-1} \) is allowed
 \end{note}
 \end{example}
 \end{document}

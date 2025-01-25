@@ -18,7 +18,7 @@
 \subsection{Reducibility Tests}
 \begin{definition}[Irreducible/Reducible Polynomial]
   Let \( D \) be an integral domain.
-  A polynomial \( f(x)\in D[x] \) that is neither 0 nor a unit in \( D[x] \) is said to be \ul{irreducible} over \( D \) if whenever \( f(x) = g(x)h(x) \), then \( g(x) \) or \( h(x) \) is a unit in \( D[x] \). A nonzero, nonunit element of \( D[x] \) that is \emph{not} irreducible is said to be \ul{reducible}.
+  A polynomial \( f(x)\in D[x] \) that is neither 0 nor a unit in \( D[x] \) is said to be \tun{irreducible} over \( D \) if whenever \( f(x) = g(x)h(x) \), then \( g(x) \) or \( h(x) \) is a unit in \( D[x] \). A nonzero, nonunit element of \( D[x] \) that is \emph{not} irreducible is said to be \tun{reducible}.
 \end{definition}
 
 \begin{example}
@@ -37,7 +37,7 @@
   Then \( f(x) \) is reducible over \( F \)\iff \( f(x) \) has a zero in \( F \).
 \end{theorem}
 
-\begin{proof}[\bd{Pf sketch}]
+\begin{proof}[\tbo{Pf sketch}]
   If \( f(x) = g(x)h(x) \) then \( \deg g(x) + \deg h(x) = \deg f(x) = \) 2 or 3.
   So \( g(x) \) or \( h(x) \) has a degree of 1 (if \( \deg g(x) = 0 \) or \( \deg h(x) = 0 \) then \( g(x) \) or \( h(x) \) is a unit).
   \begin{align*}
@@ -61,10 +61,10 @@
 \end{example}
 
 \begin{definition}[Content of a Polynomial, Primitive Polynomial]
-The \ul{content} of a nonzero polynomial \begin{align*}
+The \tun{content} of a nonzero polynomial \begin{align*}
   a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x+a_0 \in \Z[x]
 \end{align*} is the greatest common divisor of \( a_n, a_{n-1}, \ldots, a_0 \).
-A \ul{primitive polynomials} is an element in \( \Z[x] \) with content \( 1 \).
+A \tun{primitive polynomials} is an element in \( \Z[x] \) with content \( 1 \).
 \end{definition}
 
 \begin{lemma}[Gauss's Lemma]

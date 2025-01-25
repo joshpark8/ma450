@@ -149,11 +149,11 @@ We wish to fill in the following Cayley table.
     \begin{tabular}{c | c c c c c}
         & $e$ & $a$ & $b$ & $c$ & $d$  \\
        \cline{1-6}
-       $e$ & $e$         & \ul{\ \ \ } & \ul{\ \ \ } & \ul{\ \ \ } & \ul{\ \ \ } \\
-       $a$ & \ul{\ \ \ } & $b$         & \ul{\ \ \ } & \ul{\ \ \ } & $e$ \\
-       $b$ & \ul{\ \ \ } & $c$         & $d$         & $e$         & \ul{\ \ \ } \\
-       $c$ & \ul{\ \ \ } & $d$         & \ul{\ \ \ } & $a$         & $b$ \\
-       $d$ & \ul{\ \ \ } & \ul{\ \ \ } & \ul{\ \ \ } & \ul{\ \ \ } & \ul{\ \ \ } \\
+       $e$ & $e$         & \tun{\ \ \ } & \tun{\ \ \ } & \tun{\ \ \ } & \tun{\ \ \ } \\
+       $a$ & \tun{\ \ \ } & $b$         & \tun{\ \ \ } & \tun{\ \ \ } & $e$ \\
+       $b$ & \tun{\ \ \ } & $c$         & $d$         & $e$         & \tun{\ \ \ } \\
+       $c$ & \tun{\ \ \ } & $d$         & \tun{\ \ \ } & $a$         & $b$ \\
+       $d$ & \tun{\ \ \ } & \tun{\ \ \ } & \tun{\ \ \ } & \tun{\ \ \ } & \tun{\ \ \ } \\
    \end{tabular}
 \end{center}
 The identity row and column are trivial. \\
@@ -163,10 +163,10 @@ By uniqueness of inverses, \(da=ad=e\) and \(cb=bc=e\). So
         & $e$ & $a$ & $b$ & $c$ & $d$  \\
        \cline{1-6}
        $e$ & $e$ & $a$ & $b$ & $c$ & $d$ \\
-       $a$ & $a$ & $b$         & \ul{\ \ \ } & \ul{\ \ \ } & $e$ \\
-       $b$ & $b$ & $c$         & $d$         & $e$         & \ul{\ \ \ } \\
+       $a$ & $a$ & $b$         & \tun{\ \ \ } & \tun{\ \ \ } & $e$ \\
+       $b$ & $b$ & $c$         & $d$         & $e$         & \tun{\ \ \ } \\
        $c$ & $c$ & $d$         & $e$         & $a$         & $b$ \\
-       $d$ & $d$ & $e$ & \ul{\ \ \ } & \ul{\ \ \ } & \ul{\ \ \ } \\
+       $d$ & $d$ & $e$ & \tun{\ \ \ } & \tun{\ \ \ } & \tun{\ \ \ } \\
    \end{tabular}
 \end{center}
 By problem 2.31, each element of the group appears exactly once in each row and each column. Thus \(db=a\) and \(dd=c\).
@@ -175,10 +175,10 @@ By problem 2.31, each element of the group appears exactly once in each row and 
         & $e$ & $a$ & $b$ & $c$ & $d$  \\
        \cline{1-6}
        $e$ & $e$ & $a$ & $b$ & $c$ & $d$ \\
-       $a$ & $a$ & $b$         & \ul{\ \ \ } & \ul{\ \ \ } & $e$ \\
+       $a$ & $a$ & $b$         & \tun{\ \ \ } & \tun{\ \ \ } & $e$ \\
        $b$ & $b$ & $c$ & $d$ & $e$ & $a$ \\
        $c$ & $c$ & $d$ & $e$ & $a$ & $b$ \\
-       $d$ & $d$ & $e$ & \ul{\ \ \ } & \ul{\ \ \ } & $c$ \\
+       $d$ & $d$ & $e$ & \tun{\ \ \ } & \tun{\ \ \ } & $c$ \\
    \end{tabular}
 \end{center}
 Note that if we let \(ca=x\), then \(cad=xd\implies c=xd\implies x=d\). \\
