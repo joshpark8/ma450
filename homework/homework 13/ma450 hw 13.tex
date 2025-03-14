@@ -58,14 +58,14 @@ Find a zero-divisor in \( \Zfi[i] = \{a+bi\st a,b\in\Zfi\} \).
 \end{solution}
 
 \tbo{Exercise 13.30.}
-Let \( d \) be a positive integer. Prove that \( \Q[\sqrt d] = \{a + b\sqrt d\st a,b\in\Q\}\) is a field.
+Let \( d \) be a positive integer. Prove that \( \![\sqrt d] = \{a + b\sqrt d\st a,b\in\!\}\) is a field.
 
 \begin{solution} % 13.30
-  Viewed as an element of \( \bbR \), the multiplicative inverse of any element of the form \( a+b\sqrt d \) is \( 1/(a+b\sqrt d) \). To verify that \( \Q[\sqrt d] \) is a field, we must show \( 1/(a+b\sqrt d) \) can be written in the form \( \alpha+\beta\sqrt d \). Observe that
+  Viewed as an element of \( \bbR \), the multiplicative inverse of any element of the form \( a+b\sqrt d \) is \( 1/(a+b\sqrt d) \). To verify that \( \![\sqrt d] \) is a field, we must show \( 1/(a+b\sqrt d) \) can be written in the form \( \alpha+\beta\sqrt d \). Observe that
   \begin{align*}
     \frac{1}{a+b\sqrt d} = \frac{1}{a+b\sqrt d} \cdot \frac{a-b\sqrt d}{a-b\sqrt d} = \frac{a-b\sqrt{d}}{a\sq -ab\sqrt{d} + ab \sqrt{d} - b\sq d} = \frac{a}{a\sq-b\sq d} - \frac{b}{a\sq-b\sq d}\sqrt{d}.
   \end{align*}
-  Thus \( \Q[\sqrt{d}] \) is a field.
+  Thus \( \![\sqrt{d}] \) is a field.
 \end{solution}
 
 \tbo{Exercise 13.31.}
@@ -85,7 +85,7 @@ Let \( R \) be a ring with unity 1. If the product of any pair of nonzero elemen
 Let \( R = \{0, 2, 4, 6, 8\} \) under addition and multiplication modulo 10. Prove that \( R \) is a field.
 
 \begin{solution} % 13.32
-  By definition field, we need only verify each nonzero element of \( R \) has a multiplicative inverse. The nonzero elements of \( R \) are \{2, 4, 6, 8\}. By Exercise 12.2, we know the unity of \( R \) is 6. Thus, we must find some \( b\in R \) for each \( a\in\R \) such that \( ab = 6 \). Then, we can see that \begin{align*}
+  By definition field, we need only verify each nonzero element of \( R \) has a multiplicative inverse. The nonzero elements of \( R \) are \{2, 4, 6, 8\}. By Exercise 12.2, we know the unity of \( R \) is 6. Thus, we must find some \( b\in R \) for each \( a\in\bbR \) such that \( ab = 6 \). Then, we can see that \begin{align*}
     &2\cdot 8 = 16 \equiv 6 \pmod{10}, &4\cdot 4 = 16 \equiv 6 \pmod{10}, \\
     &6\cdot 6 = 36 \equiv 6 \pmod{10}, &8\cdot 2 = 16 \equiv 6 \pmod{10}.
   \end{align*}
