@@ -1,8 +1,8 @@
 \subsection*{Lecture 25 (10/23)} % wed oct 23
 
 \begin{example}[N/C Theorem] Let \(H\sgp G\). Recall the \emph{normalizer of H in G} and the \emph{centralizer of H in G}, \begin{align*}
-    N(H)&=\{x\in G \st xHx\inv=H\} \\
-    C(H)&=\{x\in G \st xhx\inv \in H,\ \forall h\in H\}
+    N(H)&=\{x\in G \mid xHx\inv=H\} \\
+    C(H)&=\{x\in G \mid xhx\inv \in H,\ \forall h\in H\}
 \end{align*}
 
 (Note: \(H\nsgp G \implies N(H)=G \implies H\nsgp N(H)\)).
@@ -13,7 +13,7 @@ Consider the map \(\phi: N(H)\to \Aut(H)\) given by \(g\mapsto \phi_g\), where \
     Check \(\phi_g\) is an automorphism of H and check \(\phi\) is a homomorphism (i.e. \(\phi_{g_1g_2}=\phi_{g_1}\circ\phi_{g_2}\)).
 \end{exercise}
 
-Then, \(\ker\phi = \{g\in N(H) \st \phi_g=id_H\} = \{g\in N(H) \st ghg\inv=h,\ \forall h\in H\}= C(H)\). Note that elements of \(C(H)\) commute with all elements of \(H\). Thus by Thm 10.3, \(N(H)/C(H)\) is isomorphic to a sgp of \(\Aut(G)\).
+Then, \(\ker\phi = \{g\in N(H) \mid\phi_g=id_H\} = \{g\in N(H) \mid ghg\inv=h,\ \forall h\in H\}= C(H)\). Note that elements of \(C(H)\) commute with all elements of \(H\). Thus by Thm 10.3, \(N(H)/C(H)\) is isomorphic to a sgp of \(\Aut(G)\).
 \end{example}
 
 \begin{theorem}
@@ -44,7 +44,7 @@ Then, \(\ker\phi = \{g\in N(H) \st \phi_g=id_H\} = \{g\in N(H) \st ghg\inv=h,\ \
 
 
 \begin{theorem}[Abelian groups of order \(p^k\)]
-    There is \tun{one} abelian group of order \(p^k\) for each set of positive integers whose sum is \(k\) (called a partition of \(k\))
+    There is \uline{one} abelian group of order \(p^k\) for each set of positive integers whose sum is \(k\) (called a partition of \(k\))
 \end{theorem}
 
 \begin{example}

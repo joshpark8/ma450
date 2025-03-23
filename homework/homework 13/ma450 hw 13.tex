@@ -48,7 +48,7 @@ List all zero-divisors of \( \ZZ{20} \). Can you see a relationship between the 
 \end{solution}
 
 \tbo{Exercise 13.24.}
-Find a zero-divisor in \( \Zfi[i] = \{a+bi\st a,b\in\Zfi\} \).
+Find a zero-divisor in \( \Zfi[i] = \{a+bi\mid a,b\in\Zfi\} \).
 
 \begin{solution} % 13.24
   Let \( R = \Zfi[i] \). By definition zero-divisor, \( r_{\neq 0}\in R \) is a zero-divisor of \( R \) if there exists some \( s_{\neq 0}\in R \) such that \( rs \equiv 0 \pmod 5 \). Consider the elements \( r = 2+i \) and \( \bar{r} = 2-i \). Notice \begin{align*}
@@ -58,7 +58,7 @@ Find a zero-divisor in \( \Zfi[i] = \{a+bi\st a,b\in\Zfi\} \).
 \end{solution}
 
 \tbo{Exercise 13.30.}
-Let \( d \) be a positive integer. Prove that \( \![\sqrt d] = \{a + b\sqrt d\st a,b\in\!\}\) is a field.
+Let \( d \) be a positive integer. Prove that \( \![\sqrt d] = \{a + b\sqrt d\mid a,b\in\!\}\) is a field.
 
 \begin{solution} % 13.30
   Viewed as an element of \( \bbR \), the multiplicative inverse of any element of the form \( a+b\sqrt d \) is \( 1/(a+b\sqrt d) \). To verify that \( \![\sqrt d] \) is a field, we must show \( 1/(a+b\sqrt d) \) can be written in the form \( \alpha+\beta\sqrt d \). Observe that
@@ -96,7 +96,7 @@ Let \( R = \{0, 2, 4, 6, 8\} \) under addition and multiplication modulo 10. Pro
 Construct a multiplication table for \( \Ztw[i] \), the ring of Gaussian integers modulo 2. Is this ring a field? Is it an integral domain?
 
 \begin{solution} % 13.42
-  We know \( \Ztw[i] = \{a+bi\st a,b\in\Ztw\} = \{0, i, 1, 1+i\} \)
+  We know \( \Ztw[i] = \{a+bi\mid a,b\in\Ztw\} = \{0, i, 1, 1+i\} \)
 
   Then the multiplication table is
   \begin{center}
@@ -117,7 +117,7 @@ The nonzero elements of \( \Zth[i] \) form an abelian group of order 8 under mul
 
 \begin{solution} % 13.43
   We know \begin{align*}
-    \Z_3[i] = \{a+bi \st a,b\in\Zth\} = \{0, i, 2i, 1, 1+i, 1+2i, 2, 2+i, 2+2i\},
+    \Z_3[i] = \{a+bi \mid a,b\in\Zth\} = \{0, i, 2i, 1, 1+i, 1+2i, 2, 2+i, 2+2i\},
   \end{align*}
   so let \( G = \{i, 2i, 1, 1+i, 1+2i, 2, 2+i, 2+2i\} \).
   By thm, a group isomorphism must preserve the order of elements of the group.
@@ -137,7 +137,7 @@ The nonzero elements of \( \Zth[i] \) form an abelian group of order 8 under mul
 Find a subring of \( \Z\edp\Z \) that is not an ideal of \( \Z\edp\Z \).
 
 \begin{solution} % 14.4
-Consider the set \( R = \{(x,x)\st x\in\Z\} \).
+Consider the set \( R = \{(x,x)\mid x\in\Z\} \).
 Notice \begin{align}
   (\alpha,\alpha) - (\beta,\beta) &= (\alpha-\beta, \alpha-\beta) \in R \label{srt c1}\\
   (\alpha,\alpha) \cdot (\beta,\beta) &= (\alpha\beta,\alpha\beta) \in R,
@@ -202,7 +202,7 @@ Find all maximal ideals in \\
 \pagebreak
 
 \tbo{Exercise 14.10.}
-If \( A \) and \( B \) are ideals of a ring, show that the \tit{sum} of \( A \) and \( B \), \( A+B = \{a+b\st a\in A,b\in B\} \), is an ideal.
+If \( A \) and \( B \) are ideals of a ring, show that the \tit{sum} of \( A \) and \( B \), \( A+B = \{a+b\mid a\in A,b\in B\} \), is an ideal.
 
 \begin{solution} % 14.10
   Let \( A \) and \( B \) be ideals of some ring \( R \). By definition ideal, \( ra,ar\in A \) for any \( a\in A,\ r\in R \). Similarly \( rb,br\in B \) for any \( b\in B,\ r\in R \). Consider the element \( a+b\in A+B \) and pick any \( r\in R \). Then \( r(a+b) = ra+rb \) and \( (a+b)r = ar+br \) by properties of multiplication. Since \( ra\in A \) and \( rb\in B \), \( ra+rb \in A+B \). Similarly, \( ar+br \in A+B \). Thus \( A+B \) is an ideal of \( R \) by def ideal.
@@ -219,7 +219,7 @@ In the ring of integers, find a positive integer \( a \) such that
 \begin{solution} % 14.11
 \begin{enumerate}[label=\tbo{\alph*.}]
   \item \( \pidl{a} = \pidl{2} + \pidl{3} \) \\
-    By definition of principal ideal, \( \pidl{2}=\{2k\st k\in\Z\} \) and \( \pidl{3}=\{3k\st k\in\Z\} \).
+    By definition of principal ideal, \( \pidl{2}=\{2k\mid k\in\Z\} \) and \( \pidl{3}=\{3k\mid k\in\Z\} \).
     So any element \(\gamma\in \pidl{2} + \pidl{3} \) must be of the form \( \gamma=2\alpha+3\beta \), where \( \alpha,\beta\in\Z \).
     We know 2 and 3 are both prime and are thus relatively prime, so by Bezout's Identity there exist integers \( s,t \) such that \( 2s+3t=1 \). Notice that for any \( k\in\Z \), \begin{align*}
       k = k(2s+3t) = 2ks+3kt
@@ -227,7 +227,7 @@ In the ring of integers, find a positive integer \( a \) such that
     Thus we can generate any integer \( k \) by letting \( \alpha = ks \) and \( \beta = kt \).
     Thus \( \pidl{2}+\pidl{3} = \Z = \pidl{1} \) and \( a=1 \).
   \item \( \pidl{a} = \pidl{6} + \pidl{8} \) \\
-    By definition of principal ideal, \( \pidl{6}=\{6k\st k\in\Z\} \) and \( \pidl{8}=\{8k\st k\in\Z\} \).
+    By definition of principal ideal, \( \pidl{6}=\{6k\mid k\in\Z\} \) and \( \pidl{8}=\{8k\mid k\in\Z\} \).
     So any element \(\gamma\in\pidl{6} + \pidl{8} \) must be of the form \( \gamma=6\alpha+8\beta \), where \( \alpha,\beta\in\Z \). Notice that while 6 and 8 are not relatively prime, \begin{align*}
       \gamma=6\alpha+8\beta= 2(3\alpha+4\beta)
     \end{align*} where \( 3\alpha+4\beta \in \pidl{3}+\pidl{4} \).
@@ -235,7 +235,7 @@ In the ring of integers, find a positive integer \( a \) such that
     Since 3 and 4 are relatively prime, we can the same logic as in part a to find that \( \pidl b = \pidl 1 \).
     Thus, \( \pidl{6}+\pidl{8} = 2\Z = \pidl{2} \) and \( a=2 \).
   \item \( \pidl{a} = \pidl{m} + \pidl{n} \) \\
-    By definition of principal ideal, \( \pidl{m}=\{mk\st k\in\Z\} \) and \( \pidl{n}=\{nk\st k\in\Z\} \).
+    By definition of principal ideal, \( \pidl{m}=\{mk\mid k\in\Z\} \) and \( \pidl{n}=\{nk\mid k\in\Z\} \).
     So any element \(\gamma\in\pidl{m} + \pidl{n} \) must be of the form \( \gamma=m\alpha+a\beta \), where \( \alpha,\beta\in\Z \).
     If \( m \) and \( n \) relatively prime, then we can follow the proof of part a and we are done.
     Suppose \( m \) and \( n \) are \tit{not} relatively prime. That is, \( \gcd(m,n) = d > 1\). So any element \( \gamma\in\pidl{m}+\pidl{n} \) must be of the form \( \gamma=m\alpha+n\beta \). Notice that \begin{align*}
@@ -247,11 +247,11 @@ In the ring of integers, find a positive integer \( a \) such that
 \end{solution}
 
 \tbo{Exercise 14.12.}
-If \( A \) and \( B \) are ideals of a ring, show that the \tit{product} of \( A \) and \( B \), \( AB = \{a_1b_1 + a_2b_2 + \cdots + a_nb_n \st a_i\in A, b_i\in B, n \in\ZZ{>0}\} \), is an ideal.
+If \( A \) and \( B \) are ideals of a ring, show that the \tit{product} of \( A \) and \( B \), \( AB = \{a_1b_1 + a_2b_2 + \cdots + a_nb_n \mid a_i\in A, b_i\in B, n \in\ZZ{>0}\} \), is an ideal.
 
 \begin{solution} % 14.12
   Let \( A \) and \( B \) be ideals of some ring \( R \).
-  To show \( AB = \left\{\sum_{i=1}^n a_ib_i \st a_i\in A, b_i\in B, n\in\ZZ{>0}\right\} \) is an ideal of \( R \), we use the ideal test.
+  To show \( AB = \left\{\sum_{i=1}^n a_ib_i \mid a_i\in A, b_i\in B, n\in\ZZ{>0}\right\} \) is an ideal of \( R \), we use the ideal test.
   Suppose we have some \( x,y\in AB \).
   By def \( AB \), \begin{align*}
     x = \sum_{i=1}^{n} a_ib_i \qquad y = \sum_{j=1}^{m} a_j'b_j',

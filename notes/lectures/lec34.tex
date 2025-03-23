@@ -17,7 +17,7 @@
 \subsection{Factor Rings}
 
 \begin{theorem}[Existence of Factor Rings]
-  Let \( R \) be a ring and let \( A \) be a subring of \( R \). Then the set of cosets \( \{r+A\st r\in R\} \)  is a ring under the operation
+  Let \( R \) be a ring and let \( A \) be a subring of \( R \). Then the set of cosets \( \{r+A\mid r\in R\} \)  is a ring under the operation
   \begin{itemize}
     \item \( (s+A)+(t+A) = s+t+A \) and
     \item \( (s+A)(t+A) = st+A\)
@@ -26,7 +26,7 @@
 \end{theorem}
 
 \begin{proof}[\tbo{Pf sketch}]
-  \( A \) is an ideal of \( R \) \( \implies \) addition and multiplication of cosets are \tun{well-defined} (i.e. do not depend on the choice of representative)
+  \( A \) is an ideal of \( R \) \( \implies \) addition and multiplication of cosets are \uline{well-defined} (i.e. do not depend on the choice of representative)
 
   Conversely, if \( A \) is not an ideal, then \( \exists a\in R, r\in R \) such that \( ar\not\in A \neq A \).
 
@@ -95,8 +95,8 @@
 \begin{example}
   \( \bbR[x] \) and \( \cyc{x\sq+1} \)
   \begin{align*}
-    \bbR[x] &= \{ g(x) + \cyc{x^2+1} \st g(x)\in \bbR[x] \} \\
-          &= \{ ax+b + \cyc{x^2+1} \st a,b\in \bbR \} \iso \C
+    \bbR[x] &= \{ g(x) + \cyc{x^2+1} \mid g(x)\in \bbR[x] \} \\
+          &= \{ ax+b + \cyc{x^2+1} \mid a,b\in \bbR \} \iso \C
   \end{align*}
   \begin{align*}
     \implies \fr{\bbR}{\cyc{x^2+1}}&\iso\C \\

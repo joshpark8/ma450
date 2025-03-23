@@ -78,7 +78,7 @@
 \end{corollary}
 
 \begin{proof}
-  Let 1 be the unity. Consider \( S = \{k\cdot 1\st k\in\Z\} \). Then \( \phi:\Z\to S \) is a ring homomorphism \( \implies \) \( \fr{\Z}{\ker\phi} \iso S \).
+  Let 1 be the unity. Consider \( S = \{k\cdot 1\mid k\in\Z\} \). Then \( \phi:\Z\to S \) is a ring homomorphism \( \implies \) \( \fr{\Z}{\ker\phi} \iso S \).
 
   \( \char 0: \) \( \ker\phi = 0 \imp \Z\iso S \)
 
@@ -92,7 +92,7 @@
 \end{corollary}
 
 \begin{proof}
-  By Cor 15.5.1, \( F \) contains \( \ZZ{p} \) if \( \char{F} = p>0 \). If \( \char{F}=0 \), then Cor 15.5.1 says \( F \) contains a subring \( S \) isomorphic to \( \Z \).  In this case, let \( T=\{ab\inv\st a,b\in S,\ b\neq 0\} \).  Then \( T \) is well defined since \( F \) is a field.
+  By Cor 15.5.1, \( F \) contains \( \ZZ{p} \) if \( \char{F} = p>0 \). If \( \char{F}=0 \), then Cor 15.5.1 says \( F \) contains a subring \( S \) isomorphic to \( \Z \).  In this case, let \( T=\{ab\inv\mid a,b\in S,\ b\neq 0\} \).  Then \( T \) is well defined since \( F \) is a field.
   \begin{exercise}
     \( T \) is a subring.
   \end{exercise}
@@ -104,7 +104,7 @@
 
 \begin{itemize}
   \item Intersections of subfields of fields are also fields \( (F_1\sseq F,\ F_2\sseq F,\ \underbrace{F_1\cap F_2}_{\text{field}}\sseq F) \)
-  \item Every field has a smallest subfield which is called the \tun{prime subfield} of the field.
+  \item Every field has a smallest subfield which is called the \uline{prime subfield} of the field.
 \end{itemize}
 
 \begin{corollary}
@@ -116,7 +116,7 @@
 \subsection{The Field of Quotients}
 
 \begin{theorem}
-  Let \( D \) be an integral domain. Then there exists a field \( F = Q(D) \) called the \tun{field of quotients} \tun{of \( D \)} that contains a subring isomorphic to \( D \).
+  Let \( D \) be an integral domain. Then there exists a field \( F = Q(D) \) called the \uline{field of quotients} \uline{of \( D \)} that contains a subring isomorphic to \( D \).
 \end{theorem}
 
 \begin{example}
@@ -124,7 +124,7 @@
 \end{example}
 
 \begin{proof}
-  Let \( S = \{(a,b) \st a,b\in D,\ \tun{b\neq 0}\} \). Define an equivalence relation on \( S \); \( (a,b) \equiv (c,d) \) if \( ad = bc \).
+  Let \( S = \{(a,b) \mid a,b\in D,\ \uline{b\neq 0}\} \). Define an equivalence relation on \( S \); \( (a,b) \equiv (c,d) \) if \( ad = bc \).
 
   Let \( F \) be the set of equivalence classes of \( S \) under the relation \( \equiv \) and denote the equivalence class that contains \( (x,y) \) by \( \frac{x}{y} \). Define addition and multiplication on \( F \) as follows:
   \begin{align*}
@@ -145,11 +145,11 @@
 \begin{example}
   \( D=\Z[x] \)
 \begin{align*}
-  Q(D) &= \left\{\frac{f(x)}{g(x)}\st g(x)\neq 0,\ f(x)\in\Z[x]\right\} \\
-  \Q(x) = Q(\Q[x]) &= \left\{\frac{f(x)}{g(x)}\st g(x)\neq 0,\ f(x)\in\Q[x]\right\}
+  Q(D) &= \left\{\frac{f(x)}{g(x)}\mid g(x)\neq 0,\ f(x)\in\Z[x]\right\} \\
+  \Q(x) = Q(\Q[x]) &= \left\{\frac{f(x)}{g(x)}\mid g(x)\neq 0,\ f(x)\in\Q[x]\right\}
 \end{align*}
 \begin{note}
-  \( g(x)\neq 0 \imp \) not the zero polynomial. \( g(x) = \tun{x-1} \) is allowed
+  \( g(x)\neq 0 \imp \) not the zero polynomial. \( g(x) = \uline{x-1} \) is allowed
 \end{note}
 \end{example}
 \end{document}

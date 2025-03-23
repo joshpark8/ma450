@@ -13,7 +13,7 @@
   \begin{definition}[kernel]
   The \emph{kernel} of a homomorphism \(\phi: G\to \bar G\) is the set
       \begin{align*}
-          \ker(\phi) = \{x\in G \st \phi(x)=\bar e\}.
+          \ker(\phi) = \{x\in G \mid\phi(x)=\bar e\}.
       \end{align*}
   \end{definition}
 
@@ -43,14 +43,14 @@
       \begin{align*}
           \phi(x+y)&=(x+y)^2 \\
           \neq \phi(x)+\phi(y) &= x^2+y^2
-      \end{align*} so \(\phi\) is \tun{not} a homomorphism.
+      \end{align*} so \(\phi\) is \uline{not} a homomorphism.
 
       \item \(\phi:\ZZ{3}\to\ZZ{6}\) where \(x\mapsto 3x\Mod 6\)
       \begin{align*}
           \phi(x+y) &= [3(x+y\Mod 3)]\Mod 6 \\
           \phi(x)+\phi(y) &= [(3x\Mod 6) + (3y\Mod 6)]\Mod 6
       \end{align*}
-      Now let \(x=1\) and \(y=2\). Then \(\phi(1+2)=0\) but \(\phi(x)+\phi(y)=(3+0)\Mod 6 = 3\). Thus \(\phi\) is \tun{not} a homomorphism
+      Now let \(x=1\) and \(y=2\). Then \(\phi(1+2)=0\) but \(\phi(x)+\phi(y)=(3+0)\Mod 6 = 3\). Thus \(\phi\) is \uline{not} a homomorphism
   \end{itemize}
   \end{nonexamples}
 
@@ -62,7 +62,7 @@
           \item \(\abs{g}\text{ finite} \implies \abs{\phi(g)} \divs \abs{g}\)
           \item \(\ker\phi \sgp G\)
           \item \(\phi(a) = \phi(b) \iff a\cdot\ker\phi = b\cdot\ker\phi\)
-          \item \(\phi(g)=g'\implies \phi\inv(g')=\{x\in G \st \phi(x)=g'\} = g\cdot \ker\phi\)
+          \item \(\phi(g)=g'\implies \phi\inv(g')=\{x\in G \mid\phi(x)=g'\} = g\cdot \ker\phi\)
       \end{enumerate}
   \end{theorem}
 
@@ -96,13 +96,13 @@
   \begin{theorem}[Properties of sgps under \homo s]
       Let \(\phi: G\to\bar G\) be a homomorphism and \(H\sgp G\). Then
       \begin{enumerate}
-          \item \(\phi(H)=\{\phi(h)\st h\in H\}\) is a sgp of \(\bar G\)
+          \item \(\phi(H)=\{\phi(h)\mid h\in H\}\) is a sgp of \(\bar G\)
           \item \(H\) cyclic \(\implies \phi(H)\) cyclic
           \item \(H\) abelian \(\implies \phi(H)\) abelian
           \item \(H\) normal \(\implies \phi(H) \nsgp \phi(G)\)
           \item \(\abs{\ker\phi} = n \implies \phi\) is an n-to-1 mapping from \(G\) onto \(\phi(G)\)
           \item \(\abs{H} = n \implies \abs{\phi(H)} \divs n\)
-          \item \(\Kbar \sgp \Gbar \implies \phi\inv(\Kbar)=\{k\in G\st \phi(k)\in\Kbar\}\sgp G\)
+          \item \(\Kbar \sgp \Gbar \implies \phi\inv(\Kbar)=\{k\in G\mid\phi(k)\in\Kbar\}\sgp G\)
           \item \(\Kbar \nsgp \Gbar \implies \phi\inv(\Kbar) \nsgp G\) \\
           (\(\implies\) \textbf{Cor:} \(\ker\phi = \phi\inv(\bar{e}) \nsgp G\))
           \item \(\phi\) is injective \(\iff\) \(\ker\phi=\{e\}\) \\
